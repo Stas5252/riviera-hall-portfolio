@@ -1,0 +1,10 @@
+# служебные файлы ИИ-инструментов, к сайту отношения не имеют
+.agents/
+.claude/*
+!.claude/launch.json
+skills-lock.json
+
+# системный мусор
+.DS_Store
+Thumbs.db
+desktop.ini

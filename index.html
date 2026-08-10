@@ -2,11 +2,13 @@
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Ривьера Холл — белоснежный шатёр на набережной</title>
 <meta name="description" content="Ривьера Холл — новое пространство для свадеб, церемоний и корпоративных событий. Белоснежный шатёр с куполом на набережной в центре города. До 220 гостей.">
+<meta name="theme-color" content="#173A67">
+<meta name="format-detection" content="telephone=no">
 <link rel="icon" type="image/jpeg" href="./фото для сайта/4fb67a8a-0d8a-4f6e-b644-6dd00ced8f7a.jpg">
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/style.css?v=11">
 </head>
 <body>
 
@@ -46,6 +48,7 @@
 </header>
 
 <div class="drawer" id="drawer">
+  <div class="drawer__inner">
   <nav>
     <a href="#about">01 &nbsp;Площадка</a>
     <a href="#services">02 &nbsp;Что проводим</a>
@@ -59,6 +62,11 @@
     <a href="#reviews">10 &nbsp;Отзывы</a>
     <a href="#book">11 &nbsp;Оставить заявку</a>
   </nav>
+  <div class="drawer__foot">
+    <a href="tel:+70000000000" class="drawer__tel">+7 (000) 000-00-00</a>
+    <span class="drawer__place">Набережная · центр города</span>
+  </div>
+  </div>
 </div>
 
 <!-- ══════════ 01 · ГЛАВНЫЙ ЭКРАН ══════════ -->
@@ -120,35 +128,45 @@
       </div>
       <div class="about__body rise" style="--d:.12s">
         <p class="lede">Ривьера Холл — новое пространство для мероприятий на набережной. С видом, с воздухом и с комфортом.</p>
-        <p>Отдельно стоящий белоснежный шатёр с огромным потолком-куполом. Элегантный современный интерьер и невероятно вкусная кухня — идеальная площадка для свадьбы, корпоративного праздника и любого другого торжества.</p>
-        <p>Шатёр вентилируемый и оснащён кондиционерами, работает в тёплое время года. Рядом — белоснежная зона с арками: для выездной церемонии, встречи гостей и отдыха.</p>
+
+        <ol class="facets">
+          <li class="facet">
+            <div class="facet__h"><span class="facet__n">01</span><h3>Шатёр и интерьер</h3></div>
+            <p>Отдельно стоящий белоснежный шатёр с огромным потолком-куполом. Элегантный современный интерьер и невероятно вкусная кухня — идеальная площадка для свадьбы, корпоративного праздника и любого другого торжества.</p>
+          </li>
+          <li class="facet">
+            <div class="facet__h"><span class="facet__n">02</span><h3>Климат и территория</h3></div>
+            <p>Шатёр вентилируемый и оснащён кондиционерами, работает в тёплое время года. Рядом — белоснежная зона с арками: для выездной церемонии, встречи гостей и отдыха.</p>
+          </li>
+        </ol>
+
         <a href="#book" class="link">Узнать свободные даты</a>
       </div>
     </div>
   </div>
 
   <!-- брендинг + арки -->
-  <div class="brand-arches rise" style="padding: 100px 20px; text-align: center;">
-    <h2 class="massive-serif" style="font-size: clamp(3rem, 8vw, 8rem); text-transform: uppercase; letter-spacing: -0.02em; color: var(--drk); margin: 0; font-family: 'Montserrat', sans-serif; font-weight: 700; line-height: 1;">РИВЬЕРА ХОЛЛ</h2>
-    <p style="font-size: clamp(1.2rem, 3vw, 2rem); font-family: 'Cormorant', serif; font-style: italic; color: var(--txt); margin: 20px 0 80px;">Пространство, которое делает событие<br>красивым и беззаботным</p>
-    <div class="arches-grid-3" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto;">
-      <figure class="brand-arch-item" style="margin:0;">
-        <div class="brand-arch-img" style="aspect-ratio: 4/5; overflow: hidden; border-radius: 400px 400px 0 0; background: #eee;">
-          <img src="./фото для сайта/IMG_2362.WEBP" alt="" style="width: 100%; height: 100%; object-fit: cover;">
+  <div class="brand-arches rise">
+    <h2 class="brand-arches__title">РИВЬЕРА ХОЛЛ</h2>
+    <p class="brand-arches__sub">Пространство, которое делает событие<br>красивым и беззаботным</p>
+    <div class="arches-grid-3">
+      <figure class="brand-arch-item">
+        <div class="brand-arch-img">
+          <img loading="lazy" decoding="async" src="./фото для сайта/IMG_2362.WEBP" alt="Купол шатра изнутри">
         </div>
-        <figcaption style="margin-top: 20px; font-family: 'Montserrat', sans-serif; font-size: 0.9rem; letter-spacing: 0.05em; color: var(--drk);">Белоснежный купол</figcaption>
+        <figcaption>Белоснежный купол</figcaption>
       </figure>
-      <figure class="brand-arch-item" style="margin:0;">
-        <div class="brand-arch-img" style="aspect-ratio: 4/5; overflow: hidden; border-radius: 400px 400px 0 0; background: #eee;">
-          <img src="./фото для сайта/IMG_2356.WEBP" alt="" style="width: 100%; height: 100%; object-fit: cover;">
+      <figure class="brand-arch-item">
+        <div class="brand-arch-img">
+          <img loading="lazy" decoding="async" src="./фото для сайта/IMG_2356.WEBP" alt="Шатёр вечером у воды">
         </div>
-        <figcaption style="margin-top: 20px; font-family: 'Montserrat', sans-serif; font-size: 0.9rem; letter-spacing: 0.05em; color: var(--drk);">События у воды</figcaption>
+        <figcaption>События у воды</figcaption>
       </figure>
-      <figure class="brand-arch-item" style="margin:0;">
-        <div class="brand-arch-img" style="aspect-ratio: 4/5; overflow: hidden; border-radius: 400px 400px 0 0; background: #eee;">
-          <img src="./фото для сайта/IMG_2371.WEBP" alt="" style="width: 100%; height: 100%; object-fit: cover;">
+      <figure class="brand-arch-item">
+        <div class="brand-arch-img">
+          <img loading="lazy" decoding="async" src="./фото для сайта/IMG_2371.WEBP" alt="Выездная церемония под арками">
         </div>
-        <figcaption style="margin-top: 20px; font-family: 'Montserrat', sans-serif; font-size: 0.9rem; letter-spacing: 0.05em; color: var(--drk);">Выездные церемонии</figcaption>
+        <figcaption>Выездные церемонии</figcaption>
       </figure>
     </div>
   </div>
@@ -164,23 +182,18 @@
 </section>
 
 <!-- ══════════ УСЛУГИ — ИНФОГРАФИКА ══════════ -->
-<section class="services-diagram" id="services" style="padding: 100px 20px; text-align: center; overflow: hidden; background: var(--paper); position: relative;">
+<section class="services-diagram" id="services">
   <div class="wrap">
     <span class="mark">02 — что проводим</span>
-    <h2 class="massive-serif" style="font-size: clamp(2.5rem, 6vw, 4rem); text-transform: uppercase; margin-bottom: 80px; font-family: 'Proletarsk', serif; color: var(--ink);">УСЛУГИ</h2>
-    
-    <div class="diagram-wrapper" style="position: relative; max-width: 1200px; width: 100%; aspect-ratio: 1200 / 700; margin: 0 auto; display: flex; justify-content: center; align-items: center;">
-      
+    <h2 class="services-diagram__title">УСЛУГИ</h2>
+
+    <div class="diagram-wrapper">
+
       <!-- Central Image -->
-      <img src="./фото для сайта/59205cea-e367-42c5-9684-c1b99ae5a88e.png" alt="Шатёр" style="width: 66.66%; display: block; position: relative; z-index: 2;">
-      
+      <img loading="lazy" decoding="async" class="diagram-wrapper__pic" src="./фото для сайта/59205cea-e367-42c5-9684-c1b99ae5a88e.png" alt="Шатёр Ривьера Холл">
+
       <!-- SVG Lines Background -->
-      <svg width="100%" height="100%" style="position: absolute; top: 0; left: 0; pointer-events: none; z-index: 1;" viewBox="0 0 1200 700" preserveAspectRatio="xMidYMid meet">
-        <style>
-          .diag-line { fill: none; stroke: var(--sea); stroke-width: 3.5px; stroke-linecap: round; }
-          .diag-dot { fill: var(--sea); }
-        </style>
-        
+      <svg class="diagram-wrapper__lines" width="100%" height="100%" viewBox="0 0 1200 700" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
         <!-- Wavy Lines from Left -->
         <path class="diag-line" d="M 150,110 Q 171.3,140.9 208.3,135 Q 245.4,129.1 266.7,160 Q 288,190.9 325,185 Q 362,179.1 383.3,210 Q 404.6,240.9 441.7,235 Q 478.7,229.1 500,260" />
         <circle class="diag-dot" cx="500" cy="260" r="4" />
@@ -214,47 +227,38 @@
         <circle class="diag-dot" cx="785" cy="485" r="4" />
       </svg>
       
-      <!-- Text Labels Left -->
-      <div class="service-text-container" style="position: absolute; left: 0; top: 0; width: 100%; height: 100%; pointer-events: none;">
-        <div class="service-text" style="left: 0; top: 15.71%; width: 140px; text-align: right;">Свадебные<br>события</div>
-        <div class="service-text" style="left: 0; top: 32.85%; width: 140px; text-align: right;">Детские<br>дни рождения</div>
-        <div class="service-text" style="left: 0; top: 50.00%; width: 140px; text-align: right;">Юбилеи</div>
-        <div class="service-text" style="left: 0; top: 67.14%; width: 140px; text-align: right;">Корпоративные<br>события</div>
-        <div class="service-text" style="left: 0; top: 84.28%; width: 140px; text-align: right;">Имиджевые<br>события</div>
-        
-        <!-- Text Labels Right -->
-        <div class="service-text" style="right: 0; top: 15.71%; width: 140px; text-align: left;">Выездная<br>церемония</div>
-        <div class="service-text" style="right: 0; top: 32.85%; width: 140px; text-align: left;">Конференции</div>
-        <div class="service-text" style="right: 0; top: 50.00%; width: 140px; text-align: left;">Бизнес завтраки<br>и обеды</div>
-        <div class="service-text" style="right: 0; top: 67.14%; width: 140px; text-align: left;">Фуршеты</div>
-        <div class="service-text" style="right: 0; top: 84.28%; width: 140px; text-align: left;">Презентации</div>
-      </div>
-      
+      <!-- Волны для узких экранов: та же схема, вертикальные пропорции -->
+      <svg class="diagram-wrapper__lines diagram-wrapper__lines--m" width="100%" height="100%" viewBox="0 0 1200 860" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+        <path class="diag-line" d="M310,135C312,137 318,145 322,150C326,155 330,161 334,164C339,168 345,171 351,173C357,174 365,174 372,174C379,175 387,174 394,175C400,176 406,178 411,182C416,186 419,193 421,200C424,206 426,215 428,222C431,229 433,237 437,242C441,247 446,250 452,252C459,254 466,253 474,253C481,253 489,252 496,253C503,254 509,255 515,258C520,262 524,267 528,272C532,277 534,284 539,289C543,293 551,298 553,300"/>
+        <path class="diag-line" d="M310,283C311,284 314,287 316,289C318,292 320,295 322,297C324,300 325,303 327,305C329,308 331,310 334,312C336,314 339,315 341,316C344,317 347,317 350,317C353,317 357,316 360,316C364,315 368,314 371,313C375,312 379,311 382,311C386,310 389,310 392,310C395,310 398,311 401,312C404,313 406,314 408,316C411,318 412,321 414,323C416,326 418,329 420,331C422,334 423,337 425,339C427,342 431,344 432,345"/>
+        <path class="diag-line" d="M310,430C311,430 312,430 313,431C314,431 315,432 316,432C317,433 318,433 319,434C320,434 322,435 323,435C324,436 325,436 326,437C327,437 328,437 329,437C330,437 331,437 332,437C333,437 334,437 335,437C336,436 337,436 339,435C340,435 341,434 342,434C343,433 344,433 345,432C346,432 347,431 348,431C349,430 350,430 352,430C353,429 354,429 355,429C356,429 357,429 358,430C359,430 360,432 361,432"/>
+        <path class="diag-line" d="M310,577C311,577 315,575 318,575C320,574 323,574 326,574C329,574 332,574 334,574C337,574 340,573 342,573C345,572 347,571 350,570C352,569 354,567 356,565C357,563 359,561 360,559C362,556 363,553 364,551C366,548 367,545 368,542C369,539 370,536 372,534C373,531 374,528 376,526C378,524 379,522 381,521C383,519 386,518 388,517C390,516 393,516 396,515C398,515 401,514 404,514C407,514 411,515 413,515"/>
+        <path class="diag-line" d="M310,725C312,723 318,718 323,715C327,712 333,710 337,706C340,703 344,699 346,694C348,689 349,683 349,677C350,671 349,664 349,658C349,652 349,645 351,640C352,635 355,631 358,627C362,624 368,621 374,619C380,617 387,616 394,614C400,613 407,611 411,608C416,605 420,602 423,597C425,593 426,587 427,582C428,576 427,569 428,563C429,557 429,551 431,546C433,541 436,537 439,533C443,530 452,526 454,525"/>
+
+        <path class="diag-line" d="M890,135C887,136 878,139 872,141C866,143 859,144 854,147C848,150 844,154 840,159C836,164 834,172 831,178C828,185 826,193 822,198C818,204 814,209 809,211C803,214 796,215 789,215C782,215 773,213 765,213C758,212 750,212 744,214C738,216 733,219 729,224C725,229 722,237 720,244C717,250 715,259 712,265C708,271 705,276 700,280C695,283 689,285 682,287C676,289 669,289 663,291C657,293 650,298 647,300"/>
+        <path class="diag-line" d="M890,283C889,283 884,284 881,284C878,285 875,284 871,284C868,284 865,284 862,284C859,284 855,284 853,285C850,286 847,287 845,289C843,291 841,293 839,296C837,298 835,301 834,304C832,308 831,311 829,315C828,318 827,322 825,325C823,328 822,331 820,333C818,336 816,338 813,340C811,341 808,342 805,343C802,344 799,344 796,344C793,344 790,343 786,343C783,343 780,343 777,343C774,343 769,345 768,345"/>
+        <path class="diag-line" d="M890,430C889,430 888,430 887,429C886,429 885,429 884,428C882,428 881,427 880,427C879,426 878,426 877,426C876,425 875,425 874,425C873,424 872,424 871,424C870,424 868,424 867,424C866,425 865,425 864,425C863,426 862,426 861,427C860,427 859,428 858,429C857,429 856,430 855,431C854,431 853,432 852,432C851,433 850,433 849,434C848,434 847,434 845,434C844,434 843,434 842,434C841,434 840,432 839,432"/>
+        <path class="diag-line" d="M890,577C889,576 886,573 885,571C883,569 882,567 880,564C879,562 877,559 876,557C874,555 873,552 871,550C869,548 867,547 865,545C863,544 861,543 858,542C856,542 853,541 850,541C847,541 844,541 841,541C838,541 835,542 832,542C829,542 826,543 823,543C820,543 817,543 814,542C812,542 809,541 807,540C805,539 802,538 801,536C799,535 797,533 795,530C794,528 792,526 791,523C789,521 788,516 787,515"/>
+        <path class="diag-line" d="M890,725C889,722 886,715 885,710C883,705 883,699 881,694C878,689 876,685 872,681C868,677 863,675 857,673C852,670 845,669 839,667C833,665 827,663 823,660C818,657 815,653 812,648C810,643 810,637 810,631C810,625 811,617 812,611C812,604 813,597 811,592C810,586 808,581 805,578C801,574 796,571 791,568C786,566 779,564 774,562C769,559 763,557 759,554C755,550 752,546 749,542C747,537 747,528 746,525"/>
+      </svg>
+
+      <ul class="service-text-container">
+        <!-- левая колонка -->
+        <li class="service-text service-text--l" style="--y:15.71%">Свадебные<br>события</li>
+        <li class="service-text service-text--l" style="--y:32.85%">Детские<br>дни рождения</li>
+        <li class="service-text service-text--l" style="--y:50%">Юбилеи</li>
+        <li class="service-text service-text--l" style="--y:67.14%">Корпоративные<br>события</li>
+        <li class="service-text service-text--l" style="--y:84.28%">Имиджевые<br>события</li>
+        <!-- правая колонка -->
+        <li class="service-text service-text--r" style="--y:15.71%">Выездная<br>церемония</li>
+        <li class="service-text service-text--r" style="--y:32.85%">Конференции</li>
+        <li class="service-text service-text--r" style="--y:50%">Бизнес завтраки<br>и обеды</li>
+        <li class="service-text service-text--r" style="--y:67.14%">Фуршеты</li>
+        <li class="service-text service-text--r" style="--y:84.28%">Презентации</li>
+      </ul>
+
     </div>
   </div>
-  <style>
-    .service-text {
-      position: absolute;
-      transform: translateY(-50%);
-      font-family: 'Vela', sans-serif;
-      font-size: 0.85rem;
-      font-weight: 500;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      color: var(--ink);
-      line-height: 1.4;
-    }
-    @media (max-width: 900px) {
-      .diagram-wrapper svg { display: none; }
-      .diagram-wrapper { aspect-ratio: auto !important; height: auto !important; flex-direction: column; }
-      .diagram-wrapper img { width: 100% !important; max-width: 500px !important; margin-bottom: 20px; }
-      .service-text-container { position: relative !important; display: grid !important; grid-template-columns: 1fr 1fr; gap: 30px 15px; text-align: center !important; margin-top: 20px; pointer-events: auto !important; height: auto !important; }
-      .service-text { position: relative !important; top: auto !important; left: auto !important; right: auto !important; transform: none !important; width: 100% !important; text-align: center !important; }
-    }
-    @media (max-width: 600px) {
-      .service-text-container { grid-template-columns: 1fr; }
-    }
-  </style>
 </section>
 
 <!-- ══════════ 03 · ГАЛЕРЕЯ ШАТРА ══════════ -->
@@ -267,14 +271,14 @@
     <p class="reel__note rise" style="--d:.1s">Купол, прозрачные окна по кругу, белый подиум и лестница. Тяните вбок&nbsp;→</p>
   </div>
   <div class="reel__rail" data-rail>
-    <figure class="card"><div class="card__arch"><img src="./фото для сайта/IMG_2354.WEBP" alt="Шатёр вечером"></div><figcaption>вечерний свет</figcaption></figure>
-    <figure class="card"><div class="card__arch"><img src="./фото для сайта/IMG_2360.WEBP" alt="Шатёр днём"></div><figcaption>дневной свет</figcaption></figure>
-    <figure class="card"><div class="card__arch"><img src="./фото для сайта/IMG_2355.WEBP" alt="Шатёр и подиум"></div><figcaption>белый подиум</figcaption></figure>
-    <figure class="card"><div class="card__arch"><img src="./фото для сайта/IMG_2362.WEBP" alt="Купол изнутри"></div><figcaption>купол</figcaption></figure>
-    <figure class="card"><div class="card__arch"><img src="./фото для сайта/IMG_2356.WEBP" alt="Шатёр ночью"></div><figcaption>ночь</figcaption></figure>
-    <figure class="card"><div class="card__arch"><img src="./фото для сайта/IMG_2357.WEBP" alt="Сцена и свет"></div><figcaption>сцена и свет</figcaption></figure>
-    <figure class="card"><div class="card__arch"><img src="./фото для сайта/IMG_2359.WEBP" alt="Панорама шатра"></div><figcaption>панорама</figcaption></figure>
-    <figure class="card"><div class="card__arch"><img src="./фото для сайта/IMG_2351.WEBP" alt="Банкет в шатре"></div><figcaption>банкет</figcaption></figure>
+    <figure class="card"><div class="card__arch"><img loading="lazy" decoding="async" src="./фото для сайта/IMG_2354.WEBP" alt="Шатёр вечером"></div><figcaption>вечерний свет</figcaption></figure>
+    <figure class="card"><div class="card__arch"><img loading="lazy" decoding="async" src="./фото для сайта/IMG_2360.WEBP" alt="Шатёр днём"></div><figcaption>дневной свет</figcaption></figure>
+    <figure class="card"><div class="card__arch"><img loading="lazy" decoding="async" src="./фото для сайта/IMG_2355.WEBP" alt="Шатёр и подиум"></div><figcaption>белый подиум</figcaption></figure>
+    <figure class="card"><div class="card__arch"><img loading="lazy" decoding="async" src="./фото для сайта/IMG_2362.WEBP" alt="Купол изнутри"></div><figcaption>купол</figcaption></figure>
+    <figure class="card"><div class="card__arch"><img loading="lazy" decoding="async" src="./фото для сайта/IMG_2356.WEBP" alt="Шатёр ночью"></div><figcaption>ночь</figcaption></figure>
+    <figure class="card"><div class="card__arch"><img loading="lazy" decoding="async" src="./фото для сайта/IMG_2357.WEBP" alt="Сцена и свет"></div><figcaption>сцена и свет</figcaption></figure>
+    <figure class="card"><div class="card__arch"><img loading="lazy" decoding="async" src="./фото для сайта/IMG_2359.WEBP" alt="Панорама шатра"></div><figcaption>панорама</figcaption></figure>
+    <figure class="card"><div class="card__arch"><img loading="lazy" decoding="async" src="./фото для сайта/IMG_2351.WEBP" alt="Банкет в шатре"></div><figcaption>банкет</figcaption></figure>
   </div>
 </section>
 
@@ -321,12 +325,12 @@
     <p class="reel__note rise" style="--d:.1s">Белая колоннада с арками, круглый подиум и живой оркестр. Отдельная зона рядом с шатром.</p>
   </div>
   <div class="reel__rail" data-rail>
-    <figure class="card"><div class="card__arch"><img src="./фото для сайта/IMG_2371.WEBP" alt="Выездная церемония"></div><figcaption>с оркестром</figcaption></figure>
-    <figure class="card"><div class="card__arch"><img src="./фото для сайта/IMG_2364.WEBP" alt="В арочной зоне"></div><figcaption>арочная зона</figcaption></figure>
-    <figure class="card"><div class="card__arch"><img src="./фото для сайта/c168867c-9e5f-4c52-b353-25bfe04add2e.jpg" alt="Арочный павильон"></div><figcaption>павильон</figcaption></figure>
-    <figure class="card"><div class="card__arch"><img src="./фото для сайта/IMG_2365.WEBP" alt="Вид сверху"></div><figcaption>вид сверху</figcaption></figure>
-    <figure class="card"><div class="card__arch"><img src="./фото для сайта/IMG_2372.WEBP" alt="Арки крупным планом"></div><figcaption>арки</figcaption></figure>
-    <figure class="card"><div class="card__arch"><img src="./фото для сайта/IMG_2366.WEBP" alt="Встреча гостей"></div><figcaption>встреча гостей</figcaption></figure>
+    <figure class="card"><div class="card__arch"><img loading="lazy" decoding="async" src="./фото для сайта/IMG_2371.WEBP" alt="Выездная церемония"></div><figcaption>с оркестром</figcaption></figure>
+    <figure class="card"><div class="card__arch"><img loading="lazy" decoding="async" src="./фото для сайта/IMG_2364.WEBP" alt="В арочной зоне"></div><figcaption>арочная зона</figcaption></figure>
+    <figure class="card"><div class="card__arch"><img loading="lazy" decoding="async" src="./фото для сайта/c168867c-9e5f-4c52-b353-25bfe04add2e.jpg" alt="Арочный павильон"></div><figcaption>павильон</figcaption></figure>
+    <figure class="card"><div class="card__arch"><img loading="lazy" decoding="async" src="./фото для сайта/IMG_2365.WEBP" alt="Вид сверху"></div><figcaption>вид сверху</figcaption></figure>
+    <figure class="card"><div class="card__arch"><img loading="lazy" decoding="async" src="./фото для сайта/IMG_2372.WEBP" alt="Арки крупным планом"></div><figcaption>арки</figcaption></figure>
+    <figure class="card"><div class="card__arch"><img loading="lazy" decoding="async" src="./фото для сайта/IMG_2366.WEBP" alt="Встреча гостей"></div><figcaption>встреча гостей</figcaption></figure>
   </div>
 </section>
 
@@ -340,13 +344,13 @@
     <p class="reel__note rise" style="--d:.1s">Чаще всего Ривьеру выбирают именно для свадьбы: церемония под арками, ужин под куполом, танцы до ночи.</p>
   </div>
   <div class="reel__rail" data-rail>
-    <figure class="card"><div class="card__arch"><img src="./фото для сайта/IMG_2367.WEBP" alt="Первый танец"></div><figcaption>первый танец</figcaption></figure>
-    <figure class="card"><div class="card__arch"><img src="./фото для сайта/IMG_2361.WEBP" alt="Банкет под куполом"></div><figcaption>ужин под куполом</figcaption></figure>
-    <figure class="card"><div class="card__arch"><img src="./фото для сайта/IMG_2351.WEBP" alt="Гости в шатре"></div><figcaption>220 гостей</figcaption></figure>
-    <figure class="card"><div class="card__arch"><img src="./фото для сайта/IMG_2368.WEBP" alt="Свадебный декор"></div><figcaption>декор</figcaption></figure>
-    <figure class="card"><div class="card__arch"><img src="./фото для сайта/IMG_2369.WEBP" alt="Церемония"></div><figcaption>церемония</figcaption></figure>
-    <figure class="card"><div class="card__arch"><img src="./фото для сайта/IMG_2370.WEBP" alt="Вечерний фуршет"></div><figcaption>вечерний фуршет</figcaption></figure>
-    <figure class="card"><div class="card__arch"><img src="./фото для сайта/IMG_2356.WEBP" alt="Шатёр ночью"></div><figcaption>до последнего гостя</figcaption></figure>
+    <figure class="card"><div class="card__arch"><img loading="lazy" decoding="async" src="./фото для сайта/IMG_2367.WEBP" alt="Первый танец"></div><figcaption>первый танец</figcaption></figure>
+    <figure class="card"><div class="card__arch"><img loading="lazy" decoding="async" src="./фото для сайта/IMG_2361.WEBP" alt="Банкет под куполом"></div><figcaption>ужин под куполом</figcaption></figure>
+    <figure class="card"><div class="card__arch"><img loading="lazy" decoding="async" src="./фото для сайта/IMG_2351.WEBP" alt="Гости в шатре"></div><figcaption>220 гостей</figcaption></figure>
+    <figure class="card"><div class="card__arch"><img loading="lazy" decoding="async" src="./фото для сайта/IMG_2368.WEBP" alt="Свадебный декор"></div><figcaption>декор</figcaption></figure>
+    <figure class="card"><div class="card__arch"><img loading="lazy" decoding="async" src="./фото для сайта/IMG_2369.WEBP" alt="Церемония"></div><figcaption>церемония</figcaption></figure>
+    <figure class="card"><div class="card__arch"><img loading="lazy" decoding="async" src="./фото для сайта/IMG_2370.WEBP" alt="Вечерний фуршет"></div><figcaption>вечерний фуршет</figcaption></figure>
+    <figure class="card"><div class="card__arch"><img loading="lazy" decoding="async" src="./фото для сайта/IMG_2356.WEBP" alt="Шатёр ночью"></div><figcaption>до последнего гостя</figcaption></figure>
   </div>
 </section>
 
@@ -367,12 +371,12 @@
     </div>
   </div>
   <div class="reel__rail" data-rail>
-    <figure class="card"><div class="card__arch"><img src="./фото для сайта/a981990f-bad3-48b3-a182-7fba0d79b4a6.jpg" alt="Сервировка стола"></div><figcaption>сервировка стола</figcaption></figure>
-    <figure class="card"><div class="card__arch"><img src="./фото для сайта/7b2def80-e3bc-4056-96e9-08dc855a4002.jpg" alt="Банкетный зал"></div><figcaption>банкетный зал</figcaption></figure>
-    <figure class="card"><div class="card__arch"><img src="./фото для сайта/167510a4f22d25d9ff6d99a9df8d39d3.jpg" alt="Фуршет"></div><figcaption>фуршет</figcaption></figure>
-    <figure class="card"><div class="card__arch"><img src="./фото для сайта/df7bd13514925849d3805201a600e2ee.jpg" alt="Детали"></div><figcaption>детали</figcaption></figure>
-    <figure class="card"><div class="card__arch"><img src="./фото для сайта/IMG_2353.WEBP" alt="Детский праздник"></div><figcaption>оформление</figcaption></figure>
-    <figure class="card"><div class="card__arch"><img src="./фото для сайта/3c37c9c9-c93b-4280-b218-6cd49cd9f7e7.jpg" alt="Свет и оборудование"></div><figcaption>свет и оборудование</figcaption></figure>
+    <figure class="card"><div class="card__arch"><img loading="lazy" decoding="async" src="./фото для сайта/a981990f-bad3-48b3-a182-7fba0d79b4a6.jpg" alt="Сервировка стола"></div><figcaption>сервировка стола</figcaption></figure>
+    <figure class="card"><div class="card__arch"><img loading="lazy" decoding="async" src="./фото для сайта/7b2def80-e3bc-4056-96e9-08dc855a4002.jpg" alt="Банкетный зал"></div><figcaption>банкетный зал</figcaption></figure>
+    <figure class="card"><div class="card__arch"><img loading="lazy" decoding="async" src="./фото для сайта/167510a4f22d25d9ff6d99a9df8d39d3.jpg" alt="Фуршет"></div><figcaption>фуршет</figcaption></figure>
+    <figure class="card"><div class="card__arch"><img loading="lazy" decoding="async" src="./фото для сайта/df7bd13514925849d3805201a600e2ee.jpg" alt="Детали"></div><figcaption>детали</figcaption></figure>
+    <figure class="card"><div class="card__arch"><img loading="lazy" decoding="async" src="./фото для сайта/IMG_2353.WEBP" alt="Детский праздник"></div><figcaption>оформление</figcaption></figure>
+    <figure class="card"><div class="card__arch"><img loading="lazy" decoding="async" src="./фото для сайта/3c37c9c9-c93b-4280-b218-6cd49cd9f7e7.jpg" alt="Свет и оборудование"></div><figcaption>свет и оборудование</figcaption></figure>
   </div>
 </section>
 
@@ -384,7 +388,7 @@
   </div>
   <div class="film__box rise">
     <!-- Замените блок ниже на <video src="..."> или <iframe> с роликом площадки -->
-    <img src="./фото для сайта/IMG_2356.WEBP" alt="Видео о площадке Ривьера Холл">
+    <img loading="lazy" decoding="async" src="./фото для сайта/IMG_2356.WEBP" alt="Видео о площадке Ривьера Холл">
     <button class="film__play" aria-label="Смотреть видео">
       <svg viewBox="0 0 44 44" aria-hidden="true"><polygon points="17,13 17,31 33,22" fill="currentColor"/></svg>
     </button>
@@ -425,9 +429,9 @@
     <div class="says__box">
       <div class="says__pics" aria-hidden="true">
         <div class="card__arch">
-          <img class="is-on" src="./фото для сайта/IMG_2367.WEBP" alt="">
-          <img src="./фото для сайта/IMG_2370.WEBP" alt="">
-          <img src="./фото для сайта/IMG_2365.WEBP" alt="">
+          <img loading="lazy" decoding="async" class="is-on" src="./фото для сайта/IMG_2367.WEBP" alt="">
+          <img loading="lazy" decoding="async" src="./фото для сайта/IMG_2370.WEBP" alt="">
+          <img loading="lazy" decoding="async" src="./фото для сайта/IMG_2365.WEBP" alt="">
         </div>
       </div>
       <div class="says__quote">
@@ -501,6 +505,15 @@
 
 </main>
 
-<script src="js/main.js"></script>
+<!-- ══════════ МОБИЛЬНАЯ ПАНЕЛЬ ДЕЙСТВИЙ ══════════ -->
+<div class="dock" id="dock" aria-hidden="false">
+  <a href="tel:+70000000000" class="dock__call">
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6.5 3.5h3l1.5 4-2 1.5a12 12 0 0 0 6 6l1.5-2 4 1.5v3a2 2 0 0 1-2.2 2A17 17 0 0 1 4.5 5.7 2 2 0 0 1 6.5 3.5Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>
+    <span>Позвонить</span>
+  </a>
+  <a href="#book" class="dock__book">Забронировать дату</a>
+</div>
+
+<script src="js/main.js?v=5"></script>
 </body>
 </html>

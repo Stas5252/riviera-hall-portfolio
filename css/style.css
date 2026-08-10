@@ -11,6 +11,7 @@
 @font-face{font-family:'Vela';src:url('../fonts/VELASANS-REGULAR.TTF') format('truetype');font-weight:400;font-display:swap}
 @font-face{font-family:'Vela';src:url('../fonts/VELASANS-MEDIUM.TTF') format('truetype');font-weight:500;font-display:swap}
 @font-face{font-family:'Vela';src:url('../fonts/VELASANS-SEMIBOLD.TTF') format('truetype');font-weight:600;font-display:swap}
+@font-face{font-family:'Montserrat';src:url('../fonts/MONTSERRAT-VARIABLEFONT_WGHT.TTF') format('truetype');font-weight:100 900;font-display:swap}
 
 :root{
   /* С„РёСЂРјРµРЅРЅР°СЏ РїР°Р»РёС‚СЂР° */
@@ -52,6 +53,8 @@ button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
 ::selection{background:var(--ink);color:var(--paper)}
 
 .wrap{width:var(--rail);margin-inline:auto}
+/* чтобы переход по якорю не заводил заголовок под закреплённую шапку */
+[id]{scroll-margin-top:86px}
 
 /* в”Ђв”Ђ РѕР±С‰РёРµ С‚РёРїРѕРіСЂР°С„РёС‡РµСЃРєРёРµ РїСЂРёРјРёС‚РёРІС‹ в”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђ */
 .mark{
@@ -77,7 +80,7 @@ button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
   padding-bottom:6px;border-bottom:1px solid currentColor;
   transition:gap .4s var(--ease),opacity .3s;
 }
-.link::after{content:'в†’';transition:transform .4s var(--ease)}
+.link::after{content:'\2192';transition:transform .4s var(--ease)}
 .link:hover{gap:1em}
 .link:hover::after{transform:translateX(4px)}
 .link--light{color:var(--white)}
@@ -235,7 +238,26 @@ body.nav-open .drawer{clip-path:circle(150% at calc(100% - 44px) 34px)}
 .about{padding:clamp(72px,11vw,170px) 0 clamp(60px,8vw,120px)}
 .about__grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(28px,5vw,90px);align-items:start}
 .about__body p{max-width:52ch;color:var(--ink-soft)}
-.about__body .lede{color:var(--ink);margin-bottom:1.1em}
+.about__body .lede{color:var(--ink);margin-bottom:0}
+
+/* нумерованные пункты: тонкий контурный круг, капсы и волосяная линия */
+.facets{
+  --dot:clamp(42px,11vw,54px);
+  margin:clamp(30px,4.4vw,52px) 0 0;display:grid;gap:clamp(30px,4.6vw,48px);
+}
+.facet{display:grid;gap:clamp(13px,1.8vw,18px)}
+.facet__h{display:flex;align-items:center;gap:clamp(12px,2vw,18px)}
+.facet__n{
+  flex:none;width:var(--dot);aspect-ratio:1;border-radius:50%;
+  border:1px solid rgba(23,58,103,.26);display:grid;place-content:center;
+  font-family:'Proletarsk',serif;font-size:clamp(12px,3.2vw,15px);line-height:1;color:var(--sea);
+}
+.facet__h h3{
+  margin:0;font-family:'Vela',sans-serif;font-weight:500;font-size:11px;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--ink);white-space:nowrap;
+}
+.facet__h::after{content:'';flex:1;height:1px;background:rgba(23,58,103,.16)}
+.facet p{margin:0}
 
 /* Р°СЂРєР°-РїРѕСЂС‚Р°Р» */
 .portal{margin:clamp(48px,7vw,110px) auto clamp(34px,5vw,70px);width:var(--rail)}
@@ -515,44 +537,323 @@ body.nav-open .drawer{clip-path:circle(150% at calc(100% - 44px) 34px)}
 }
 .end__foot a:hover{color:#fff}
 
-/* в•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђ РђР”РђРџРўРР’ в•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђ */
+/* ═══════════════════════════════════════════════════════════
+   КОМПОНЕНТЫ, ВЫНЕСЕННЫЕ ИЗ РАЗМЕТКИ
+   ═══════════════════════════════════════════════════════════ */
+
+/* алиасы под переменные, которые использовались в инлайновых стилях */
+:root{--drk:#173A67;--txt:#4A6A93}
+
+/* ── безопасные зоны (вырез и скруглённые углы телефонов) ── */
+.bar{
+  padding-top:calc(22px + env(safe-area-inset-top));
+  padding-left:calc(var(--gap) + env(safe-area-inset-left));
+  padding-right:calc(var(--gap) + env(safe-area-inset-right));
+}
+.bar.solid{padding-block:14px;padding-top:calc(14px + env(safe-area-inset-top))}
+
+/* ── бургер: зона нажатия 44×44 ── */
+.burger{width:44px;height:44px;flex:none;margin-right:-10px}
+.burger i{left:9px;width:26px}
+.burger i:first-child{top:16px}
+.burger i:last-child{bottom:16px}
+body.nav-open .burger i:first-child{transform:translateY(5px) rotate(45deg)}
+body.nav-open .burger i:last-child{transform:translateY(-5px) rotate(-45deg)}
+
+/* ── выдвижное меню: прокручиваемое, с контактом внизу ── */
+.drawer{display:block}
+.drawer__inner{
+  min-height:100svh;max-height:100svh;overflow-y:auto;overscroll-behavior:contain;
+  display:flex;flex-direction:column;justify-content:center;gap:clamp(24px,6vh,54px);
+  padding:calc(96px + env(safe-area-inset-top)) calc(var(--gap) + env(safe-area-inset-right))
+          calc(36px + env(safe-area-inset-bottom)) calc(var(--gap) + env(safe-area-inset-left));
+}
+.drawer a{display:block;padding-block:3px}
+.drawer__foot{display:grid;gap:8px;padding-top:clamp(16px,3vh,26px);border-top:1px solid rgba(255,255,255,.16)}
+.drawer__foot .drawer__tel{font-family:'Proletarsk',serif;font-size:clamp(22px,6.4vw,30px);line-height:1.2;color:#fff}
+.drawer__foot .drawer__place{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.5)}
+/* iOS не держит прокрутку одним overflow:hidden — фиксируем страницу */
+body.lock{position:fixed;left:0;right:0;width:100%;overflow:hidden}
+
+/* ── брендинг + арки ── */
+.brand-arches{padding:clamp(60px,9vw,100px) var(--gap);text-align:center}
+.brand-arches__title{
+  margin:0;font-family:'Montserrat',sans-serif;font-weight:700;line-height:1;
+  font-size:clamp(2rem,8vw,8rem);text-transform:uppercase;letter-spacing:-.02em;color:var(--ink);
+}
+.brand-arches__sub{
+  margin:clamp(14px,2vw,20px) 0 clamp(36px,6vw,80px);
+  font-family:'Proletarsk',serif;font-size:clamp(1.05rem,3vw,2rem);line-height:1.3;color:var(--ink-soft);
+}
+.arches-grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2.4vw,30px);max-width:1200px;margin:0 auto}
+.brand-arch-item{margin:0}
+.brand-arch-img{
+  aspect-ratio:4/5;overflow:hidden;background:var(--paper-2);
+  border-radius:999px 999px 6px 6px / 46% 46% 6px 6px;
+}
+.brand-arch-img img{width:100%;height:100%;object-fit:cover;transition:transform 1.4s var(--slow)}
+.brand-arch-item:hover img{transform:scale(1.05)}
+.brand-arch-item figcaption{
+  margin-top:clamp(12px,1.6vw,20px);font-size:11px;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--ink-soft);
+}
+
+/* ── инфографика «услуги» ── */
+.services-diagram{position:relative;overflow:hidden;background:var(--paper);padding:clamp(60px,9vw,100px) 0;text-align:center}
+.services-diagram__title{
+  margin:0 0 clamp(36px,6vw,80px);font-family:'Proletarsk',serif;color:var(--ink);
+  text-transform:uppercase;font-size:clamp(2rem,6vw,4rem);line-height:1;
+}
+.diagram-wrapper{
+  position:relative;max-width:1200px;width:100%;margin:0 auto;aspect-ratio:1200/700;
+  display:flex;justify-content:center;align-items:center;
+}
+.diagram-wrapper__pic{width:66.66%;position:relative;z-index:2}
+.diagram-wrapper__lines{position:absolute;top:0;left:0;pointer-events:none;z-index:1}
+.diagram-wrapper__lines--m{display:none}   /* включается на узких экранах */
+/* non-scaling-stroke — чтобы толщина не менялась вместе с масштабом viewBox */
+.diag-line{fill:none;stroke:var(--sea);stroke-width:3.5px;stroke-linecap:round;vector-effect:non-scaling-stroke}
+.diag-dot{fill:var(--sea)}
+.service-text-container{position:absolute;inset:0;margin:0;padding:0;list-style:none;pointer-events:none}
+.service-text{
+  position:absolute;top:var(--y);transform:translateY(-50%);width:140px;
+  font-size:.85rem;font-weight:500;text-transform:uppercase;letter-spacing:.05em;
+  color:var(--ink);line-height:1.4;
+}
+.service-text--l{left:0;text-align:right}
+.service-text--r{right:0;text-align:left}
+
+/* ── мобильная панель действий ── */
+.dock{
+  position:fixed;left:0;right:0;bottom:0;z-index:86;display:none;align-items:center;gap:10px;
+  padding:10px calc(var(--gap) + env(safe-area-inset-right))
+          calc(10px + env(safe-area-inset-bottom)) calc(var(--gap) + env(safe-area-inset-left));
+  background:rgba(23,58,103,.94);backdrop-filter:blur(14px);
+  border-top:1px solid rgba(255,255,255,.14);
+  transform:translateY(125%);transition:transform .5s var(--slow);
+}
+.dock a{
+  display:flex;align-items:center;justify-content:center;min-height:48px;border-radius:100px;
+  font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-weight:500;
+}
+.dock__call{flex:0 0 48px;border:1px solid rgba(255,255,255,.42);color:#fff}
+.dock__call svg{width:20px;height:20px}
+.dock__call span{position:absolute;width:1px;height:1px;margin:-1px;overflow:hidden;clip-path:inset(50%)}
+.dock__book{flex:1 1 auto;padding-inline:14px;background:#fff;color:var(--ink);text-align:center}
+
+/* ═══════════════════════════════════════════════════════════
+   АДАПТИВ
+   ═══════════════════════════════════════════════════════════ */
+
+/* ── ноутбуки и планшеты-горизонталь ─────────────────────── */
 @media (max-width:1080px){
   .about__grid,.cer__head,.banq__grid,.route__grid,.terms__grid,.end__grid{grid-template-columns:1fr}
   .cer__stage{grid-template-columns:1fr}
   .cer__side{grid-template-columns:1fr 1fr}
   .specs span{text-align:left}
   .specs li{flex-direction:column;gap:2px}
+  .film__box{border-radius:min(46vw,50%) min(46vw,50%) 10px 10px / 28% 28% 10px 10px}
 }
+
+/* ── инфографика: разворачиваем в сетку ──────────────────── */
+@media (max-width:900px){
+  /* Та же схема, что на десктопе: шатёр по центру, услуги по краям,
+     волны между ними. Меняются только пропорции — блок становится выше,
+     шатёр мельче, а волны короче (второй SVG в разметке). */
+  .diagram-wrapper{
+    aspect-ratio:1200/860;
+    margin-inline:calc(var(--gap) * -1);width:auto;max-width:none;  /* во всю ширину экрана */
+  }
+  .diagram-wrapper__lines{display:none}
+  .diagram-wrapper__lines--m{display:block}   /* лежит под шатром, как на десктопе */
+  .diag-line{stroke-width:2.4px}
+  /* ВАЖНО: 44% и центрирование зашиты в геометрию волн (см. генератор в истории),
+     менять размер шатра — только вместе с пересчётом путей */
+  .diagram-wrapper__pic{width:44%}
+
+  .service-text{width:22%;font-size:clamp(8.5px,2.4vw,11px);letter-spacing:.02em;line-height:1.32}
+  .service-text--l{left:8px}
+  .service-text--r{right:8px}
+}
+
+/* ── планшеты-вертикаль и крупные телефоны ───────────────── */
 @media (max-width:860px){
   .bar__nav,.bar__cta{display:none}
   .burger{display:block}
+
+  .dock{display:flex;justify-content:center}
+  .dock__book{max-width:480px}
+  body.dock-on .dock{transform:none}
+  body.nav-open .dock{transform:translateY(125%)}
+  /* панель прячется у формы заявки, поэтому запас снизу небольшой */
+  .end{padding-bottom:calc(28px + env(safe-area-inset-bottom))}
+
+  .hero{padding-top:calc(78px + env(safe-area-inset-top))}
   .hero__facts{grid-template-columns:1fr 1fr}
   .hero__facts div:nth-child(3){border-left:0;padding-left:0}
   .hero__facts div:nth-child(-n+2){border-bottom:1px solid rgba(255,255,255,.14)}
   .hero__cue{display:none}
+
   .tally{grid-template-columns:1fr 1fr;gap:26px}
-  .trio {
-    display:flex; overflow-x:auto; scroll-snap-type:x proximity;
-    margin-right:calc(var(--gap) * -1); padding-right:var(--gap);
+  .trio{
+    display:flex;overflow-x:auto;scroll-snap-type:x proximity;
+    margin-right:calc(var(--gap) * -1);padding-right:var(--gap);
     scrollbar-width:none;-ms-overflow-style:none;
   }
   .trio::-webkit-scrollbar{display:none}
-  .trio__col { flex: 0 0 85%; scroll-snap-align: start; }
+  .trio__col{flex:0 0 85%;scroll-snap-align:start}
   .banq__pics{grid-template-columns:1fr 1fr}
   .peek{display:none}
   .mosaic{grid-template-areas:"a a a a a a" "b b b b b b" "c c c d d d" "e e e e e e"}
-  .reel__head{flex-direction:column;align-items:flex-start}
+  .reel__head{flex-direction:column;align-items:flex-start;gap:16px}
   .says__box{grid-template-columns:1fr}
-  .says__pics{order:0;max-width:340px}
+  .says__pics{order:0;max-width:min(340px,100%)}
+  .terms__pattern{background-size:96px auto}
+  .end::before{background-size:112px auto}
 }
-@media (max-width:560px){
-  .cer__side,.banq__pics{grid-template-columns:1fr}
-  .hero__word{letter-spacing:-.005em}
-  .end__foot{flex-direction:column;gap:10px}
-  .say p{max-width:none}
+
+/* ── телефоны ────────────────────────────────────────────── */
+@media (max-width:720px){
+  body{font-size:15px;line-height:1.6}
+  .statement{font-size:clamp(34px,8.6vw,54px);line-height:.98}
+  .lede{font-size:clamp(17px,4.4vw,20px);line-height:1.45}
+  .mark{font-size:10px;letter-spacing:.2em;margin-bottom:16px}
+  .mark::before{width:18px;margin-right:9px}
+  .link{font-size:12px;letter-spacing:.1em;padding-block:6px}
+
+  /* главный экран */
+  .hero__type{padding-bottom:clamp(16px,4vw,30px)}
+  .hero__eyebrow{flex-wrap:wrap;gap:6px 10px;font-size:10px;letter-spacing:.2em;margin-bottom:14px}
+  .hero__second{letter-spacing:.34em}
+  .hero__line{max-width:24ch;margin-inline:auto;font-size:14px}
+  .hero__lower{padding-bottom:env(safe-area-inset-bottom)}
+  .hero__facts div{padding:14px 10px}
+  .hero__facts b{font-size:clamp(19px,5.4vw,26px)}
+  .hero__facts span{margin-top:2px;font-size:10px;letter-spacing:.1em}
+
+  .ribbon__run span{font-size:clamp(17px,5vw,24px)}
+
+  /* о площадке */
+  .about{padding:clamp(52px,12vw,80px) 0 clamp(40px,9vw,70px)}
+  .about__grid{gap:20px}
+  .about__body p{max-width:none}
+  .brand-arches{padding-inline:0}
+  .brand-arches__title,.brand-arches__sub{padding-inline:var(--gap)}
+  .arches-grid-3{
+    grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:min(72%,280px);
+    gap:14px;overflow-x:auto;scroll-snap-type:x proximity;
+    padding-inline:var(--gap);scrollbar-width:none;-ms-overflow-style:none;
+  }
+  .arches-grid-3::-webkit-scrollbar{display:none}
+  .brand-arch-item{scroll-snap-align:center}
+
+  .tally{gap:20px 16px;padding-top:22px}
+  .tally__i b{font-size:clamp(26px,8vw,40px)}
+  .tally__i span{margin-top:6px;font-size:10px;letter-spacing:.12em}
+
+  /* галереи */
+  .reel{padding:clamp(48px,11vw,80px) 0}
+  .card{flex:0 0 min(74vw,300px)}
+  .reel__note{max-width:none;font-size:13.5px}
+
+  /* условия и подарки */
+  .terms{padding:clamp(50px,11vw,90px) 0}
+  .specs li{flex-direction:row;align-items:baseline;justify-content:space-between;gap:14px;padding:12px 0}
+  .specs span{text-align:right}
+  .gifts__kicker{font-size:clamp(19px,5.4vw,26px)}
+  .gift{padding:20px 18px}
+  .gift h3{font-size:clamp(18px,5vw,22px)}
+  .gift p{max-width:none;font-size:13.5px}
+
+  /* видео */
+  .film__box{aspect-ratio:4/3;border-radius:50% 50% 8px 8px / 32% 32% 8px 8px}
+  .film__tag{bottom:12px;width:calc(100% - 32px);text-align:center;font-size:10px;letter-spacing:.14em}
+
+  /* как проехать */
+  .route{padding:clamp(50px,11vw,90px) 0}
+  .route__list li{flex-direction:column;gap:3px;padding:13px 0}
+  .route__list span{text-align:left}
+  .route__map{aspect-ratio:4/3}
+
+  /* отзывы */
+  .says{padding:clamp(50px,11vw,90px) 0}
+  .says__track{min-height:200px}
+  .say p{font-size:clamp(19px,5.4vw,26px);max-width:none}
+  .say footer{gap:6px 14px;font-size:11px}
+  .says__nav{gap:16px;margin-top:24px}
+  .says__nav button{width:48px;height:48px}
+
+  /* заявка */
+  .end{padding-top:clamp(50px,11vw,90px)}
+  .end__logo{height:28px}
+  .end__note{max-width:none}
+  .mgr__tel{font-size:clamp(26px,7.4vw,34px)}
+  .field input{padding:20px 0 11px}
+  .send{width:100%;padding:18px 24px}
+  .form__fine{max-width:none}
+}
+
+/* ── компактные телефоны ─────────────────────────────────── */
+@media (max-width:480px){
+  .brand-arches__title{font-size:clamp(1.9rem,9.6vw,3rem)}
+  .services-diagram__title{font-size:clamp(1.9rem,9.6vw,3rem)}
+  .card{flex:0 0 min(80vw,290px)}
+  .tally{gap:18px 14px}
+  .banq__pics{grid-template-columns:1fr 1fr}
+  .end__foot{flex-direction:column;gap:10px;text-align:left}
+  .drawer a{font-size:clamp(21px,6.6vw,30px)}
+}
+
+/* ── самые узкие экраны (320–380) ────────────────────────── */
+@media (max-width:380px){
+  :root{--gap:16px}
+  .statement{font-size:clamp(28px,8.6vw,34px)}
+  .hero__word{font-size:clamp(50px,16vw,64px);letter-spacing:-.005em}
+  .hero__facts div{padding:12px 8px}
+  .hero__facts b{font-size:18px}
+  .service-text{letter-spacing:0}
+  .dock__book{font-size:11px;letter-spacing:.05em}
+  .mgr__links{gap:14px;font-size:11px}
+  .says__nav{gap:12px}
+}
+
+/* ── телефон в горизонтали ───────────────────────────────── */
+@media (max-height:540px) and (orientation:landscape){
+  .hero{padding-top:calc(62px + env(safe-area-inset-top))}
+  .hero__word{font-size:clamp(42px,12vh,86px)}
+  .hero__second{margin:2px 0 8px}
+  .hero__line{font-size:13px}
+  .hero__facts{grid-template-columns:repeat(4,1fr)}
+  .hero__facts div{padding:10px 10px;border-left:1px solid rgba(255,255,255,.14);border-bottom:0}
+  .hero__facts div:first-child{border-left:0;padding-left:0}
+  .hero__facts b{font-size:17px}
+  .drawer__inner{justify-content:flex-start;padding-top:calc(72px + env(safe-area-inset-top));gap:20px}
+  .drawer a{font-size:clamp(18px,5.6vh,24px)}
+  .curtain__name{font-size:24px}
+  .curtain__wave{width:120px}
+}
+
+/* ── сенсорные экраны: гасим «залипающий» hover ──────────── */
+@media (hover:none){
+  .card:hover .card__arch img,
+  .brand-arch-item:hover img,
+  .mosaic figure:hover img,
+  .banq__pics figure:hover img,
+  .film__box:hover img{transform:none}
+  .gift:hover{transform:none;background:rgba(255,255,255,.035);border-color:rgba(255,255,255,.2)}
+  .gift:hover::after{transform:scaleX(0)}
+  .link:hover{gap:.6em}
+  .link:hover::after{transform:none}
+  .bar__cta:hover::before,.send:hover::before{transform:translateY(101%)}
+  .roster li:hover{color:inherit;padding-left:0}
+  .roster li:hover::before{width:0}
+  .drawer a:hover{transform:none;color:#fff}
+  .says__nav button:hover{background:none;color:inherit;border-color:rgba(255,255,255,.35)}
+  .film__play:hover{background:none;color:#fff;transform:translate(-50%,-50%)}
 }
 
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important}
   .rise{opacity:1;transform:none}
+  .dock{transition:none}
 }

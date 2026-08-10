@@ -24,8 +24,26 @@ const onBar = () => {
 
 /* ── мобильное меню ─────────────────────────────────────── */
 const burger = $('#burger');
-burger.addEventListener('click', () => document.body.classList.toggle('nav-open'));
-$$('#drawer a').forEach(a => a.addEventListener('click', () => document.body.classList.remove('nav-open')));
+const drawer = $('#drawer');
+let lockY = 0;                                     // куда вернуть страницу после закрытия
+const setNav = (open) => {
+  const body = document.body;
+  if (open) lockY = scrollY;
+  body.classList.toggle('nav-open', open);
+  body.classList.toggle('lock', open);             // блокируем прокрутку под меню
+  if (open) {
+    body.style.top = `-${lockY}px`;
+  } else if (body.style.top) {
+    body.style.top = '';
+    scrollTo({ top: lockY, behavior: 'instant' });
+  }
+  burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+  if (drawer) drawer.setAttribute('aria-hidden', open ? 'false' : 'true');
+};
+setNav(false);
+burger.addEventListener('click', () => setNav(!document.body.classList.contains('nav-open')));
+$$('#drawer a').forEach(a => a.addEventListener('click', () => setNav(false)));
+addEventListener('keydown', (e) => { if (e.key === 'Escape') setNav(false); });
 
 /* ── смена кадров в героe ───────────────────────────────── */
 const shots = $$('#heroStack .shot');
@@ -42,9 +60,17 @@ if (shots.length > 1 && !calm) {
 const heroType  = $('.hero__lower');
 const portalImg = $('#portalImg');
 const portalBox = portalImg && portalImg.parentElement;
+const dock      = $('#dock');
+const bookBox   = $('#book');
 
 const onScroll = () => {
   onBar();
+
+  // мобильная панель действий: после первого экрана и до формы заявки
+  if (dock) {
+    const formNear = bookBox && bookBox.getBoundingClientRect().top < innerHeight * .75;
+    document.body.classList.toggle('dock-on', scrollY > innerHeight * .85 && !formNear);
+  }
 
   // 0 → 1 по мере ухода первого экрана: текст мягко уходит вглубь
   if (heroType) {
@@ -134,8 +160,11 @@ $$('[data-rail]').forEach(rail => {
     if (next > 0 && next < room) { e.preventDefault(); rail.scrollLeft = next; }
   }, { passive: false });
 
+  // перетаскивание — только мышью: на тач-экранах работает родная прокрутка,
+  // иначе она складывалась бы с ручной и лента «улетала» вдвое быстрее
   let down = false, sx = 0, sl = 0;
   rail.addEventListener('pointerdown', (e) => {
+    if (e.pointerType !== 'mouse') return;
     down = true; sx = e.clientX; sl = rail.scrollLeft;
     rail.classList.add('drag'); rail.setPointerCapture(e.pointerId);
   });
@@ -190,7 +219,9 @@ $$('a[href^="#"]').forEach(a => {
     const t = $(id);
     if (!t) return;
     e.preventDefault();
-    scrollTo({ top: t.getBoundingClientRect().top + scrollY - 8, behavior: calm ? 'auto' : 'smooth' });
+    // отступ на высоту закреплённой шапки, чтобы заголовок не уезжал под неё
+    const off = id === '#top' ? 0 : bar.offsetHeight + 10;
+    scrollTo({ top: Math.max(0, t.getBoundingClientRect().top + scrollY - off), behavior: calm ? 'auto' : 'smooth' });
   });
 });
 
