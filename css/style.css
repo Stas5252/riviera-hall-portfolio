@@ -333,9 +333,9 @@ body.nav-open .drawer{clip-path:circle(150% at calc(100% - 44px) 34px)}
   top: 65%; /* чуть ниже середины */
   left: 50%;
   transform: translate(-50%, -50%);
-  width: clamp(300px, 85%, 700px);
+  width: clamp(280px, 80%, 550px);
   background-color: #d7deeb;
-  padding: clamp(20px, 3vw, 36px) clamp(24px, 4vw, 48px);
+  padding: clamp(16px, 2.5vw, 24px) clamp(20px, 3vw, 36px);
   border-radius: 4px;
 }
 @media (max-width: 768px) {
@@ -347,29 +347,39 @@ body.nav-open .drawer{clip-path:circle(150% at calc(100% - 44px) 34px)}
   }
 }
 
-.album__note {
-  max-width: 100%;
-  color: var(--ink-soft);
-  font-size: 15px;
-  line-height: 1.4;
-  margin: clamp(16px, 2.4vw, 24px) 0 0;
-}
-.album__ticks {
-  margin-top: clamp(14px, 2vw, 20px);
+.album__overlay .mark {
+  font-size: 10px;
 }
 
-.album__cta {
+.album__overlay .statement {
+  font-size: clamp(24px, 3.5vw, 36px);
+  margin-top: 4px;
+}
+
+.album__overlay .album__note {
+  max-width: 100%;
+  color: var(--ink-soft);
+  font-size: 14px;
+  line-height: 1.4;
+  margin: clamp(10px, 1.5vw, 14px) 0 0;
+}
+.album__ticks {
+  margin-top: clamp(8px, 1vw, 12px);
+  font-size: 13px;
+}
+
+.album__overlay .album__cta {
   display: inline-flex; align-items: baseline; gap: .9em;
-  margin-top: clamp(24px, 3.2vw, 38px);
-  padding-bottom: 7px; border-bottom: 1px solid currentColor;
-  font-size: 13px; font-weight: 500; letter-spacing: .12em; text-transform: uppercase;
+  margin-top: clamp(16px, 2vw, 24px);
+  padding-bottom: 4px; border-bottom: 1px solid currentColor;
+  font-size: 11px; font-weight: 500; letter-spacing: .12em; text-transform: uppercase;
   transition: gap .4s var(--ease);
 }
-.album__cta i {
-  font-style: normal; font-weight: 300; font-size: 11px; letter-spacing: .14em;
+.album__overlay .album__cta i {
+  font-style: normal; font-weight: 300; font-size: 10px; letter-spacing: .14em;
   color: var(--ink-soft); text-transform: uppercase; flex: none;
 }
-.album__cta::after { content: '\2192'; transition: transform .4s var(--ease); }
+.album__overlay .album__cta::after { content: '\2192'; transition: transform .4s var(--ease); }
 
 @media (hover: hover) {
   .album__card:hover .album__cover img { transform: scale(1.05); }
