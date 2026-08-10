@@ -1,9 +1,9 @@
-/* ═══════════════════════════════════════════════════════════
-   РИВЬЕРА ХОЛЛ — версия 4
-   Дизайн-система построена на двух формах бренда:
-   АРКА (купол шатра и колоннада) и ВОЛНА (логотип, набережная).
-   Шрифты — фирменные: Proletarsk (дисплей) + Vela Sans (текст).
-   ═══════════════════════════════════════════════════════════ */
+/* в•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђ
+   Р РР’Р¬Р•Р Рђ РҐРћР›Р› вЂ” РІРµСЂСЃРёСЏ 4
+   Р”РёР·Р°Р№РЅ-СЃРёСЃС‚РµРјР° РїРѕСЃС‚СЂРѕРµРЅР° РЅР° РґРІСѓС… С„РѕСЂРјР°С… Р±СЂРµРЅРґР°:
+   РђР РљРђ (РєСѓРїРѕР» С€Р°С‚СЂР° Рё РєРѕР»РѕРЅРЅР°РґР°) Рё Р’РћР›РќРђ (Р»РѕРіРѕС‚РёРї, РЅР°Р±РµСЂРµР¶РЅР°СЏ).
+   РЁСЂРёС„С‚С‹ вЂ” С„РёСЂРјРµРЅРЅС‹Рµ: Proletarsk (РґРёСЃРїР»РµР№) + Vela Sans (С‚РµРєСЃС‚).
+   в•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђ */
 
 @font-face{font-family:'Proletarsk';src:url('../fonts/PROLETARSK.TTF') format('truetype');font-weight:400;font-display:swap}
 @font-face{font-family:'Vela';src:url('../fonts/VELASANS-EXTRALIGHT.TTF') format('truetype');font-weight:200;font-display:swap}
@@ -13,14 +13,14 @@
 @font-face{font-family:'Vela';src:url('../fonts/VELASANS-SEMIBOLD.TTF') format('truetype');font-weight:600;font-display:swap}
 
 :root{
-  /* фирменная палитра */
-  --ink:#173A67;          /* глубокий синий логотипа */
-  --ink-deep:#0D2444;     /* тёмные блоки */
+  /* С„РёСЂРјРµРЅРЅР°СЏ РїР°Р»РёС‚СЂР° */
+  --ink:#173A67;          /* РіР»СѓР±РѕРєРёР№ СЃРёРЅРёР№ Р»РѕРіРѕС‚РёРїР° */
+  --ink-deep:#0D2444;     /* С‚С‘РјРЅС‹Рµ Р±Р»РѕРєРё */
   --ink-soft:#4A6A93;
-  --sea:#358BC1;          /* волна, насыщенный конец градиента */
-  --sky:#96B7DA;          /* волна, светлый конец */
-  --paper:#F3EFE9;        /* тёплая бумага — фон сайта */
-  --paper-2:#EAE3D9;      /* песочный */
+  --sea:#358BC1;          /* РІРѕР»РЅР°, РЅР°СЃС‹С‰РµРЅРЅС‹Р№ РєРѕРЅРµС† РіСЂР°РґРёРµРЅС‚Р° */
+  --sky:#96B7DA;          /* РІРѕР»РЅР°, СЃРІРµС‚Р»С‹Р№ РєРѕРЅРµС† */
+  --paper:#F3EFE9;        /* С‚С‘РїР»Р°СЏ Р±СѓРјР°РіР° вЂ” С„РѕРЅ СЃР°Р№С‚Р° */
+  --paper-2:#EAE3D9;      /* РїРµСЃРѕС‡РЅС‹Р№ */
   --white:#FFFFFF;
 
   --gap:clamp(20px,5vw,80px);
@@ -29,7 +29,7 @@
   --ease:cubic-bezier(.22,.61,.36,1);
   --slow:cubic-bezier(.16,1,.3,1);
 
-  /* фирменный паттерн-тильда */
+  /* С„РёСЂРјРµРЅРЅС‹Р№ РїР°С‚С‚РµСЂРЅ-С‚РёР»СЊРґР° */
   --wave-tile:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='80 -70 165 72'%3E%3Cpath d='M82.4-2.5c0,0-6.6-41.3,25.9-58.8s65.3,16.7,65.3,16.7s29.3,41.3,64.6,15.3c0.9-0.7,2.1,0.3,1.6,1.3c-5.5,12.7-27.3,50.8-78.3,8.9C101.4-68.5,82.4-2.5,82.4-2.5z' fill='%2396B7DA'/%3E%3C/svg%3E");
 }
 
@@ -41,7 +41,7 @@ body{
   font-size:clamp(15px,1.02vw,17px);line-height:1.62;
   overflow-x:clip;-webkit-font-smoothing:antialiased;
 }
-/* полотно, которое наезжает на закреплённый первый экран */
+/* РїРѕР»РѕС‚РЅРѕ, РєРѕС‚РѕСЂРѕРµ РЅР°РµР·Р¶Р°РµС‚ РЅР° Р·Р°РєСЂРµРїР»С‘РЅРЅС‹Р№ РїРµСЂРІС‹Р№ СЌРєСЂР°РЅ */
 .flow{position:relative;z-index:2;background:var(--paper)}
 img{display:block;max-width:100%}
 a{color:inherit;text-decoration:none}
@@ -53,7 +53,7 @@ button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
 
 .wrap{width:var(--rail);margin-inline:auto}
 
-/* ── общие типографические примитивы ───────────────────── */
+/* в”Ђв”Ђ РѕР±С‰РёРµ С‚РёРїРѕРіСЂР°С„РёС‡РµСЃРєРёРµ РїСЂРёРјРёС‚РёРІС‹ в”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђ */
 .mark{
   display:inline-block;font-size:11px;font-weight:500;letter-spacing:.24em;
   text-transform:uppercase;color:var(--ink-soft);margin-bottom:clamp(18px,2.6vw,34px);
@@ -77,16 +77,16 @@ button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
   padding-bottom:6px;border-bottom:1px solid currentColor;
   transition:gap .4s var(--ease),opacity .3s;
 }
-.link::after{content:'→';transition:transform .4s var(--ease)}
+.link::after{content:'в†’';transition:transform .4s var(--ease)}
 .link:hover{gap:1em}
 .link:hover::after{transform:translateX(4px)}
 .link--light{color:var(--white)}
 
-/* появление при скролле */
+/* РїРѕСЏРІР»РµРЅРёРµ РїСЂРё СЃРєСЂРѕР»Р»Рµ */
 .rise{opacity:0;transform:translateY(34px);transition:opacity 1s var(--slow) var(--d,0s),transform 1.1s var(--slow) var(--d,0s)}
 .rise.on{opacity:1;transform:none}
 
-/* ═══════════ ЗАНАВЕС ═══════════ */
+/* в•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђ Р—РђРќРђР’Р•РЎ в•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђ */
 .curtain{position:fixed;inset:0;z-index:200;pointer-events:none}
 .curtain__half{position:absolute;top:0;height:100%;width:50.2%;background:var(--ink);transition:transform 1.1s var(--slow) .55s}
 .curtain__half--l{left:0}
@@ -106,7 +106,7 @@ body.ready .curtain__half--l{transform:translateX(-101%)}
 body.ready .curtain__half--r{transform:translateX(101%)}
 body.ready .curtain{transition:visibility 0s 1.7s;visibility:hidden}
 
-/* ═══════════ ШАПКА ═══════════ */
+/* в•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђ РЁРђРџРљРђ в•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђ */
 .bar{
   position:fixed;top:0;left:0;right:0;z-index:90;
   display:flex;align-items:center;justify-content:space-between;gap:24px;
@@ -150,10 +150,11 @@ body.nav-open .drawer{clip-path:circle(150% at calc(100% - 44px) 34px)}
 }
 .drawer a:hover{transform:translateX(14px);color:var(--sky)}
 
-/* ═══════════ ГЛАВНЫЙ ЭКРАН ═══════════ */
+/* в•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђ Р“Р›РђР’РќР«Р™ Р­РљР РђРќ в•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђ */
 .hero{
   position:sticky;top:0;z-index:0;
   min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;
+  padding-top: 100px;
   overflow:hidden;background:var(--ink-deep);
 }
 .hero__frame{position:absolute;inset:0;overflow:hidden}
@@ -220,7 +221,7 @@ body.nav-open .drawer{clip-path:circle(150% at calc(100% - 44px) 34px)}
 .hero__cue i{display:block;width:1px;height:56px;background:linear-gradient(rgba(255,255,255,.9),transparent);animation:cue 2.4s ease-in-out infinite}
 @keyframes cue{0%,100%{transform:scaleY(.4);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}}
 
-/* ═══════════ ЛЕНТА ═══════════ */
+/* в•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђ Р›Р•РќРўРђ в•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђ */
 .ribbon{background:var(--ink);color:#fff;padding:clamp(14px,1.6vw,22px) 0;overflow:hidden;white-space:nowrap}
 .ribbon__run{display:flex;width:max-content;animation:run 42s linear infinite}
 .ribbon__run span{
@@ -230,13 +231,13 @@ body.nav-open .drawer{clip-path:circle(150% at calc(100% - 44px) 34px)}
 .ribbon__run i{font-style:normal;color:var(--sky);margin:0 .55em;font-size:.85em;opacity:.9}
 @keyframes run{to{transform:translateX(-50%)}}
 
-/* ═══════════ О ПЛОЩАДКЕ ═══════════ */
+/* в•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђ Рћ РџР›РћР©РђР”РљР• в•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђ */
 .about{padding:clamp(72px,11vw,170px) 0 clamp(60px,8vw,120px)}
 .about__grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(28px,5vw,90px);align-items:start}
 .about__body p{max-width:52ch;color:var(--ink-soft)}
 .about__body .lede{color:var(--ink);margin-bottom:1.1em}
 
-/* арка-портал */
+/* Р°СЂРєР°-РїРѕСЂС‚Р°Р» */
 .portal{margin:clamp(48px,7vw,110px) auto clamp(34px,5vw,70px);width:var(--rail)}
 .portal__arch{
   position:relative;overflow:hidden;background:var(--paper-2);
@@ -252,7 +253,7 @@ body.nav-open .drawer{clip-path:circle(150% at calc(100% - 44px) 34px)}
 .tally__i b{display:block;font-family:'Proletarsk',serif;font-size:clamp(30px,4.4vw,66px);line-height:1;letter-spacing:-.02em}
 .tally__i span{display:block;margin-top:10px;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);line-height:1.5}
 
-/* ═══════════ СПИСОК УСЛУГ ═══════════ */
+/* в•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђ РЎРџРРЎРћРљ РЈРЎР›РЈР“ в•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђ */
 .menu-list{padding:clamp(50px,7vw,110px) 0;border-top:1px solid rgba(23,58,103,.14)}
 .roster li{
   position:relative;display:flex;align-items:baseline;justify-content:space-between;gap:20px;
@@ -277,7 +278,7 @@ body.nav-open .drawer{clip-path:circle(150% at calc(100% - 44px) 34px)}
 .peek.on{opacity:1;transform:translate(-50%,-50%) scale(1)}
 .peek img{width:100%;height:100%;object-fit:cover}
 
-/* ═══════════ ГОРИЗОНТАЛЬНАЯ ГАЛЕРЕЯ ═══════════ */
+/* в•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђ Р“РћР РР—РћРќРўРђР›Р¬РќРђРЇ Р“РђР›Р•Р Р•РЇ в•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђ */
 .reel{padding:clamp(56px,8vw,120px) 0 clamp(56px,8vw,110px);background:var(--paper-2)}
 .reel__head{display:flex;align-items:flex-end;justify-content:space-between;gap:30px;margin-bottom:clamp(26px,4vw,56px)}
 .reel__note{max-width:34ch;font-size:14px;color:var(--ink-soft);margin:0}
@@ -300,7 +301,7 @@ body.nav-open .drawer{clip-path:circle(150% at calc(100% - 44px) 34px)}
 .card:hover .card__arch img{transform:scale(1.06)}
 .card figcaption{margin-top:14px;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-soft)}
 
-/* ═══════════ УСЛОВИЯ И ПОДАРКИ ═══════════ */
+/* в•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђ РЈРЎР›РћР’РРЇ Р РџРћР”РђР РљР в•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђ */
 .terms{position:relative;background:var(--ink);color:#fff;padding:clamp(66px,9vw,140px) 0;overflow:hidden}
 .terms__pattern{
   position:absolute;inset:0;background-image:var(--wave-tile);
@@ -334,7 +335,7 @@ body.nav-open .drawer{clip-path:circle(150% at calc(100% - 44px) 34px)}
 .gift h3{font-family:'Proletarsk',serif;font-size:clamp(20px,2.1vw,28px);margin:10px 0 8px}
 .gift p{margin:0;font-size:14px;color:rgba(255,255,255,.7);max-width:44ch}
 
-/* ═══════════ ЦЕРЕМОНИЯ ═══════════ */
+/* в•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђ Р¦Р•Р Р•РњРћРќРРЇ в•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђ */
 .cer{padding:clamp(66px,9vw,150px) 0 clamp(50px,7vw,110px)}
 .cer__head{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,70px);align-items:end}
 .cer__head p{max-width:46ch;color:var(--ink-soft);margin:0}
@@ -348,7 +349,7 @@ body.nav-open .drawer{clip-path:circle(150% at calc(100% - 44px) 34px)}
 .trio{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,1.8vw,28px)}
 .trio figure{margin:0}
 
-/* ═══════════ СВАДЬБЫ ═══════════ */
+/* в•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђ РЎР’РђР”Р¬Р‘Р« в•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђ */
 .wed{padding:clamp(56px,8vw,120px) 0;background:var(--paper-2)}
 .wed__lede{max-width:52ch;color:var(--ink-soft);margin-top:clamp(16px,2vw,26px)}
 .mosaic{
@@ -372,7 +373,7 @@ body.nav-open .drawer{clip-path:circle(150% at calc(100% - 44px) 34px)}
   text-shadow:0 1px 14px rgba(13,36,68,.7);
 }
 
-/* ═══════════ БАНКЕТНАЯ СЛУЖБА ═══════════ */
+/* в•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђ Р‘РђРќРљР•РўРќРђРЇ РЎР›РЈР–Р‘Рђ в•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђ */
 .banq{padding:clamp(66px,9vw,140px) 0}
 .banq__grid{display:grid;grid-template-columns:.92fr 1.08fr;gap:clamp(30px,4.6vw,80px);align-items:center}
 .banq__text p{max-width:46ch;color:var(--ink-soft)}
@@ -388,7 +389,7 @@ body.nav-open .drawer{clip-path:circle(150% at calc(100% - 44px) 34px)}
 .banq__pics img{width:100%;height:100%;object-fit:cover;transition:transform 1.5s var(--slow)}
 .banq__pics figure:hover img{transform:scale(1.06)}
 
-/* ═══════════ ВИДЕО ═══════════ */
+/* в•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђ Р’РР”Р•Рћ в•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђ */
 .film{background:var(--ink-deep);color:#fff;padding:clamp(60px,8vw,130px) 0 clamp(60px,8vw,130px)}
 .film__box{
   position:relative;width:var(--rail);margin:clamp(28px,4vw,56px) auto 0;
@@ -410,7 +411,7 @@ body.nav-open .drawer{clip-path:circle(150% at calc(100% - 44px) 34px)}
   font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.75);
 }
 
-/* ═══════════ КАК ПРОЕХАТЬ ═══════════ */
+/* в•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђ РљРђРљ РџР РћР•РҐРђРўР¬ в•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђ */
 .route{padding:clamp(66px,9vw,140px) 0}
 .route__grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(30px,4.6vw,80px);align-items:center}
 .route__list{margin-top:clamp(20px,2.6vw,36px);border-top:1px solid rgba(23,58,103,.16)}
@@ -424,7 +425,7 @@ body.nav-open .drawer{clip-path:circle(150% at calc(100% - 44px) 34px)}
 .route__stub svg{width:38px;height:38px}
 .route__stub p{margin:0;font-size:11px;letter-spacing:.22em;text-transform:uppercase}
 
-/* ═══════════ ОТЗЫВЫ ═══════════ */
+/* в•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђ РћРўР—Р«Р’Р« в•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђ */
 .says{background:var(--ink);color:#fff;padding:clamp(66px,9vw,140px) 0}
 .says__box{
   display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(30px,5vw,80px);align-items:center;
@@ -457,7 +458,7 @@ body.nav-open .drawer{clip-path:circle(150% at calc(100% - 44px) 34px)}
 }
 .says__nav button:hover{background:#fff;color:var(--ink);border-color:#fff}
 
-/* ═══════════ ФУТЕР / ЗАЯВКА ═══════════ */
+/* в•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђ Р¤РЈРўР•Р  / Р—РђРЇР’РљРђ в•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђ */
 .end{position:relative;background:var(--ink-deep);color:#fff;padding:clamp(66px,9vw,140px) 0 clamp(26px,3vw,44px);overflow:hidden}
 .end::before{
   content:'';position:absolute;left:-6%;right:-6%;top:-4%;height:46%;
@@ -514,7 +515,7 @@ body.nav-open .drawer{clip-path:circle(150% at calc(100% - 44px) 34px)}
 }
 .end__foot a:hover{color:#fff}
 
-/* ═══════════ АДАПТИВ ═══════════ */
+/* в•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђ РђР”РђРџРўРР’ в•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђ */
 @media (max-width:1080px){
   .about__grid,.cer__head,.banq__grid,.route__grid,.terms__grid,.end__grid{grid-template-columns:1fr}
   .cer__stage{grid-template-columns:1fr}
@@ -530,7 +531,14 @@ body.nav-open .drawer{clip-path:circle(150% at calc(100% - 44px) 34px)}
   .hero__facts div:nth-child(-n+2){border-bottom:1px solid rgba(255,255,255,.14)}
   .hero__cue{display:none}
   .tally{grid-template-columns:1fr 1fr;gap:26px}
-  .trio,.banq__pics{grid-template-columns:1fr 1fr}
+  .trio {
+    display:flex; overflow-x:auto; scroll-snap-type:x proximity;
+    margin-right:calc(var(--gap) * -1); padding-right:var(--gap);
+    scrollbar-width:none;-ms-overflow-style:none;
+  }
+  .trio::-webkit-scrollbar{display:none}
+  .trio__col { flex: 0 0 85%; scroll-snap-align: start; }
+  .banq__pics{grid-template-columns:1fr 1fr}
   .peek{display:none}
   .mosaic{grid-template-areas:"a a a a a a" "b b b b b b" "c c c d d d" "e e e e e e"}
   .reel__head{flex-direction:column;align-items:flex-start}
@@ -538,7 +546,7 @@ body.nav-open .drawer{clip-path:circle(150% at calc(100% - 44px) 34px)}
   .says__pics{order:0;max-width:340px}
 }
 @media (max-width:560px){
-  .cer__side,.trio,.banq__pics{grid-template-columns:1fr}
+  .cer__side,.banq__pics{grid-template-columns:1fr}
   .hero__word{letter-spacing:-.005em}
   .end__foot{flex-direction:column;gap:10px}
   .say p{max-width:none}
@@ -547,18 +555,4 @@ body.nav-open .drawer{clip-path:circle(150% at calc(100% - 44px) 34px)}
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important}
   .rise{opacity:1;transform:none}
-}
-/* ================================================
-   ������������� ��������� ����
-   ================================================ */
-@media(max-width: 768px) {
-    body { overflow-x: hidden !important; }
-    .container, section, header, footer { padding-left: 20px !important; padding-right: 20px !important; box-sizing: border-box !important; }
-    h1, h2, h3, .hero-title, .title, .about__heading, .cond__title, .massive-serif, .seo-h2 { font-size: clamp(2rem, 8vw, 3.5rem) !important; line-height: 1.2 !important; margin-left: 0 !important; }
-    img { max-width: 100% !important; height: auto !important; }
-    .grid, .flex, .row, .about__grid, .services-grid, .conditions__grid, .gallery-dark__inner, .footer__inner, .arches-grid, .arches-grid--4 { display: flex !important; flex-direction: column !important; gap: 40px !important; }
-    .hero, .hero-art { min-height: 60vh !important; height: auto !important; padding: 100px 20px 40px !important; }
-    input, select, textarea { width: 100% !important; font-size: 16px !important; box-sizing: border-box !important; }
-    .nav__links, .nav-art__menu { display: none !important; }
-    .gifts-card, .cond__gifts-card, .gifts-box, .log-address { position: relative !important; bottom: 0 !important; right: 0 !important; left: 0 !important; width: 100% !important; margin-top: 20px !important; transform: none !important; }
 }
