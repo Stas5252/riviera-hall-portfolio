@@ -1,92 +1,501 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Примеры дизайна | Ривьера Холл</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --bg: #0A0A0A;
-            --surface: #141414;
-            --text-main: #FFFFFF;
-            --accent: #5c95c4;
-        }
-
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--bg);
-            color: var(--text-main);
-            -webkit-font-smoothing: antialiased;
-            padding: 60px 20px 100px;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        h1 {
-            font-size: 2rem;
-            font-weight: 400;
-            text-align: center;
-            margin-bottom: 60px;
-            color: var(--text-main);
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 20px;
-        }
-
-        .card {
-            background: var(--surface);
-            border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 8px;
-            padding: 30px;
-            text-decoration: none;
-            color: var(--text-main);
-            text-align: center;
-            font-size: 1.1rem;
-            font-weight: 400;
-            transition: all 0.3s ease;
-        }
-
-        .card:hover {
-            background: rgba(92, 149, 196, 0.1);
-            border-color: var(--accent);
-            transform: translateY(-3px);
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ривьера Холл — белоснежный шатёр на набережной</title>
+<meta name="description" content="Ривьера Холл — новое пространство для свадеб, церемоний и корпоративных событий. Белоснежный шатёр с куполом на набережной в центре города. До 220 гостей.">
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-    <div class="container">
-        <h1>Варианты дизайна</h1>
-        
-        <div class="grid">
-            <a href="1 версия/index.html" class="card" target="_blank">Пример дизайна 1</a>
-            <a href="2 версия/index.html" class="card" target="_blank">Пример дизайна 2</a>
-            <a href="3 версия/index.html" class="card" target="_blank">Пример дизайна 3</a>
-            <a href="4 версия/index.html" class="card" target="_blank">Пример дизайна 4</a>
-            <a href="5 версия/index.html" class="card" target="_blank">Пример дизайна 5</a>
-            <a href="6 версия/index.html" class="card" target="_blank">Пример дизайна 6</a>
-            <a href="7 версия/index.html" class="card" target="_blank">Пример дизайна 7</a>
-            <a href="9 версия/index.html" class="card" target="_blank">Пример дизайна 9</a>
-            <a href="10 версия/index.html" class="card" target="_blank">Пример дизайна 10</a>
-            <a href="11 версия/index.html" class="card" target="_blank">Пример дизайна 11</a>
-            <a href="12 версия/index.html" class="card" target="_blank">Пример дизайна 12</a>
-            <a href="13 версия/index.html" class="card" target="_blank">Пример дизайна 13</a>
-            <a href="14 версия/index.html" class="card" target="_blank">Пример дизайна 14</a>
-            <a href="15 версия/index.html" class="card" target="_blank">Пример дизайна 15</a>
-            <a href="16 версия/index.html" class="card" target="_blank">Пример дизайна 16</a>
+<!-- ══════════ ЗАНАВЕС / ПРЕЛОАДЕР ══════════ -->
+<div class="curtain" id="curtain">
+  <div class="curtain__half curtain__half--l"></div>
+  <div class="curtain__half curtain__half--r"></div>
+  <div class="curtain__mark">
+    <svg class="curtain__wave" viewBox="0 0 200 40" fill="none" aria-hidden="true" style="overflow: visible;">
+      <path d="M2 30 C 22 -4, 58 -4, 78 18 S 138 44, 168 12 S 196 6, 198 10"
+            stroke="url(#cg)" stroke-width="7" stroke-linecap="round"/>
+      <defs><linearGradient id="cg" x1="0" y1="0" x2="200" y2="0">
+        <stop stop-color="#96B7DA"/><stop offset="1" stop-color="#358BC1"/>
+      </linearGradient></defs>
+    </svg>
+    <span class="curtain__name">ривьера<i>холл</i></span>
+  </div>
+</div>
+
+<!-- ══════════ КУРСОР-МЕДАЛЬОН ДЛЯ СПИСКА УСЛУГ ══════════ -->
+<div class="peek" id="peek" aria-hidden="true"><img id="peekImg" alt=""></div>
+
+<!-- ══════════ ШАПКА ══════════ -->
+<header class="bar" id="bar">
+  <a href="#top" class="bar__logo" aria-label="Ривьера Холл">
+    <img src="../РИВЬЕРА ХОЛЛ/логотип/лого бел.png" alt="Ривьера Холл">
+  </a>
+  <nav class="bar__nav">
+    <a href="#about">Площадка</a>
+    <a href="#tent">Шатёр</a>
+    <a href="#terms">Условия</a>
+    <a href="#ceremony">Церемония</a>
+    <a href="#reviews">Отзывы</a>
+  </nav>
+  <a href="#book" class="bar__cta"><span>Забронировать дату</span></a>
+  <button class="burger" id="burger" aria-label="Меню"><i></i><i></i></button>
+</header>
+
+<div class="drawer" id="drawer">
+  <nav>
+    <a href="#about">01 &nbsp;Площадка</a>
+    <a href="#services">02 &nbsp;Что проводим</a>
+    <a href="#tent">03 &nbsp;Шатёр</a>
+    <a href="#terms">04 &nbsp;Условия и подарки</a>
+    <a href="#ceremony">05 &nbsp;Выездная церемония</a>
+    <a href="#weddings">06 &nbsp;Свадьбы</a>
+    <a href="#banquet">07 &nbsp;Банкетная служба</a>
+    <a href="#film">08 &nbsp;Видео</a>
+    <a href="#route">09 &nbsp;Как проехать</a>
+    <a href="#reviews">10 &nbsp;Отзывы</a>
+    <a href="#book">11 &nbsp;Оставить заявку</a>
+  </nav>
+</div>
+
+<!-- ══════════ 01 · ГЛАВНЫЙ ЭКРАН ══════════ -->
+<section class="hero" id="top">
+  <div class="hero__frame" id="heroFrame">
+    <div class="hero__stack" id="heroStack">
+      <figure class="shot is-on" style="background-image:url('../фото для сайта/abb86d6c-c770-48a6-8192-bbcc9fd5fdc3.png')"></figure>
+    </div>
+    <div class="hero__veil"></div>
+  </div>
+
+  <div class="hero__lower">
+  <div class="hero__type">
+    <p class="hero__eyebrow"><span>Новая площадка</span><em>·</em><span>открытие июль 2026</span></p>
+    <h1 class="hero__word">
+      <span class="ch">р</span><span class="ch">и</span><span class="ch">в</span><span class="ch">ь</span><span class="ch">е</span><span class="ch">р</span><span class="ch">а</span>
+    </h1>
+    <p class="hero__second">
+      <span>х о л л</span>
+      <svg class="tilde" viewBox="0 0 120 26" fill="none" aria-hidden="true">
+        <path d="M3 18C13 1 33 1 45 12s31 12 42 1c5-5 12-6 15-2" stroke="url(#hg)" stroke-width="6" stroke-linecap="round"/>
+        <defs><linearGradient id="hg" x1="0" y1="0" x2="120" y2="0"><stop stop-color="#96B7DA"/><stop offset="1" stop-color="#358BC1"/></linearGradient></defs>
+      </svg>
+    </p>
+    <p class="hero__line">Белоснежный шатёр с куполом — на набережной, в центре города</p>
+  </div>
+
+  <div class="hero__facts">
+    <div><b>220</b><span>гостей посадка</span></div>
+    <div><b>120</b><span>гостей фуршет</span></div>
+    <div><b>8 500 ₽</b><span>аренда за час, от</span></div>
+    <div><b>свой</b><span>алкоголь можно</span></div>
+  </div>
+  </div>
+
+  <a href="#about" class="hero__cue"><span>вниз</span><i></i></a>
+</section>
+
+<!-- Всё, что ниже, «наезжает» на закреплённый первый экран -->
+<main class="flow">
+
+<!-- ══════════ ЛЕНТА ══════════ -->
+<div class="ribbon" aria-hidden="true">
+  <div class="ribbon__run">
+    <span>свадьбы<i>~</i>выездные церемонии<i>~</i>юбилеи<i>~</i>корпоративы<i>~</i>детские праздники<i>~</i>фуршеты<i>~</i>конференции<i>~</i>презентации<i>~</i></span>
+    <span>свадьбы<i>~</i>выездные церемонии<i>~</i>юбилеи<i>~</i>корпоративы<i>~</i>детские праздники<i>~</i>фуршеты<i>~</i>конференции<i>~</i>презентации<i>~</i></span>
+  </div>
+</div>
+
+<!-- ══════════ 02 · О ПЛОЩАДКЕ ══════════ -->
+<section class="about" id="about">
+  <div class="wrap">
+    <div class="about__grid">
+      <div class="about__head">
+        <span class="mark">01 — площадка</span>
+        <h2 class="statement rise">
+          Пространство,<br>которое делает<br><em>событие красивым</em>
+        </h2>
+      </div>
+      <div class="about__body rise" style="--d:.12s">
+        <p class="lede">Ривьера Холл — новое пространство для мероприятий на набережной. С видом, с воздухом и с комфортом.</p>
+        <p>Отдельно стоящий белоснежный шатёр с огромным потолком-куполом. Элегантный современный интерьер и невероятно вкусная кухня — идеальная площадка для свадьбы, корпоративного праздника и любого другого торжества.</p>
+        <p>Шатёр вентилируемый и оснащён кондиционерами, работает в тёплое время года. Рядом — белоснежная зона с арками: для выездной церемонии, встречи гостей и отдыха.</p>
+        <a href="#book" class="link">Узнать свободные даты</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- брендинг + арки -->
+  <div class="brand-arches rise" style="padding: 100px 20px; text-align: center;">
+    <h2 class="massive-serif" style="font-size: clamp(3rem, 8vw, 8rem); text-transform: uppercase; letter-spacing: -0.02em; color: var(--drk); margin: 0; font-family: 'Montserrat', sans-serif; font-weight: 700; line-height: 1;">РИВЬЕРА ХОЛЛ</h2>
+    <p style="font-size: clamp(1.2rem, 3vw, 2rem); font-family: 'Cormorant', serif; font-style: italic; color: var(--txt); margin: 20px 0 80px;">Пространство, которое делает событие<br>красивым и беззаботным</p>
+    <div class="arches-grid-3" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto;">
+      <figure class="brand-arch-item" style="margin:0;">
+        <div class="brand-arch-img" style="aspect-ratio: 4/5; overflow: hidden; border-radius: 400px 400px 0 0; background: #eee;">
+          <img src="../фото для сайта/IMG_2362.WEBP" alt="" style="width: 100%; height: 100%; object-fit: cover;">
         </div>
+        <figcaption style="margin-top: 20px; font-family: 'Montserrat', sans-serif; font-size: 0.9rem; letter-spacing: 0.05em; color: var(--drk);">Белоснежный купол</figcaption>
+      </figure>
+      <figure class="brand-arch-item" style="margin:0;">
+        <div class="brand-arch-img" style="aspect-ratio: 4/5; overflow: hidden; border-radius: 400px 400px 0 0; background: #eee;">
+          <img src="../фото для сайта/IMG_2356.WEBP" alt="" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+        <figcaption style="margin-top: 20px; font-family: 'Montserrat', sans-serif; font-size: 0.9rem; letter-spacing: 0.05em; color: var(--drk);">События у воды</figcaption>
+      </figure>
+      <figure class="brand-arch-item" style="margin:0;">
+        <div class="brand-arch-img" style="aspect-ratio: 4/5; overflow: hidden; border-radius: 400px 400px 0 0; background: #eee;">
+          <img src="../фото для сайта/IMG_2371.WEBP" alt="" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+        <figcaption style="margin-top: 20px; font-family: 'Montserrat', sans-serif; font-size: 0.9rem; letter-spacing: 0.05em; color: var(--drk);">Выездные церемонии</figcaption>
+      </figure>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="tally">
+      <div class="tally__i"><b class="num" data-to="220">0</b><span>гостей<br>посадка</span></div>
+      <div class="tally__i"><b class="num" data-to="120">0</b><span>гостей<br>фуршет</span></div>
+      <div class="tally__i"><b class="num" data-to="4500" data-suffix=" ₽">0</b><span>меню<br>на человека от</span></div>
+      <div class="tally__i"><b class="num" data-to="8500" data-suffix=" ₽">0</b><span>аренда<br>за час от</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ УСЛУГИ — ИНФОГРАФИКА ══════════ -->
+<section class="services-diagram" id="services" style="padding: 100px 20px; text-align: center; overflow: hidden; background: var(--paper); position: relative;">
+  <div class="wrap">
+    <span class="mark">02 — что проводим</span>
+    <h2 class="massive-serif" style="font-size: clamp(2.5rem, 6vw, 4rem); text-transform: uppercase; margin-bottom: 80px; font-family: 'Proletarsk', serif; color: var(--ink);">УСЛУГИ</h2>
+    
+    <div class="diagram-wrapper" style="position: relative; max-width: 1200px; width: 100%; aspect-ratio: 1200 / 700; margin: 0 auto; display: flex; justify-content: center; align-items: center;">
+      
+      <!-- Central Image -->
+      <img src="../фото для сайта/59205cea-e367-42c5-9684-c1b99ae5a88e.png" alt="Шатёр" style="width: 66.66%; display: block; position: relative; z-index: 2;">
+      
+      <!-- SVG Lines Background -->
+      <svg width="100%" height="100%" style="position: absolute; top: 0; left: 0; pointer-events: none; z-index: 1;" viewBox="0 0 1200 700" preserveAspectRatio="xMidYMid meet">
+        <style>
+          .diag-line { fill: none; stroke: var(--sea); stroke-width: 2.5px; stroke-linecap: round; }
+          .diag-dot { fill: var(--sea); }
+        </style>
+        
+        <!-- Wavy Lines from Left -->
+        <path class="diag-line" d="M 150,110 C 300,50 350,300 500,260" />
+        <circle class="diag-dot" cx="500" cy="260" r="3.5" />
+        
+        <path class="diag-line" d="M 150,230 C 250,150 350,400 420,330" />
+        <circle class="diag-dot" cx="420" cy="330" r="3.5" />
+        
+        <path class="diag-line" d="M 150,350 C 200,250 250,550 300,450" />
+        <circle class="diag-dot" cx="300" cy="450" r="3.5" />
+        
+        <path class="diag-line" d="M 150,470 C 220,380 280,500 340,420" />
+        <circle class="diag-dot" cx="340" cy="420" r="3.5" />
+        
+        <path class="diag-line" d="M 150,590 C 250,500 350,560 450,420" />
+        <circle class="diag-dot" cx="450" cy="420" r="3.5" />
+
+        <!-- Wavy Lines from Right -->
+        <path class="diag-line" d="M 1050,110 C 900,50 850,300 700,260" />
+        <circle class="diag-dot" cx="700" cy="260" r="3.5" />
+        
+        <path class="diag-line" d="M 1050,230 C 950,150 850,400 780,330" />
+        <circle class="diag-dot" cx="780" cy="330" r="3.5" />
+        
+        <path class="diag-line" d="M 1050,350 C 1000,250 950,550 900,450" />
+        <circle class="diag-dot" cx="900" cy="450" r="3.5" />
+        
+        <path class="diag-line" d="M 1050,470 C 980,380 920,500 860,420" />
+        <circle class="diag-dot" cx="860" cy="420" r="3.5" />
+        
+        <path class="diag-line" d="M 1050,590 C 950,500 850,560 750,420" />
+        <circle class="diag-dot" cx="750" cy="420" r="3.5" />
+      </svg>
+      
+      <!-- Text Labels Left -->
+      <div class="service-text-container" style="position: absolute; left: 0; top: 0; width: 100%; height: 100%; pointer-events: none;">
+        <div class="service-text" style="left: 0; top: 15.71%; width: 140px; text-align: right;">Свадебные<br>события</div>
+        <div class="service-text" style="left: 0; top: 32.85%; width: 140px; text-align: right;">Детские<br>дни рождения</div>
+        <div class="service-text" style="left: 0; top: 50.00%; width: 140px; text-align: right;">Юбилеи</div>
+        <div class="service-text" style="left: 0; top: 67.14%; width: 140px; text-align: right;">Корпоративные<br>события</div>
+        <div class="service-text" style="left: 0; top: 84.28%; width: 140px; text-align: right;">Имиджевые<br>события</div>
+        
+        <!-- Text Labels Right -->
+        <div class="service-text" style="right: 0; top: 15.71%; width: 140px; text-align: left;">Выездная<br>церемония</div>
+        <div class="service-text" style="right: 0; top: 32.85%; width: 140px; text-align: left;">Конференции</div>
+        <div class="service-text" style="right: 0; top: 50.00%; width: 140px; text-align: left;">Бизнес завтраки<br>и обеды</div>
+        <div class="service-text" style="right: 0; top: 67.14%; width: 140px; text-align: left;">Фуршеты</div>
+        <div class="service-text" style="right: 0; top: 84.28%; width: 140px; text-align: left;">Презентации</div>
+      </div>
+      
+    </div>
+  </div>
+  <style>
+    .service-text {
+      position: absolute;
+      transform: translateY(-50%);
+      font-family: 'Vela', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--ink);
+      line-height: 1.4;
+    }
+    @media (max-width: 900px) {
+      .diagram-wrapper svg { display: none; }
+      .diagram-wrapper { aspect-ratio: auto !important; height: auto !important; flex-direction: column; }
+      .diagram-wrapper img { width: 100% !important; max-width: 500px !important; margin-bottom: 20px; }
+      .service-text-container { position: relative !important; display: grid !important; grid-template-columns: 1fr 1fr; gap: 30px 15px; text-align: center !important; margin-top: 20px; pointer-events: auto !important; height: auto !important; }
+      .service-text { position: relative !important; top: auto !important; left: auto !important; right: auto !important; transform: none !important; width: 100% !important; text-align: center !important; }
+    }
+    @media (max-width: 600px) {
+      .service-text-container { grid-template-columns: 1fr; }
+    }
+  </style>
+</section>
+
+<!-- ══════════ 03 · ГАЛЕРЕЯ ШАТРА ══════════ -->
+<section class="reel" id="tent">
+  <div class="wrap reel__head">
+    <div>
+      <span class="mark">03 — галерея</span>
+      <h2 class="statement rise">Шатёр</h2>
+    </div>
+    <p class="reel__note rise" style="--d:.1s">Купол, прозрачные окна по кругу, белый подиум и лестница. Тяните вбок&nbsp;→</p>
+  </div>
+  <div class="reel__rail" data-rail>
+    <figure class="card"><div class="card__arch"><img src="../фото для сайта/IMG_2354.WEBP" alt="Шатёр вечером"></div><figcaption>вечерний свет</figcaption></figure>
+    <figure class="card"><div class="card__arch"><img src="../фото для сайта/IMG_2360.WEBP" alt="Шатёр днём"></div><figcaption>дневной свет</figcaption></figure>
+    <figure class="card"><div class="card__arch"><img src="../фото для сайта/IMG_2355.WEBP" alt="Шатёр и подиум"></div><figcaption>белый подиум</figcaption></figure>
+    <figure class="card"><div class="card__arch"><img src="../фото для сайта/IMG_2362.WEBP" alt="Купол изнутри"></div><figcaption>купол</figcaption></figure>
+    <figure class="card"><div class="card__arch"><img src="../фото для сайта/IMG_2356.WEBP" alt="Шатёр ночью"></div><figcaption>ночь</figcaption></figure>
+    <figure class="card"><div class="card__arch"><img src="../фото для сайта/IMG_2357.WEBP" alt="Сцена и свет"></div><figcaption>сцена и свет</figcaption></figure>
+    <figure class="card"><div class="card__arch"><img src="../фото для сайта/IMG_2359.WEBP" alt="Панорама шатра"></div><figcaption>панорама</figcaption></figure>
+    <figure class="card"><div class="card__arch"><img src="../фото для сайта/IMG_2351.WEBP" alt="Банкет в шатре"></div><figcaption>банкет</figcaption></figure>
+  </div>
+</section>
+
+<!-- ══════════ 04 · УСЛОВИЯ И ПОДАРКИ ══════════ -->
+<section class="terms" id="terms">
+  <div class="terms__pattern" aria-hidden="true"></div>
+  <div class="wrap">
+    <span class="mark mark--light">04 — условия</span>
+    <div class="terms__grid">
+      <div class="terms__left">
+        <h2 class="statement statement--light rise">Просто<br>и понятно</h2>
+        <ul class="specs rise" style="--d:.1s">
+          <li><b>Аренда</b><span>от 8 500 ₽ / час</span></li>
+          <li><b>Меню</b><span>от 4 500 ₽ на человека</span></li>
+          <li><b>Вместимость</b><span>посадка 220 · фуршет 120</span></li>
+          <li><b>Алкоголь</b><span>можно свой</span></li>
+          <li><b>Сезон</b><span>тёплое время года</span></li>
+          <li><b>Климат</b><span>вентиляция и кондиционеры</span></li>
+          <li><b>Регистрация</b><span>выездная, на территории</span></li>
+          <li><b>Расположение</b><span>набережная, центр города</span></li>
+        </ul>
+        <a href="../РИВЬЕРА ХОЛЛ/МЕНЮ РИВЬЕРА.pdf" target="_blank" rel="noopener" class="link link--light">Посмотреть меню</a>
+      </div>
+
+      <div class="terms__right">
+        <p class="gifts__kicker rise">Подарок каждой паре,<br>которая бронирует дату</p>
+        <div class="gifts">
+          <article class="gift rise"><i>01</i><h3>Торт в стиле Pinterest</h3><p>Кондитерская работа под вашу палитру и декор — как с доски вдохновения.</p></article>
+          <article class="gift rise" style="--d:.1s"><i>02</i><h3>Мобильный рилсмейкер</h3><p>Снимает вертикальные ролики весь вечер. Готовые рилсы — сразу после праздника.</p></article>
+          <article class="gift rise" style="--d:.2s"><i>03</i><h3>Номер для молодых</h3><p>Отдельный номер в подарок — чтобы вечер закончился спокойно и красиво.</p></article>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ 05 · ВЫЕЗДНАЯ ЦЕРЕМОНИЯ ══════════ -->
+<section class="reel" id="ceremony">
+  <div class="wrap reel__head">
+    <div>
+      <span class="mark">05 — галерея</span>
+      <h2 class="statement rise">Выездная<br><em>церемония</em></h2>
+    </div>
+    <p class="reel__note rise" style="--d:.1s">Белая колоннада с арками, круглый подиум и живой оркестр. Отдельная зона рядом с шатром.</p>
+  </div>
+  <div class="reel__rail" data-rail>
+    <figure class="card"><div class="card__arch"><img src="../фото для сайта/IMG_2371.WEBP" alt="Выездная церемония"></div><figcaption>с оркестром</figcaption></figure>
+    <figure class="card"><div class="card__arch"><img src="../фото для сайта/IMG_2364.WEBP" alt="В арочной зоне"></div><figcaption>арочная зона</figcaption></figure>
+    <figure class="card"><div class="card__arch"><img src="../фото для сайта/c168867c-9e5f-4c52-b353-25bfe04add2e.jpg" alt="Арочный павильон"></div><figcaption>павильон</figcaption></figure>
+    <figure class="card"><div class="card__arch"><img src="../фото для сайта/IMG_2365.WEBP" alt="Вид сверху"></div><figcaption>вид сверху</figcaption></figure>
+    <figure class="card"><div class="card__arch"><img src="../фото для сайта/IMG_2372.WEBP" alt="Арки крупным планом"></div><figcaption>арки</figcaption></figure>
+    <figure class="card"><div class="card__arch"><img src="../фото для сайта/IMG_2366.WEBP" alt="Встреча гостей"></div><figcaption>встреча гостей</figcaption></figure>
+  </div>
+</section>
+
+<!-- ══════════ 06 · СВАДЬБЫ ══════════ -->
+<section class="reel" id="weddings">
+  <div class="wrap reel__head">
+    <div>
+      <span class="mark">06 — галерея</span>
+      <h2 class="statement rise">Свадьбы</h2>
+    </div>
+    <p class="reel__note rise" style="--d:.1s">Чаще всего Ривьеру выбирают именно для свадьбы: церемония под арками, ужин под куполом, танцы до ночи.</p>
+  </div>
+  <div class="reel__rail" data-rail>
+    <figure class="card"><div class="card__arch"><img src="../фото для сайта/IMG_2367.WEBP" alt="Первый танец"></div><figcaption>первый танец</figcaption></figure>
+    <figure class="card"><div class="card__arch"><img src="../фото для сайта/IMG_2361.WEBP" alt="Банкет под куполом"></div><figcaption>ужин под куполом</figcaption></figure>
+    <figure class="card"><div class="card__arch"><img src="../фото для сайта/IMG_2351.WEBP" alt="Гости в шатре"></div><figcaption>220 гостей</figcaption></figure>
+    <figure class="card"><div class="card__arch"><img src="../фото для сайта/IMG_2370.WEBP" alt="Вечерний фуршет"></div><figcaption>вечерний фуршет</figcaption></figure>
+    <figure class="card"><div class="card__arch"><img src="../фото для сайта/IMG_2356.WEBP" alt="Шатёр ночью"></div><figcaption>до последнего гостя</figcaption></figure>
+  </div>
+</section>
+
+<!-- ══════════ 07 · БАНКЕТНАЯ СЛУЖБА ══════════ -->
+<section class="reel" id="banquet">
+  <div class="wrap reel__head">
+    <div>
+      <span class="mark">07 — галерея</span>
+      <h2 class="statement rise">Банкетная<br><em>служба</em></h2>
+      <a href="../РИВЬЕРА ХОЛЛ/МЕНЮ РИВЬЕРА.pdf" target="_blank" rel="noopener" class="link" style="margin-top: 30px; display: inline-block;">Открыть меню (PDF)</a>
+    </div>
+    <div class="rise" style="--d:.1s; max-width: 450px;">
+      <p style="font-family: 'Montserrat', sans-serif; font-size: 0.95rem; line-height: 1.5; color: var(--drk); margin-bottom: 20px;">Своя кухня и сервис полного цикла: сервировка, обслуживание, фуршетные линии, бар.</p>
+      <ul class="ticks" style="font-size: 0.9rem;">
+        <li>Меню от 4 500 ₽ на гостя</li>
+        <li>Свой алкоголь — без пробкового сбора</li>
+      </ul>
+    </div>
+  </div>
+  <div class="reel__rail" data-rail>
+    <figure class="card"><div class="card__arch"><img src="../фото для сайта/a981990f-bad3-48b3-a182-7fba0d79b4a6.jpg" alt="Сервировка стола"></div><figcaption>сервировка стола</figcaption></figure>
+    <figure class="card"><div class="card__arch"><img src="../фото для сайта/7b2def80-e3bc-4056-96e9-08dc855a4002.jpg" alt="Банкетный зал"></div><figcaption>банкетный зал</figcaption></figure>
+    <figure class="card"><div class="card__arch"><img src="../фото для сайта/IMG_2353.WEBP" alt="Детский праздник"></div><figcaption>оформление</figcaption></figure>
+    <figure class="card"><div class="card__arch"><img src="../фото для сайта/3c37c9c9-c93b-4280-b218-6cd49cd9f7e7.jpg" alt="Свет и оборудование"></div><figcaption>свет и оборудование</figcaption></figure>
+  </div>
+</section>
+
+<!-- ══════════ 08 · ВИДЕО ══════════ -->
+<section class="film" id="film">
+  <div class="wrap">
+    <span class="mark mark--light">08 — видео</span>
+    <h2 class="statement statement--light rise">Как это выглядит<br><em>вживую</em></h2>
+  </div>
+  <div class="film__box rise">
+    <!-- Замените блок ниже на <video src="..."> или <iframe> с роликом площадки -->
+    <img src="../фото для сайта/IMG_2356.WEBP" alt="Видео о площадке Ривьера Холл">
+    <button class="film__play" aria-label="Смотреть видео">
+      <svg viewBox="0 0 44 44" aria-hidden="true"><polygon points="17,13 17,31 33,22" fill="currentColor"/></svg>
+    </button>
+    <span class="film__tag">1 мин · экскурсия по площадке</span>
+  </div>
+</section>
+
+<!-- ══════════ 09 · КАК ПРОЕХАТЬ ══════════ -->
+<section class="route" id="route">
+  <div class="wrap">
+    <div class="route__grid">
+      <div>
+        <span class="mark">09 — как проехать</span>
+        <h2 class="statement rise">В самом<br><em>центре города</em></h2>
+        <ul class="route__list rise" style="--d:.1s">
+          <li><b>Адрес</b><span>наб. —————, д. —<br><small>укажите точный адрес площадки</small></span></li>
+          <li><b>Ориентир</b><span>набережная, пешеходная зона</span></li>
+          <li><b>Парковка</b><span>вдоль набережной, рядом с площадкой</span></li>
+          <li><b>Пешком</b><span>от центра — 5–7 минут</span></li>
+        </ul>
+        <a href="#book" class="link">Записаться на просмотр</a>
+      </div>
+      <div class="route__map rise" style="--d:.16s">
+        <!-- Вставьте сюда <iframe> Яндекс.Карт с меткой площадки -->
+        <div class="route__stub">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11Z" stroke="currentColor" stroke-width="1.2"/><circle cx="12" cy="10" r="2.4" stroke="currentColor" stroke-width="1.2"/></svg>
+          <p>Здесь будет Яндекс.Карта</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ 10 · ОТЗЫВЫ ══════════ -->
+<section class="says" id="reviews">
+  <div class="wrap">
+    <span class="mark mark--light">10 — отзывы</span>
+    <div class="says__box">
+      <div class="says__pics" aria-hidden="true">
+        <div class="card__arch">
+          <img class="is-on" src="../фото для сайта/IMG_2367.WEBP" alt="">
+          <img src="../фото для сайта/IMG_2370.WEBP" alt="">
+          <img src="../фото для сайта/IMG_2365.WEBP" alt="">
+        </div>
+      </div>
+      <div class="says__quote">
+      <div class="says__track" id="saysTrack">
+        <blockquote class="say is-on">
+          <p>Шатёр сам по себе красивый — декором ничего не пришлось дотягивать. Церемония под арками стала лучшим решением дня.</p>
+          <footer><b>Анна и Максим</b><span>свадьба, июль 2026</span></footer>
+        </blockquote>
+        <blockquote class="say">
+          <p>Юбилей компании на 180 человек. Кондиционеры спасли в жару, кухня — отдельный комплимент. Организация без единой шероховатости.</p>
+          <footer><b>Екатерина С.</b><span>корпоративное событие, август 2026</span></footer>
+        </blockquote>
+        <blockquote class="say">
+          <p>Набережная, зелень, белый купол — картинка, ради которой стоит ехать. А свой алкоголь заметно сэкономил бюджет вечера.</p>
+          <footer><b>Дарья и Кирилл</b><span>свадьба, август 2026</span></footer>
+        </blockquote>
+      </div>
+      <div class="says__nav">
+        <button id="sayPrev" aria-label="Предыдущий отзыв">←</button>
+        <span id="sayCount">01 / 03</span>
+        <button id="sayNext" aria-label="Следующий отзыв">→</button>
+      </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ 11 · ЗАЯВКА И КОНТАКТЫ ══════════ -->
+<footer class="end" id="book">
+  <div class="wrap">
+    <div class="end__grid">
+      <div class="end__left">
+        <img src="../РИВЬЕРА ХОЛЛ/логотип/лого бел.png" alt="Ривьера Холл" class="end__logo">
+        <span class="mark mark--light">11 — заявка</span>
+        <h2 class="statement statement--light rise">Забронируем<br><em>вашу дату</em></h2>
+        <p class="end__note rise" style="--d:.1s">Ответим в течение рабочего дня, подберём свободные даты и рассчитаем смету под ваш формат.</p>
+
+        <div class="mgr rise" style="--d:.16s">
+          <span class="mgr__role">Менеджер площадки</span>
+          <span class="mgr__name">Имя Фамилия</span>
+          <a href="tel:+70000000000" class="mgr__tel">+7 (000) 000-00-00</a>
+          <div class="mgr__links">
+            <a href="#" target="_blank" rel="noopener">Telegram</a>
+            <a href="#" target="_blank" rel="noopener">WhatsApp</a>
+            <a href="#" target="_blank" rel="noopener">Instagram</a>
+          </div>
+        </div>
+      </div>
+
+      <form class="form rise" style="--d:.12s" id="form" novalidate>
+        <div class="field"><input type="text" name="name" required placeholder=" "><label>Ваше имя</label></div>
+        <div class="field"><input type="tel" name="tel" required placeholder=" "><label>Телефон</label></div>
+        <div class="field"><input type="text" name="date" placeholder=" "><label>Желаемая дата</label></div>
+        <div class="field"><input type="text" name="kind" placeholder=" "><label>Формат события</label></div>
+        <div class="field"><input type="text" name="guests" placeholder=" "><label>Количество гостей</label></div>
+        <button type="submit" class="send"><span>Оставить заявку</span>
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12h15m-6-7 7 7-7 7" stroke="currentColor" stroke-width="1.4"/></svg>
+        </button>
+        <p class="form__fine">Нажимая кнопку, вы соглашаетесь на обработку персональных данных.</p>
+        <p class="form__ok" id="formOk">Заявка отправлена. Мы свяжемся с вами в ближайшее время.</p>
+      </form>
     </div>
 
+    <div class="end__foot">
+      <span>© 2026 Ривьера Холл</span>
+      <span>Набережная · центр города</span>
+      <a href="#top">Наверх ↑</a>
+    </div>
+  </div>
+</footer>
+
+</main>
+
+<script src="js/main.js"></script>
 </body>
 </html>
