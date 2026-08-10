@@ -3,18 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Презентация дизайн-концепций | Ривьера Холл</title>
+    <title>Примеры дизайна | Ривьера Холл</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
         :root {
             --bg: #0A0A0A;
             --surface: #141414;
             --text-main: #FFFFFF;
-            --text-muted: #888888;
             --accent: #5c95c4;
-            --arch: 50% 50% 0 0 / 15% 15% 0 0;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -24,290 +22,70 @@
             background-color: var(--bg);
             color: var(--text-main);
             -webkit-font-smoothing: antialiased;
-            padding: 0 20px 100px;
+            padding: 60px 20px 100px;
         }
 
-        header {
-            text-align: center;
-            padding: 100px 0 60px;
-            max-width: 800px;
+        .container {
+            max-width: 1200px;
             margin: 0 auto;
         }
 
-        .subtitle {
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 4px;
-            color: var(--accent);
-            margin-bottom: 20px;
-            display: block;
-        }
-
         h1 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: clamp(3rem, 6vw, 4.5rem);
-            font-weight: 300;
-            line-height: 1.1;
-            margin-bottom: 20px;
-        }
-
-        h1 em {
-            font-style: italic;
-            color: var(--text-muted);
-        }
-
-        .header-desc {
-            color: var(--text-muted);
-            font-size: 1.1rem;
-            line-height: 1.6;
-        }
-
-        .section-title {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 2.5rem;
-            font-weight: 300;
+            font-size: 2rem;
+            font-weight: 400;
             text-align: center;
-            margin: 80px 0 40px;
-            padding-bottom: 20px;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
+            margin-bottom: 60px;
+            color: var(--text-main);
         }
 
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-            gap: 30px;
-            max-width: 1400px;
-            margin: 0 auto;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
         }
 
         .card {
             background: var(--surface);
-            border-radius: 16px;
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 8px;
             padding: 30px;
             text-decoration: none;
-            color: inherit;
-            border: 1px solid rgba(255,255,255,0.05);
-            transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), border-color 0.4s;
-            display: flex;
-            flex-direction: column;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .card::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0; height: 3px;
-            background: var(--accent);
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+            color: var(--text-main);
+            text-align: center;
+            font-size: 1.1rem;
+            font-weight: 400;
+            transition: all 0.3s ease;
         }
 
         .card:hover {
-            transform: translateY(-10px);
-            border-color: rgba(255,255,255,0.2);
-        }
-
-        .card:hover::before {
-            transform: scaleX(1);
-        }
-
-        .card-flag {
-            position: absolute;
-            top: 20px; right: 20px;
             background: rgba(92, 149, 196, 0.1);
-            color: var(--accent);
-            padding: 6px 12px;
-            border-radius: 100px;
-            font-size: 0.7rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-weight: 500;
-        }
-        
-        .card-flag.hot {
-            background: rgba(255, 215, 0, 0.1);
-            color: #FFD700;
-        }
-
-        .card-number {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 3rem;
-            color: var(--text-muted);
-            line-height: 1;
-            margin-bottom: 20px;
-            transition: color 0.4s;
-        }
-
-        .card:hover .card-number {
-            color: var(--text-main);
-        }
-
-        .card-title {
-            font-size: 1.5rem;
-            font-weight: 400;
-            margin-bottom: 15px;
-        }
-
-        .card-desc {
-            font-size: 0.95rem;
-            color: var(--text-muted);
-            line-height: 1.5;
-            margin-bottom: 30px;
-            flex-grow: 1;
-        }
-
-        .card-link {
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            color: var(--accent);
-        }
-
-        .card-link::after {
-            content: '→';
-            transition: transform 0.3s;
-        }
-
-        .card:hover .card-link::after {
-            transform: translateX(5px);
-        }
-
-        @media (max-width: 768px) {
-            .grid { grid-template-columns: 1fr; }
-            h1 { font-size: 2.5rem; }
+            border-color: var(--accent);
+            transform: translateY(-3px);
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <span class="subtitle">Портфолио проектов</span>
-        <h1>Выберите <em>идеальный</em> дизайн</h1>
-        <p class="header-desc">Мы подготовили для вас 15 уникальных концепций дизайна для площадки «Ривьера Холл». От строгой классики до абсолютного глянца. Выберите вариант, который лучше всего отражает дух вашего бренда.</p>
-    </header>
-
-    <h2 class="section-title">Флагманские концепты (Premium)</h2>
-    <div class="grid">
+    <div class="container">
+        <h1>Варианты дизайна</h1>
         
-        <a href="16 версия/index.html" class="card" target="_blank">
-            <span class="card-flag hot">Абсолютный идеал</span>
-            <div class="card-number">V.16</div>
-            <h3 class="card-title">Ultimate Luxury (Корпоративная)</h3>
-            <p class="card-desc">Финальная версия, объединяющая лучшие практики Vogue-журналов с вашими фирменными сине-голубыми цветами. Максимум анимаций, пленочный шум, плавный скролл и микро-взаимодействия (кастомный курсор, магнитные кнопки).</p>
-            <div class="card-link">Открыть сайт</div>
-        </a>
-
-        <a href="15 версия/index.html" class="card" target="_blank">
-            <span class="card-flag">Vogue Style</span>
-            <div class="card-number">V.15</div>
-            <h3 class="card-title">Art Director Concept</h3>
-            <p class="card-desc">Концепт "Срыв сетки". Экстремальная журнальная асимметрия, накладывающиеся слои текста и фотографий, кинематографичный параллакс. Абсолютный отказ от шаблонных блоков.</p>
-            <div class="card-link">Открыть сайт</div>
-        </a>
-
-        <a href="14 версия/index.html" class="card" target="_blank">
-            <span class="card-flag">Awwwards</span>
-            <div class="card-number">V.14</div>
-            <h3 class="card-title">Pure Elegance</h3>
-            <p class="card-desc">Белоснежный минимализм. Очень много воздуха, изящные шрифтовые пары и утонченные анимации. Сайт, который дышит спокойствием и роскошью.</p>
-            <div class="card-link">Открыть сайт</div>
-        </a>
-
-        <a href="13 версия/index.html" class="card" target="_blank">
-            <span class="card-flag">Premium</span>
-            <div class="card-number">V.13</div>
-            <h3 class="card-title">Глянцевый стандарт</h3>
-            <p class="card-desc">Мощная продающая структура в дорогой упаковке. Большие видео-вставки, акцент на детали интерьера и плавные переходы.</p>
-            <div class="card-link">Открыть сайт</div>
-        </a>
-
-    </div>
-
-    <h2 class="section-title">Ранние концепты (Classic)</h2>
-    <div class="grid">
-        
-        <a href="12 версия/index.html" class="card" target="_blank">
-            <div class="card-number">V.12</div>
-            <h3 class="card-title">Динамичный лендинг</h3>
-            <p class="card-desc">Более темная и контрастная версия с акцентом на современность и динамику.</p>
-            <div class="card-link">Открыть сайт</div>
-        </a>
-
-        <a href="11 версия/index.html" class="card" target="_blank">
-            <div class="card-number">V.11</div>
-            <h3 class="card-title">Светлая классика</h3>
-            <p class="card-desc">Традиционная структура свадебного сайта с мягкими тонами.</p>
-            <div class="card-link">Открыть сайт</div>
-        </a>
-
-        <a href="10 версия/index.html" class="card" target="_blank">
-            <div class="card-number">V.10</div>
-            <h3 class="card-title">Элегантный минимализм</h3>
-            <p class="card-desc">Упрощенная структура, фокус на красивых фотографиях.</p>
-            <div class="card-link">Открыть сайт</div>
-        </a>
-
-        <a href="9 версия/index.html" class="card" target="_blank">
-            <div class="card-number">V.09</div>
-            <h3 class="card-title">Вариант 9</h3>
-            <p class="card-desc">Строгая сетка и классические элементы управления.</p>
-            <div class="card-link">Открыть сайт</div>
-        </a>
-
-        <a href="7 версия/index.html" class="card" target="_blank">
-            <div class="card-number">V.07</div>
-            <h3 class="card-title">Вариант 7</h3>
-            <p class="card-desc">Эксперимент с типографикой и отступами.</p>
-            <div class="card-link">Открыть сайт</div>
-        </a>
-
-        <a href="6 версия/index.html" class="card" target="_blank">
-            <div class="card-number">V.06</div>
-            <h3 class="card-title">Вариант 6</h3>
-            <p class="card-desc">Классическое расположение блоков с акцентом на текст.</p>
-            <div class="card-link">Открыть сайт</div>
-        </a>
-
-        <a href="5 версия/index.html" class="card" target="_blank">
-            <div class="card-number">V.05</div>
-            <h3 class="card-title">Вариант 5</h3>
-            <p class="card-desc">Ранний концепт с базовой анимацией появления.</p>
-            <div class="card-link">Открыть сайт</div>
-        </a>
-
-        <a href="4 версия/index.html" class="card" target="_blank">
-            <div class="card-number">V.04</div>
-            <h3 class="card-title">Вариант 4</h3>
-            <p class="card-desc">Акцент на полноэкранные слайдеры.</p>
-            <div class="card-link">Открыть сайт</div>
-        </a>
-
-        <a href="3 версия/index.html" class="card" target="_blank">
-            <div class="card-number">V.03</div>
-            <h3 class="card-title">Вариант 3</h3>
-            <p class="card-desc">Использование синих оттенков на ранних этапах.</p>
-            <div class="card-link">Открыть сайт</div>
-        </a>
-
-        <a href="2 версия/index.html" class="card" target="_blank">
-            <div class="card-number">V.02</div>
-            <h3 class="card-title">Вариант 2</h3>
-            <p class="card-desc">Простая, понятная структура.</p>
-            <div class="card-link">Открыть сайт</div>
-        </a>
-
-        <a href="1 версия/index.html" class="card" target="_blank">
-            <div class="card-number">V.01</div>
-            <h3 class="card-title">Первый прототип</h3>
-            <p class="card-desc">Самая первая базовая версия сайта, с которой всё началось.</p>
-            <div class="card-link">Открыть сайт</div>
-        </a>
-
+        <div class="grid">
+            <a href="1 версия/index.html" class="card" target="_blank">Пример дизайна 1</a>
+            <a href="2 версия/index.html" class="card" target="_blank">Пример дизайна 2</a>
+            <a href="3 версия/index.html" class="card" target="_blank">Пример дизайна 3</a>
+            <a href="4 версия/index.html" class="card" target="_blank">Пример дизайна 4</a>
+            <a href="5 версия/index.html" class="card" target="_blank">Пример дизайна 5</a>
+            <a href="6 версия/index.html" class="card" target="_blank">Пример дизайна 6</a>
+            <a href="7 версия/index.html" class="card" target="_blank">Пример дизайна 7</a>
+            <a href="9 версия/index.html" class="card" target="_blank">Пример дизайна 9</a>
+            <a href="10 версия/index.html" class="card" target="_blank">Пример дизайна 10</a>
+            <a href="11 версия/index.html" class="card" target="_blank">Пример дизайна 11</a>
+            <a href="12 версия/index.html" class="card" target="_blank">Пример дизайна 12</a>
+            <a href="13 версия/index.html" class="card" target="_blank">Пример дизайна 13</a>
+            <a href="14 версия/index.html" class="card" target="_blank">Пример дизайна 14</a>
+            <a href="15 версия/index.html" class="card" target="_blank">Пример дизайна 15</a>
+            <a href="16 версия/index.html" class="card" target="_blank">Пример дизайна 16</a>
+        </div>
     </div>
 
 </body>
