@@ -1,0 +1,241 @@
+/* ================================================
+   РИВЬЕРА ХОЛЛ — 13 ВЕРСИЯ (ЖУРНАЛЬНЫЙ ГЛЯНЕЦ)
+   ================================================ */
+
+@font-face { font-family:'Proletarsk'; src:url('../../РИВЬЕРА ХОЛЛ/шрифты/PROLETARSK.TTF') format('truetype'); }
+@font-face { font-family:'VelaSans'; src:url('../../РИВЬЕРА ХОЛЛ/шрифты/VELASANS-REGULAR.TTF') format('truetype'); font-weight:400; }
+@font-face { font-family:'VelaSans'; src:url('../../РИВЬЕРА ХОЛЛ/шрифты/VELASANS-MEDIUM.TTF') format('truetype'); font-weight:500; }
+
+:root {
+    --blue: #173A67;
+    --blue-dark: #0f2746;
+    --accent: #6AA6D8;
+    --cream: #f4f1ec;
+    --white: #FFFFFF;
+    --text: #1a1a1a;
+    --text-light: #888;
+
+    --ff-serif: 'Cormorant Garamond', serif;
+    --ff-sans: 'VelaSans', 'Montserrat', sans-serif;
+    --ff-display: 'Proletarsk', sans-serif;
+
+    --ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { font-family:var(--ff-sans); background:var(--white); color:var(--text); line-height:1.5; -webkit-font-smoothing:antialiased; overflow-x:hidden; }
+img { display:block; max-width:100%; height:auto; }
+a { text-decoration:none; color:inherit; }
+
+.container { max-width:1440px; margin:0 auto; padding:0 60px; }
+@media (max-width:768px) { .container { padding:0 24px; } }
+
+/* ===== НАВИГАЦИЯ ===== */
+.nav { position:fixed; top:0; left:0; width:100%; z-index:1000; padding:32px 0; transition:all .5s var(--ease); }
+.nav--scrolled { background:rgba(255,255,255,0.95); backdrop-filter:blur(20px); padding:20px 0; box-shadow:0 1px 0 rgba(0,0,0,0.05); }
+.nav__inner { display:flex; align-items:center; justify-content:space-between; }
+.nav__logo-img { height:32px; transition:opacity .4s; position:absolute; top:50%; transform:translateY(-50%); }
+.nav__logo { position:relative; width:140px; height:32px; }
+.nav__logo-img--blue { opacity:0; }
+.nav--scrolled .nav__logo-img#nav-logo-white { opacity:0; }
+.nav--scrolled .nav__logo-img--blue { opacity:1; }
+
+.nav__links { display:flex; gap:48px; }
+.nav__link { font-size:0.75rem; font-weight:500; text-transform:uppercase; letter-spacing:2px; color:rgba(255,255,255,0.8); transition:color .3s; }
+.nav__link:hover { color:#fff; }
+.nav--scrolled .nav__link { color:var(--text); }
+.nav--scrolled .nav__link:hover { color:var(--accent); }
+
+.nav__cta { font-family:var(--ff-display); font-size:0.8rem; text-transform:uppercase; letter-spacing:2px; padding:14px 32px; border-radius:100px; border:1px solid rgba(255,255,255,0.4); color:#fff; transition:all .3s; }
+.nav__cta:hover { background:#fff; color:var(--blue); }
+.nav--scrolled .nav__cta { border-color:var(--blue); color:var(--blue); }
+.nav--scrolled .nav__cta:hover { background:var(--blue); color:#fff; }
+
+/* ===== 1. HERO (СЛАЙДЕР) ===== */
+.hero { position:relative; height:100vh; min-height:800px; display:flex; align-items:center; overflow:hidden; color:#fff; }
+.hero__bg-slider { position:absolute; inset:0; z-index:0; }
+.hero__slide { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:0; transition:opacity 2s ease-in-out, transform 8s linear; transform:scale(1.05); }
+.hero__slide.active { opacity:1; transform:scale(1); }
+.hero__overlay { position:absolute; inset:0; z-index:1; background:linear-gradient(to bottom, rgba(23,58,103,0.3) 0%, rgba(23,58,103,0.6) 100%); }
+
+.hero__content { position:relative; z-index:2; width:100%; height:100%; display:flex; flex-direction:column; justify-content:space-between; padding-top:160px; padding-bottom:60px; }
+.hero__center { text-align:center; flex-grow:1; display:flex; flex-direction:column; justify-content:center; }
+.hero__title { font-family:var(--ff-serif); font-size:clamp(6rem, 14vw, 12rem); font-weight:300; line-height:0.85; text-transform:lowercase; letter-spacing:-4px; }
+.hero__title-top, .hero__title-bottom { display:block; }
+.hero__title-bottom { margin-left:15vw; color:var(--accent); font-style:italic; }
+.hero__subtitle { font-family:var(--ff-sans); font-size:0.9rem; font-weight:500; text-transform:uppercase; letter-spacing:8px; margin-top:40px; opacity:0.8; }
+
+.hero__bottom { display:flex; justify-content:center; }
+.hero__scroll { display:flex; flex-direction:column; align-items:center; gap:16px; font-size:0.65rem; text-transform:uppercase; letter-spacing:3px; opacity:0.7; }
+.hero__scroll-line { width:1px; height:80px; background:currentColor; transform-origin:top; animation:pulse 2s infinite ease-in-out; }
+@keyframes pulse { 0%,100%{transform:scaleY(1);opacity:.4} 50%{transform:scaleY(1.5);opacity:1} }
+
+/* ===== 2. ОБЩАЯ ИНФОРМАЦИЯ И ТРИГГЕРЫ ===== */
+.about { padding:160px 0; }
+.about__grid { display:grid; grid-template-columns:1fr 1fr; gap:120px; align-items:center; }
+.about__heading { font-family:var(--ff-serif); font-size:clamp(2.5rem, 4vw, 3.8rem); font-weight:400; line-height:1.15; color:var(--blue); margin-bottom:40px; }
+.about__heading em { font-style:italic; color:var(--accent); font-weight:300; }
+.about__desc p { font-size:1.1rem; color:var(--text-light); margin-bottom:20px; line-height:1.6; }
+
+.about__triggers { margin-top:56px; display:flex; flex-direction:column; gap:16px; border-top:1px solid rgba(23,58,103,0.1); padding-top:40px; }
+.trigger { display:flex; align-items:center; gap:16px; font-size:1rem; font-weight:500; text-transform:uppercase; letter-spacing:1px; color:var(--blue); }
+.trigger__icon { color:var(--accent); font-size:1.2rem; }
+
+.about__visual { position:relative; }
+/* Арочное фото */
+.arch-photo { overflow:hidden; border-radius: 50% 50% 0 0 / 15% 15% 0 0; }
+.arch-photo img { width:100%; height:100%; object-fit:cover; transition:transform 1s var(--ease); }
+.arch-photo:hover img { transform:scale(1.05); }
+
+.about__visual .arch-photo:first-child { aspect-ratio:3/4; }
+.arch-photo--small { position:absolute; bottom:-40px; left:-60px; width:50%; aspect-ratio:3/4; border:10px solid var(--white); box-shadow:0 30px 60px rgba(0,0,0,0.08); z-index:2; }
+
+/* ===== 3. ФОРМАТЫ (МАКЕТ КРЕМА ДЛЯ РУК) ===== */
+.formats { padding:160px 0; background:var(--cream); overflow:hidden; }
+.formats__inner { position:relative; max-width:1000px; margin:0 auto; height:800px; display:flex; align-items:center; justify-content:center; }
+.formats__bg-title { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); font-family:var(--ff-serif); font-size:18vw; font-weight:300; color:rgba(23,58,103,0.03); z-index:0; pointer-events:none; }
+
+.formats__center-obj { position:relative; z-index:2; width:340px; }
+.formats__arch-mask { border-radius: 50% 50% 0 0 / 25% 25% 0 0; overflow:hidden; aspect-ratio:2/3; box-shadow:0 40px 80px rgba(23,58,103,0.15); }
+.formats__arch-mask img { width:100%; height:100%; object-fit:cover; }
+
+.format-item { position:absolute; z-index:3; font-size:0.75rem; font-weight:600; text-transform:uppercase; letter-spacing:2px; color:var(--blue); display:flex; align-items:center; gap:12px; }
+.format-item__dot { width:6px; height:6px; background:var(--accent); border-radius:50%; }
+
+/* Позиционирование элементов вокруг центра (как на референсе Handcream) */
+.format-item--1 { top:20%; left:5%; flex-direction:row-reverse; }
+.format-item--2 { top:25%; right:5%; }
+.format-item--3 { top:50%; left:0; flex-direction:row-reverse; }
+.format-item--4 { top:60%; right:0; }
+.format-item--5 { top:80%; left:10%; flex-direction:row-reverse; }
+.format-item--6 { top:85%; right:10%; }
+
+.formats__lines { position:absolute; inset:0; width:100%; height:100%; z-index:1; pointer-events:none; }
+.formats__path { fill:none; stroke:var(--accent); stroke-width:1; stroke-dasharray:4 4; opacity:0.5; }
+
+/* ===== 4. ГАЛЕРЕИ (АРОЧНЫЕ) ===== */
+.gallery-arch { padding:140px 0; }
+.section-head--center { text-align:center; margin-bottom:80px; }
+.section-head__title { font-family:var(--ff-serif); font-size:clamp(3rem, 5vw, 4.5rem); font-weight:300; color:var(--blue); line-height:1.1; margin-bottom:16px; }
+.section-head__sub { font-size:0.9rem; text-transform:uppercase; letter-spacing:4px; color:var(--text-light); }
+
+.arches-grid { display:grid; grid-template-columns:1fr 1.2fr 1fr; gap:40px; align-items:center; }
+.arches-grid--4 { grid-template-columns:repeat(4,1fr); align-items:start; }
+.arch-card { display:flex; flex-direction:column; align-items:center; gap:24px; text-align:center; }
+.arch-card__img-wrap { width:100%; border-radius: 50% 50% 0 0 / 20% 20% 0 0; overflow:hidden; aspect-ratio:3/4; }
+.arch-card__img-wrap img { width:100%; height:100%; object-fit:cover; transition:transform 1s var(--ease); }
+.arch-card:hover .arch-card__img-wrap img { transform:scale(1.05); }
+.arch-card--main .arch-card__img-wrap { aspect-ratio:3/4.5; transform:scale(1.05); }
+
+.arch-card__label { font-family:var(--ff-serif); font-size:1.8rem; font-style:italic; color:var(--blue); }
+
+/* ===== 5. УСЛОВИЯ И ПОДАРКИ ===== */
+.conditions { padding:160px 0; background:var(--blue); color:#fff; }
+.conditions__grid { display:grid; grid-template-columns:1fr 1.5fr; gap:120px; align-items:center; }
+.cond__title { font-family:var(--ff-serif); font-size:4rem; font-weight:300; margin-bottom:60px; color:var(--accent); }
+.cond__price-block { margin-bottom:48px; border-bottom:1px solid rgba(255,255,255,0.1); padding-bottom:24px; }
+.cond__price-label { font-size:0.75rem; text-transform:uppercase; letter-spacing:3px; opacity:0.6; display:block; margin-bottom:12px; }
+.cond__price-val { font-family:var(--ff-serif); font-size:3.5rem; font-weight:300; line-height:1; }
+.cond__price-val span { font-family:var(--ff-sans); font-size:1rem; opacity:0.5; }
+.btn-dark { display:inline-block; margin-top:20px; padding:18px 40px; background:#fff; color:var(--blue); border-radius:100px; font-size:0.8rem; font-weight:600; text-transform:uppercase; letter-spacing:2px; transition:background .3s; }
+.btn-dark:hover { background:var(--accent); color:#fff; }
+
+.cond__gifts-visual { position:relative; }
+.cond__bg-img { border-radius: 50% 50% 0 0 / 15% 15% 0 0; width:100%; aspect-ratio:4/5; object-fit:cover; opacity:0.8; }
+.cond__gifts-card { position:absolute; bottom:-40px; right:-40px; background:#fff; color:var(--blue); padding:56px; border-radius:24px; box-shadow:0 40px 80px rgba(0,0,0,0.2); width:80%; }
+.cond__gifts-card h3 { font-family:var(--ff-serif); font-size:2.4rem; font-weight:300; margin-bottom:32px; }
+.cond__gifts-card ul li { padding:16px 0; border-bottom:1px solid rgba(23,58,103,0.1); font-size:1.05rem; }
+.cursive-sign { font-family:var(--ff-serif); font-style:italic; font-size:2rem; color:var(--accent); position:absolute; bottom:30px; right:40px; transform:rotate(-5deg); }
+
+/* ===== 6. ВЫЕЗДНАЯ ЦЕРЕМОНИЯ (ГЛЯНЕЦ) ===== */
+.gallery-dark { background:var(--cream); padding:160px 0; }
+.gallery-dark__inner { display:grid; grid-template-columns:1fr 1.5fr; gap:80px; align-items:center; }
+.gallery-dark__title { font-family:var(--ff-serif); font-size:clamp(3rem, 5vw, 4.5rem); font-weight:300; color:var(--blue); line-height:1; margin-bottom:24px; }
+.gallery-dark__title em { font-style:italic; color:var(--accent); display:block; }
+.gallery-dark__text p { font-size:1.1rem; color:var(--text-light); }
+.gallery-dark__photos { display:flex; gap:32px; }
+.arch-photo--dark { width:50%; aspect-ratio:3/4.5; }
+.arch-photo--offset { transform:translateY(80px); }
+
+/* ===== 8. ВИДЕО ===== */
+.video-section { padding:160px 0; background:var(--white); }
+.video-container { position:relative; aspect-ratio:21/9; overflow:hidden; border-radius: 50% 50% 0 0 / 10% 10% 0 0; }
+.video-container img { width:100%; height:100%; object-fit:cover; transition:transform .8s var(--ease); }
+.video-container:hover img { transform:scale(1.03); }
+.play-btn { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:96px; height:96px; border-radius:50%; background:rgba(255,255,255,0.1); backdrop-filter:blur(10px); border:1px solid rgba(255,255,255,0.4); display:flex; align-items:center; justify-content:center; cursor:pointer; transition:all .3s; }
+.play-btn svg { width:32px; height:32px; fill:#fff; }
+.video-container:hover .play-btn { background:rgba(255,255,255,0.2); transform:translate(-50%,-50%) scale(1.1); }
+.video-caption { position:absolute; bottom:40px; left:0; width:100%; text-align:center; font-size:0.75rem; text-transform:uppercase; letter-spacing:4px; color:#fff; }
+
+/* ===== 9. ЛОГИСТИКА ===== */
+.location { padding:140px 0; background:var(--cream); }
+.location__flex { display:flex; gap:100px; align-items:center; }
+.location__text { flex:1; }
+.location__text h2 { font-family:var(--ff-serif); font-size:3.5rem; font-weight:300; color:var(--blue); margin-bottom:40px; line-height:1; }
+.location__text em { font-style:italic; color:var(--accent); }
+.location__address { font-size:1.5rem; font-weight:500; color:var(--blue); margin-bottom:16px; }
+.location__text p { color:var(--text-light); }
+.location__map { flex:1.5; }
+.map-placeholder { height:500px; background:var(--blue); border-radius: 50% 50% 0 0 / 10% 10% 0 0; display:flex; align-items:center; justify-content:center; color:rgba(255,255,255,0.3); font-size:0.8rem; text-transform:uppercase; letter-spacing:4px; }
+
+/* ===== 10. ОТЗЫВЫ ===== */
+.reviews { padding:160px 0; text-align:center; background:var(--white); }
+.review-slide { max-width:800px; margin:0 auto; }
+.review-slide__quote { font-family:var(--ff-serif); font-size:8rem; color:var(--accent); line-height:0; margin-bottom:40px; opacity:0.3; }
+.review-slide__text { font-family:var(--ff-serif); font-size:2.8rem; font-style:italic; font-weight:400; color:var(--blue); line-height:1.4; margin-bottom:40px; }
+.review-slide__author { font-size:0.8rem; text-transform:uppercase; letter-spacing:3px; color:var(--text-light); }
+
+/* ===== 11. ФУТЕР ===== */
+.footer { background:var(--blue-dark); color:#fff; padding:120px 0 60px; position:relative; overflow:hidden; }
+.footer__bg { position:absolute; inset:0; background:url('../РИВЬЕРА ХОЛЛ/паттерн и цвет/паттерн пнг.png') center/cover; opacity:0.03; }
+.footer__inner { position:relative; z-index:1; display:grid; grid-template-columns:1fr 1fr; gap:120px; align-items:center; }
+.footer__logo { height:50px; margin-bottom:60px; }
+.footer__contacts { display:flex; flex-direction:column; gap:32px; }
+.footer__contact-item .lbl { display:block; font-size:0.7rem; text-transform:uppercase; letter-spacing:3px; opacity:0.5; margin-bottom:8px; }
+.footer__contact-item strong { font-family:var(--ff-serif); font-size:2rem; font-weight:300; }
+.footer__contact-item .tel { font-family:var(--ff-serif); font-size:3rem; font-weight:300; transition:color .3s; }
+.footer__contact-item .tel:hover { color:var(--accent); }
+
+.footer__form-title { font-family:var(--ff-serif); font-size:3.5rem; font-weight:300; margin-bottom:40px; color:var(--accent); }
+.glossy-form input { width:100%; background:transparent; border:none; border-bottom:1px solid rgba(255,255,255,0.15); padding:20px 0; font-family:var(--ff-sans); font-size:1.1rem; color:#fff; outline:none; transition:border-color .3s; margin-bottom:24px; }
+.glossy-form input:focus { border-color:var(--accent); }
+.glossy-form button { display:inline-block; margin-top:16px; padding:20px 48px; background:#fff; color:var(--blue-dark); border:none; border-radius:100px; font-family:var(--ff-display); font-size:0.85rem; text-transform:uppercase; letter-spacing:3px; cursor:pointer; transition:all .3s; }
+.glossy-form button:hover { background:var(--accent); color:#fff; }
+
+/* ===== АНИМАЦИИ ===== */
+.anim-up { opacity:0; transform:translateY(40px); }
+
+/* ===== АДАПТИВ ===== */
+@media (max-width:1024px) {
+    .about__grid { grid-template-columns:1fr; gap:80px; }
+    .about__visual .arch-photo--small { left:-20px; }
+    .arches-grid { grid-template-columns:1fr; gap:60px; }
+    .arches-grid--4 { grid-template-columns:1fr 1fr; gap:40px; }
+    .arch-card--main .arch-card__img-wrap { transform:none; }
+    .conditions__grid { grid-template-columns:1fr; gap:100px; }
+    .cond__gifts-card { position:relative; bottom:0; right:0; width:100%; margin-top:-60px; }
+    .gallery-dark__inner { grid-template-columns:1fr; gap:60px; }
+    .location__flex { flex-direction:column; gap:60px; }
+    .footer__inner { grid-template-columns:1fr; gap:80px; }
+    .nav__links { display:none; }
+    .hero__title { font-size:clamp(4rem, 12vw, 8rem); }
+}
+@media (max-width:768px) {
+    .formats__inner { height:600px; }
+    .formats__center-obj { width:220px; }
+    .format-item { font-size:0.65rem; }
+    .formats__bg-title { font-size:24vw; }
+    .review-slide__text { font-size:1.8rem; }
+    
+    .container { padding: 0 20px !important; }
+    .hero__title { font-size: clamp(3rem, 12vw, 5rem); }
+    .hero__title-bottom { margin-left: 0; }
+    .about__heading, .section-head__title, .cond__title, .gallery-dark__title { font-size: clamp(2.2rem, 8vw, 3rem); }
+    .cond__price-val { font-size: 2.5rem; }
+    .footer__form-title { font-size: 2.5rem; }
+    .hero__content { padding-top: 100px; }
+    .about, .formats, .gallery-arch, .conditions, .gallery-dark, .video-section, .location, .reviews { padding: 80px 0 !important; }
+    .glossy-form input { font-size: 16px; }
+    .hero__bottom { bottom: 20px; }
+}

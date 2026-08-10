@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ривьера Холл - Premium</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Подключаем GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</head>
+<body class="loading">
+
+    <!-- Кастомный курсор -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <!-- 1. Лого + красивая картинка (Hero) -->
+    <header class="section-hero">
+        <nav class="nav container">
+            <img src="../РИВЬЕРА ХОЛЛ/логотип/лого син.png" alt="Ривьера Холл" class="logo">
+            <a href="#contact" class="btn-outline magnetic" data-strength="20">Оставить заявку</a>
+        </nav>
+        
+        <div class="hero-content">
+            <h1 class="hero-title text-reveal">
+                <span class="line"><span class="word">РИВЬЕРА</span></span>
+                <span class="line"><span class="word">ХОЛЛ</span></span>
+            </h1>
+            
+            <div class="hero-tent-wrapper" data-speed="1.2">
+                <div class="tent-shape">
+                    <!-- Полоски из фотографий для шатра -->
+                    <div class="tent-strip"><img src="../фото для сайта/IMG_2362.WEBP" alt=""></div>
+                    <div class="tent-strip"><img src="../фото для сайта/IMG_2371.WEBP" alt=""></div>
+                    <div class="tent-strip"><img src="../фото для сайта/IMG_2368.WEBP" alt=""></div>
+                    <div class="tent-strip"><img src="../фото для сайта/IMG_2354.WEBP" alt=""></div>
+                    <div class="tent-strip"><img src="../фото для сайта/IMG_2357.WEBP" alt=""></div>
+                    <div class="tent-strip"><img src="../фото для сайта/IMG_2370.WEBP" alt=""></div>
+                    <div class="tent-strip"><img src="../фото для сайта/IMG_2353.WEBP" alt=""></div>
+                    <div class="tent-strip"><img src="../фото для сайта/IMG_2361.WEBP" alt=""></div>
+                    <div class="tent-strip"><img src="../фото для сайта/IMG_2355.WEBP" alt=""></div>
+                    <div class="tent-strip"><img src="../фото для сайта/IMG_2364.WEBP" alt=""></div>
+                    <div class="tent-strip"><img src="../фото для сайта/IMG_2365.WEBP" alt=""></div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 2. Общая информация -->
+    <section class="section-info">
+        <div class="container">
+            <div class="info-grid">
+                <div class="info-text">
+                    <h2 class="section-title text-reveal">
+                        <span class="line"><span class="word">Новое</span> <span class="word">красивое</span></span><br>
+                        <span class="line"><span class="word">пространство</span></span><br>
+                        <span class="line"><span class="word">на</span> <span class="word">набережной</span></span>
+                    </h2>
+                    <p class="fade-up">Открытие состоялось в июле 2026 года. Отдельно стоящий шатер с панорамными окнами, комфортом премиум-класса и роскошным видом на реку.</p>
+                    <div class="info-stats fade-up">
+                        <div class="stat">
+                            <span class="stat-num">220</span>
+                            <span class="stat-lbl">ГОСТЕЙ</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-num">1</span>
+                            <span class="stat-lbl">СОБЫТИЕ В ДЕНЬ</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="info-image-wrapper">
+                    <div class="info-image parallax-img" data-speed="0.9">
+                        <img src="../фото для сайта/IMG_2356.WEBP" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Галерея шатра (Мудборд) -->
+    <section class="section-moodboard pb-large">
+        <h2 class="section-heading sticky-title">Пространство шатра</h2>
+        <div class="moodboard-container">
+            <!-- Плавающие фото -->
+            <div class="mood-item shape-arch pos-1" data-speed="0.8">
+                <img src="../фото для сайта/IMG_2352.WEBP" alt="">
+            </div>
+            <div class="mood-item shape-pill-h pos-2" data-speed="1.2">
+                <img src="../фото для сайта/IMG_2368.WEBP" alt="">
+            </div>
+            <div class="mood-item shape-rect pos-3" data-speed="0.9">
+                <img src="../фото для сайта/IMG_2361.WEBP" alt="">
+            </div>
+            <div class="mood-item shape-circle pos-4" data-speed="1.4">
+                <img src="../фото для сайта/IMG_2371.WEBP" alt="">
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Условия и ПОДАРКИ (Пинтерест) -->
+    <section class="section-pinterest-conditions pb-large">
+        <div class="container">
+            <h2 class="section-heading fade-up">Условия и подарки</h2>
+            <div class="moodboard-grid">
+                
+                <!-- Карточка с ценами -->
+                <div class="mood-card price-block fade-up">
+                    <div class="price-row magnetic" data-strength="10">
+                        <span class="mood-tag">Аренда шатра</span>
+                        <div class="mood-price">8 500 ₽ <span class="mood-unit">/ час</span></div>
+                    </div>
+                    <div class="price-separator"></div>
+                    <div class="price-row magnetic" data-strength="10">
+                        <span class="mood-tag">Банкетное меню</span>
+                        <div class="mood-price">от 4 500 ₽ <span class="mood-unit">/ чел</span></div>
+                    </div>
+                </div>
+
+                <!-- Арка с фото и подарками (glassmorphism) -->
+                <div class="mood-card arch-block fade-up">
+                    <img src="../фото для сайта/IMG_2355.WEBP" alt="" class="arch-bg parallax-img" data-speed="0.8">
+                    <div class="gifts-glass magnetic" data-strength="15">
+                        <h3 class="glass-title">Подарки</h3>
+                        <ul class="glass-list">
+                            <li>Торт Pinterest</li>
+                            <li>Рилсмейкер</li>
+                            <li>Номер молодым</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Теги как раскиданные стикеры -->
+                <div class="mood-card stickers-block fade-up">
+                    <div class="sticker s-1 magnetic" data-strength="30" data-speed="1.1">Свой алкоголь</div>
+                    <div class="sticker s-2 magnetic" data-strength="20" data-speed="0.9">Набережная</div>
+                    <div class="sticker-img parallax-img" data-speed="1.05">
+                        <img src="../фото для сайта/a981990f-bad3-48b3-a182-7fba0d79b4a6.jpg" alt="">
+                    </div>
+                    <div class="sticker s-3 magnetic" data-strength="25" data-speed="1.2">Кондиционеры</div>
+                    <div class="sticker s-4 magnetic" data-strength="15" data-speed="0.85">Центр города</div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Галерея : выездная церемония (Мудборд) -->
+    <section class="section-moodboard bg-light pb-large">
+        <h2 class="section-heading sticky-title">Выездная церемония</h2>
+        <div class="moodboard-container">
+            <div class="mood-item shape-pill-v pos-5" data-speed="1.1">
+                <img src="../фото для сайта/IMG_2360.WEBP" alt="">
+            </div>
+            <div class="mood-item shape-circle pos-6" data-speed="0.8">
+                <img src="../фото для сайта/IMG_2362.WEBP" alt="">
+            </div>
+            <div class="mood-item shape-arch pos-7" data-speed="1.3">
+                <img src="../фото для сайта/c168867c-9e5f-4c52-b353-25bfe04add2e.jpg" alt="">
+            </div>
+            <div class="mood-item shape-rect pos-8" data-speed="0.9">
+                <img src="../фото для сайта/IMG_2372.WEBP" alt="">
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Галерея : свадьбы -->
+    <section class="section-moodboard pb-large">
+        <h2 class="section-heading sticky-title">Свадьбы</h2>
+        <div class="moodboard-container">
+            <div class="mood-item shape-arch pos-9" data-speed="0.9">
+                <img src="../фото для сайта/IMG_2354.WEBP" alt="">
+            </div>
+            <div class="mood-item shape-rect pos-10" data-speed="1.4">
+                <img src="../фото для сайта/IMG_2364.WEBP" alt="">
+            </div>
+            <div class="mood-item shape-pill-h pos-11" data-speed="0.8">
+                <img src="../фото для сайта/IMG_2365.WEBP" alt="">
+            </div>
+            <div class="mood-item shape-circle pos-12" data-speed="1.2">
+                <img src="../фото для сайта/3c37c9c9-c93b-4280-b218-6cd49cd9f7e7.jpg" alt="">
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. Галерея : банкетная служба -->
+    <section class="section-moodboard bg-light pb-large">
+        <h2 class="section-heading sticky-title">Банкетная служба</h2>
+        <div class="moodboard-container">
+            <div class="mood-item shape-pill-h pos-13" data-speed="1.1">
+                <img src="../фото для сайта/IMG_2359.WEBP" alt="">
+            </div>
+            <div class="mood-item shape-arch pos-14" data-speed="0.75">
+                <img src="../фото для сайта/IMG_2353.WEBP" alt="">
+            </div>
+            <div class="mood-item shape-circle pos-15" data-speed="1.3">
+                <img src="../фото для сайта/IMG_2357.WEBP" alt="">
+            </div>
+            <div class="mood-item shape-rect pos-16" data-speed="0.9">
+                <img src="../фото для сайта/a981990f-bad3-48b3-a182-7fba0d79b4a6.jpg" alt="">
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. Видео -->
+    <section class="section-video">
+        <div class="container-fluid">
+            <div class="video-scale-wrapper">
+                <div class="video-placeholder magnetic-wrap">
+                    <img src="../фото для сайта/IMG_2368.WEBP" alt="Видео">
+                    <div class="play-btn magnetic" data-strength="40">
+                        <span class="play-text">PLAY</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 9. Как проехать -->
+    <section class="section-location bg-light pb-large">
+        <div class="container">
+            <h2 class="section-heading fade-up">Как проехать</h2>
+            <div class="location-grid fade-up">
+                <div class="location-map shape-pill-h">
+                    <div class="map-dummy">Yandex Map API</div>
+                </div>
+                <div class="location-info">
+                    <h3 class="glass-title">Адрес</h3>
+                    <p>ул. Набережная, 1А<br>Центр города</p>
+                    
+                    <h3 class="glass-title" style="margin-top: 40px;">Парковка</h3>
+                    <p>Собственная просторная парковка для гостей.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 10. Отзывы -->
+    <section class="section-reviews pb-large">
+        <div class="container">
+            <h2 class="section-heading fade-up">Отзывы</h2>
+            <div class="reviews-slider">
+                <!-- GSAP бесконечный скролл -->
+                <div class="reviews-track">
+                    <div class="review-card shape-arch">
+                        <p class="review-text">«Потрясающее место! Отмечали свадьбу, все гости остались в восторге от вида и сервиса.»</p>
+                        <p class="review-author">— Анна и Максим</p>
+                    </div>
+                    <div class="review-card shape-rect">
+                        <p class="review-text">«Идеальная площадка. Кондиционеры работают отлично, даже в жару было комфортно.»</p>
+                        <p class="review-author">— Дарья и Кирилл</p>
+                    </div>
+                    <div class="review-card shape-pill-v">
+                        <p class="review-text">«Потрясающее место! Отмечали свадьбу, все гости остались в восторге от вида и сервиса.»</p>
+                        <p class="review-author">— Анна и Максим</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 11. Лого+контакты менеджера+ оставить заявку -->
+    <footer class="footer" id="contact">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <img src="../РИВЬЕРА ХОЛЛ/логотип/лого бел.png" alt="Ривьера Холл" class="footer-logo">
+                    <div class="footer-contacts">
+                        <p class="manager-name">Ваш менеджер: Екатерина</p>
+                        <a href="tel:+79990000000" class="footer-phone magnetic" data-strength="20">+7 (999) 000-00-00</a>
+                        <p class="footer-email">info@rivierahall.ru</p>
+                    </div>
+                </div>
+                <div class="footer-form-wrapper">
+                    <h3 class="form-title fade-up">Оставить заявку</h3>
+                    <form class="footer-form fade-up">
+                        <input type="text" placeholder="Ваше имя" required>
+                        <input type="tel" placeholder="Телефон" required>
+                        <button type="submit" class="btn-primary magnetic" data-strength="30">Отправить</button>
+                    </form>
+                </div>
+            </div>
+            
+            <!-- ГИГАНТСКИЙ ТЕКСТ В ФУТЕРЕ (Тренд Pinterest) -->
+            <div class="footer-huge-text">РИВЬЕРА ХОЛЛ</div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

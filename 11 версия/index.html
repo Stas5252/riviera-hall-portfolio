@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ривьера Холл | Праздник на Набережной</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Pinyon+Script&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Только GSAP для легких анимаций (БЕЗ перехвата скролла) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</head>
+<body class="native-scroll">
+
+    <nav class="nav">
+        <div class="container nav-flex">
+            <img src="../РИВЬЕРА ХОЛЛ/логотип/лого син.png" alt="Ривьера Холл" class="logo">
+            <a href="#contact" class="btn-primary">Забронировать дату</a>
+        </div>
+    </nav>
+
+    <!-- 1. HERO -->
+    <header class="hero">
+        <div class="container hero-container">
+            <div class="hero-text-side">
+                <p class="hero-slogan font-montserrat gs-reveal">Праздник на набережной</p>
+                <h1 class="hero-title font-proletarsk gs-reveal">Ривьера <br><span class="hero-subtitle">холл</span></h1>
+                
+                <!-- Пинтерест: Крутящийся бейдж -->
+                <div class="rotating-badge">
+                    <svg viewBox="0 0 100 100" width="120" height="120">
+                        <path id="circlePath" d="M 50, 50 m -40, 0 a 40,40 0 1,1 80,0 a 40,40 0 1,1 -80,0" fill="none"/>
+                        <text class="badge-text"><textPath href="#circlePath">СЕЗОН 2026 • ИДЕАЛЬНАЯ СВАДЬБА •</textPath></text>
+                    </svg>
+                </div>
+            </div>
+            
+            <div class="hero-img-side gs-fade-up">
+                <div class="hero-img-large">
+                    <img src="../фото для сайта/IMG_2355.WEBP" alt="Шатер" loading="lazy">
+                </div>
+                <div class="hero-img-small">
+                    <img src="../фото для сайта/IMG_2352.WEBP" alt="Интерьер" loading="lazy">
+                </div>
+                <div class="cursive-accent accent-hero">love in every detail</div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Пинтерест: Бегущая строка (Marquee) -->
+    <div class="marquee bg-blue text-white font-proletarsk">
+        <div class="marquee-content">
+            <span>ОТКРЫТИЕ ИЮЛЬ 2026</span> • <span>ПРАЗДНИК НА НАБЕРЕЖНОЙ</span> • <span>ВМЕСТИМОСТЬ 220 ГОСТЕЙ</span> • <span>ОТКРЫТИЕ ИЮЛЬ 2026</span> • <span>ПРАЗДНИК НА НАБЕРЕЖНОЙ</span> • 
+        </div>
+        <!-- Дубликат для бесконечной прокрутки -->
+        <div class="marquee-content" aria-hidden="true">
+            <span>ОТКРЫТИЕ ИЮЛЬ 2026</span> • <span>ПРАЗДНИК НА НАБЕРЕЖНОЙ</span> • <span>ВМЕСТИМОСТЬ 220 ГОСТЕЙ</span> • <span>ОТКРЫТИЕ ИЮЛЬ 2026</span> • <span>ПРАЗДНИК НА НАБЕРЕЖНОЙ</span> • 
+        </div>
+    </div>
+
+    <!-- 2. ОБЩАЯ ИНФОРМАЦИЯ (Журнальная аккуратная верстка) -->
+    <section class="info-section">
+        <div class="container info-classic-grid">
+            <div class="info-photo-col gs-fade-up">
+                <div class="info-photo-wrap">
+                    <img src="../фото для сайта/IMG_2356.WEBP" alt="Шатер внутри" loading="lazy">
+                    <div class="cursive-accent accent-info">exclusive space</div>
+                </div>
+            </div>
+            
+            <div class="info-text-col gs-fade-up">
+                <h2 class="info-lead font-montserrat">Ривьера холл — это новое красивое пространство для мероприятий на набережной, но с комфортом.</h2>
+                <div class="info-body font-montserrat">
+                    <p>Новая площадка, открытие состоялось в июле 2026 года. Отдельно стоящий белоснежный шатер с огромным потолком-куполом.</p>
+                    <p>Роскошный шатер с элегантным современным интерьером и невероятно вкусной кухней станет идеальной площадкой для проведения свадьбы, корпоративных праздников и других торжеств.</p>
+                    <p>Функционирует в тёплое время года. Вместимость до 220 гостей. Шатер вентилируемый, оснащен кондиционерами.</p>
+                    <p>Белоснежная зона прекрасно подходящая для выездных церемоний, встречи гостей и отдыха.</p>
+                </div>
+                
+                <!-- Пинтерест: Нарисованная от руки стрелочка -->
+                <div class="drawn-arrow-box">
+                    <svg class="drawn-arrow" viewBox="0 0 100 50" width="80" height="40" fill="none" stroke="var(--color-blue)" stroke-width="2">
+                        <path d="M10,10 Q50,40 90,10 M80,5 L90,10 L85,20" />
+                    </svg>
+                    <span class="font-cursive arrow-text">наши услуги</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="container mt-large">
+            <div class="services-bento bg-blue text-white gs-fade-up">
+                <h3 class="s-title font-proletarsk">УСЛУГИ</h3>
+                <div class="s-list-wrapper font-montserrat">
+                    <ul class="s-list">
+                        <li>Свадебные события</li>
+                        <li>Детские дни рождения</li>
+                        <li>Юбилеи</li>
+                        <li>Корпоративные события</li>
+                        <li>Имиджевые события</li>
+                    </ul>
+                    <ul class="s-list">
+                        <li>Выездная церемония брака</li>
+                        <li>Конференции</li>
+                        <li>Бизнес завтраки и обеды</li>
+                        <li>Фуршеты</li>
+                        <li>Презентации</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. ГАЛЕРЕЯ ШАТРА -->
+    <section class="gallery-section bg-white pb-large">
+        <div class="container">
+            <div class="section-header text-center gs-fade-up">
+                <h2 class="section-title font-proletarsk">Пространство шатра</h2>
+                <div class="cursive-accent accent-center">pure elegance</div>
+            </div>
+            
+            <div class="bento-grid grid-1">
+                <div class="b-item b-wide gs-fade-up"><img src="../фото для сайта/IMG_2352.WEBP" loading="lazy" alt=""></div>
+                <div class="b-item b-tall gs-fade-up"><img src="../фото для сайта/IMG_2368.WEBP" loading="lazy" alt=""></div>
+                <div class="b-item gs-fade-up"><img src="../фото для сайта/IMG_2361.WEBP" loading="lazy" alt=""></div>
+                <div class="b-item gs-fade-up"><img src="../фото для сайта/IMG_2371.WEBP" loading="lazy" alt=""></div>
+                <div class="b-item b-wide gs-fade-up"><img src="../фото для сайта/IMG_2370.WEBP" loading="lazy" alt=""></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. УСЛОВИЯ И ПОДАРКИ (Пинтерест Glassmorphism) -->
+    <section class="conditions-section">
+        <div class="container">
+            <div class="section-header gs-fade-up">
+                <h2 class="section-title font-proletarsk">Условия и подарки</h2>
+            </div>
+            
+            <div class="glass-grid">
+                <!-- Огромное фото на фоне -->
+                <div class="glass-bg-img">
+                    <img src="../фото для сайта/a981990f-bad3-48b3-a182-7fba0d79b4a6.jpg" loading="lazy" alt="">
+                </div>
+                
+                <!-- Матовое стекло поверх фото -->
+                <div class="glass-card gs-fade-up">
+                    <div class="price-row">
+                        <span class="p-label font-montserrat">Аренда шатра</span>
+                        <span class="p-val font-proletarsk">8 500 ₽ <span class="p-unit">/ час</span></span>
+                    </div>
+                    <div class="divider-line"></div>
+                    <div class="price-row">
+                        <span class="p-label font-montserrat">Банкетное меню</span>
+                        <span class="p-val font-proletarsk">от 4 500 ₽ <span class="p-unit">/ чел</span></span>
+                    </div>
+                </div>
+
+                <div class="glass-card glass-gifts gs-fade-up">
+                    <h3 class="gifts-title font-proletarsk">Наши подарки</h3>
+                    <ul class="gifts-list font-montserrat">
+                        <li>Номер для молодоженов</li>
+                        <li>Рилсмейкер на мероприятие</li>
+                        <li>Свадебный торт Pinterest</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. ГАЛЕРЕЯ: ЦЕРЕМОНИЯ -->
+    <section class="gallery-section bg-blue pt-large pb-large text-white">
+        <div class="container">
+            <div class="section-header gs-fade-up">
+                <h2 class="section-title font-proletarsk">Выездная церемония</h2>
+                <div class="cursive-accent accent-right">say yes</div>
+            </div>
+            <div class="bento-grid grid-2">
+                <div class="b-item b-tall gs-fade-up"><img src="../фото для сайта/IMG_2360.WEBP" loading="lazy" alt=""></div>
+                <div class="b-item b-wide gs-fade-up"><img src="../фото для сайта/IMG_2362.WEBP" loading="lazy" alt=""></div>
+                <div class="b-item gs-fade-up"><img src="../фото для сайта/IMG_2372.WEBP" loading="lazy" alt=""></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. ГАЛЕРЕЯ: СВАДЬБЫ -->
+    <section class="gallery-section bg-white pt-large pb-large">
+        <div class="container">
+            <h2 class="section-title font-proletarsk text-blue gs-fade-up">Свадьбы</h2>
+            <div class="bento-grid grid-3">
+                <div class="b-item b-wide gs-fade-up"><img src="../фото для сайта/IMG_2354.WEBP" loading="lazy" alt=""></div>
+                <div class="b-item gs-fade-up"><img src="../фото для сайта/IMG_2364.WEBP" loading="lazy" alt=""></div>
+                <div class="b-item gs-fade-up"><img src="../фото для сайта/3c37c9c9-c93b-4280-b218-6cd49cd9f7e7.jpg" loading="lazy" alt=""></div>
+                <div class="b-item b-wide gs-fade-up"><img src="../фото для сайта/IMG_2365.WEBP" loading="lazy" alt=""></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. ГАЛЕРЕЯ: БАНКЕТНАЯ СЛУЖБА -->
+    <section class="gallery-section bg-white pb-large">
+        <div class="container">
+            <h2 class="section-title font-proletarsk text-blue gs-fade-up">Банкетная служба</h2>
+            <div class="bento-grid grid-4">
+                <div class="b-item gs-fade-up"><img src="../фото для сайта/IMG_2359.WEBP" loading="lazy" alt=""></div>
+                <div class="b-item b-tall gs-fade-up"><img src="../фото для сайта/IMG_2353.WEBP" loading="lazy" alt=""></div>
+                <div class="b-item b-wide gs-fade-up"><img src="../фото для сайта/IMG_2357.WEBP" loading="lazy" alt=""></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. ВИДЕО (Пинтерест стиль) -->
+    <section class="video-section pt-large pb-large">
+        <div class="container">
+            <div class="video-mask gs-fade-up">
+                <img src="../фото для сайта/IMG_2368.WEBP" loading="lazy" alt="Видео">
+                <div class="play-btn font-proletarsk">СМОТРЕТЬ ВИДЕО</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 9. КАРТА & 10. ОТЗЫВЫ -->
+    <section class="loc-rev-section pt-large pb-large bg-white">
+        <div class="container lr-split">
+            <!-- Отзывы -->
+            <div class="reviews-col gs-fade-up">
+                <h2 class="section-title font-proletarsk text-blue">Отзывы</h2>
+                <div class="rev-card">
+                    <p class="rev-text">«Идеальная площадка. Кондиционеры работают отлично, даже в жару было комфортно.»</p>
+                    <p class="rev-author font-proletarsk text-blue">— Дарья и Кирилл</p>
+                </div>
+                <div class="rev-card">
+                    <p class="rev-text">«Потрясающее место! Отмечали свадьбу, все гости остались в абсолютном восторге от вида и сервиса.»</p>
+                    <p class="rev-author font-proletarsk text-blue">— Анна и Максим</p>
+                </div>
+            </div>
+            
+            <!-- Карта -->
+            <div class="loc-col gs-fade-up">
+                <h2 class="section-title font-proletarsk text-blue">Как проехать</h2>
+                <div class="map-wrapper">
+                    <div class="map-dummy font-proletarsk">КАРТА YANDEX</div>
+                    <div class="cursive-accent accent-map">find us here</div>
+                </div>
+                <p class="loc-address font-montserrat">ул. Набережная, 1А <br><span class="loc-sub">Просторная парковка для всех гостей.</span></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 11. ФУТЕР -->
+    <footer class="footer bg-blue text-white pt-large pb-large" id="contact">
+        <div class="container footer-split gs-fade-up">
+            <div class="f-info">
+                <img src="../РИВЬЕРА ХОЛЛ/логотип/лого бел.png" alt="Лого" class="f-logo">
+                <p class="f-mgr font-montserrat">Ваш менеджер: Екатерина</p>
+                <a href="tel:+79990000000" class="f-phone font-proletarsk">+7 (999) 000-00-00</a>
+                <p class="f-email font-montserrat">info@rivierahall.ru</p>
+            </div>
+            
+            <div class="f-form-wrapper">
+                <h3 class="f-form-title font-proletarsk">ОСТАВИТЬ ЗАЯВКУ</h3>
+                <form class="f-form">
+                    <input type="text" placeholder="Имя" required>
+                    <input type="tel" placeholder="Телефон" required>
+                    <button type="submit" class="btn-primary font-proletarsk">Отправить</button>
+                </form>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

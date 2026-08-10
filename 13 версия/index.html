@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ривьера Холл — Праздник на набережной</title>
+    <meta name="description" content="Ривьера Холл — эксклюзивное пространство для мероприятий на набережной.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/style.css">
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
+    <script src="js/main.js" defer></script>
+</head>
+<body>
+
+    <!-- Навигация -->
+    <nav class="nav" id="nav">
+        <div class="container nav__inner">
+            <a href="#" class="nav__logo">
+                <img src="../РИВЬЕРА ХОЛЛ/логотип/лого бел.png" alt="Ривьера Холл" class="nav__logo-img" id="nav-logo-white">
+                <img src="../РИВЬЕРА ХОЛЛ/логотип/лого син.png" alt="Ривьера Холл" class="nav__logo-img nav__logo-img--blue" id="nav-logo-blue">
+            </a>
+            <div class="nav__links">
+                <a href="#about" class="nav__link">О площадке</a>
+                <a href="#services" class="nav__link">Форматы</a>
+                <a href="#ceremony" class="nav__link">Галерея</a>
+                <a href="#conditions" class="nav__link">Условия</a>
+            </div>
+            <a href="#contact" class="nav__cta">Забронировать</a>
+        </div>
+    </nav>
+
+    <!-- ===== 1. HERO (Слайдер фото) ===== -->
+    <header class="hero" id="hero">
+        <div class="hero__bg-slider">
+            <!-- Фото меняются скриптом -->
+            <img src="../фото для сайта/IMG_2355.WEBP" alt="Шатер" class="hero__slide active">
+            <img src="../фото для сайта/IMG_2368.WEBP" alt="Банкет" class="hero__slide">
+            <img src="../фото для сайта/IMG_2360.WEBP" alt="Церемония" class="hero__slide">
+        </div>
+        <div class="hero__overlay"></div>
+        
+        <div class="container hero__content">
+            <div class="hero__center">
+                <h1 class="hero__title anim-up">
+                    <span class="hero__title-top">ривьера</span>
+                    <span class="hero__title-bottom">холл</span>
+                </h1>
+                <p class="hero__subtitle anim-up" style="transition-delay: 0.2s">Праздник на набережной</p>
+            </div>
+            
+            <div class="hero__bottom anim-up" style="transition-delay: 0.4s">
+                <div class="hero__scroll">
+                    <span>Смотреть площадку</span>
+                    <div class="hero__scroll-line"></div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ===== 2. ОБЩАЯ ИНФОРМАЦИЯ И ТРИГГЕРЫ (Журнальный стиль) ===== -->
+    <section class="about" id="about">
+        <div class="container about__grid">
+            <div class="about__text anim-up">
+                <h2 class="about__heading">Новое красивое <em>пространство</em> для мероприятий</h2>
+                <div class="about__desc">
+                    <p>Отдельно стоящий белоснежный шатер с огромным потолком-куполом на набережной. Открытие состоялось в июле 2026 года.</p>
+                    <p>Роскошный шатер с элегантным современным интерьером и невероятно вкусной кухней станет идеальной площадкой для вашего торжества.</p>
+                </div>
+                
+                <div class="about__triggers">
+                    <div class="trigger"><span class="trigger__icon">✦</span> На набережной</div>
+                    <div class="trigger"><span class="trigger__icon">✦</span> В центре города</div>
+                    <div class="trigger"><span class="trigger__icon">✦</span> С выездной регистрацией</div>
+                    <div class="trigger"><span class="trigger__icon">✦</span> Можно свой алкоголь</div>
+                    <div class="trigger"><span class="trigger__icon">✦</span> Идеально для корпоратива</div>
+                </div>
+            </div>
+            <div class="about__visual anim-up">
+                <div class="arch-photo">
+                    <img src="../фото для сайта/IMG_2352.WEBP" alt="Интерьер" loading="lazy">
+                </div>
+                <div class="arch-photo arch-photo--small">
+                    <img src="../фото для сайта/IMG_2356.WEBP" alt="Детали" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== 3. ФОРМАТЫ (Стиль "Крем для рук" / Объект в центре) ===== -->
+    <section class="formats" id="services">
+        <div class="container">
+            <div class="formats__inner anim-up">
+                
+                <h2 class="formats__bg-title">EVENTS</h2>
+                
+                <!-- Центральный объект (Шатер) -->
+                <div class="formats__center-obj">
+                    <div class="formats__arch-mask">
+                        <img src="../фото для сайта/IMG_2355.WEBP" alt="Шатер" loading="lazy">
+                    </div>
+                </div>
+                
+                <!-- Подписи вокруг (Расположены абсолютно) -->
+                <div class="format-item format-item--1">
+                    <div class="format-item__dot"></div>
+                    <span>Свадебные события</span>
+                </div>
+                <div class="format-item format-item--2">
+                    <div class="format-item__dot"></div>
+                    <span>Детские дни рождения</span>
+                </div>
+                <div class="format-item format-item--3">
+                    <div class="format-item__dot"></div>
+                    <span>Юбилеи</span>
+                </div>
+                <div class="format-item format-item--4">
+                    <div class="format-item__dot"></div>
+                    <span>Корпоративные события</span>
+                </div>
+                <div class="format-item format-item--5">
+                    <div class="format-item__dot"></div>
+                    <span>Имиджевые события</span>
+                </div>
+                <div class="format-item format-item--6">
+                    <div class="format-item__dot"></div>
+                    <span>Выездная церемония</span>
+                </div>
+                
+                <!-- SVG Линии, соединяющие точки -->
+                <svg class="formats__lines" preserveAspectRatio="none">
+                    <path class="formats__path" d="M 15% 20% Q 30% 30% 40% 40%" />
+                    <path class="formats__path" d="M 85% 25% Q 70% 30% 60% 40%" />
+                    <path class="formats__path" d="M 10% 50% Q 25% 50% 35% 50%" />
+                    <path class="formats__path" d="M 90% 60% Q 75% 55% 65% 50%" />
+                    <path class="formats__path" d="M 20% 80% Q 30% 70% 45% 60%" />
+                    <path class="formats__path" d="M 80% 85% Q 70% 75% 55% 60%" />
+                </svg>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== 4. ГАЛЕРЕЯ ШАТРА (Арочный дизайн Baillotte) ===== -->
+    <section class="gallery-arch" id="gallery">
+        <div class="container">
+            <div class="section-head section-head--center anim-up">
+                <h2 class="section-head__title">Галерея шатра</h2>
+                <p class="section-head__sub">Простор и эстетика в каждой детали</p>
+            </div>
+            
+            <div class="arches-grid">
+                <div class="arch-card anim-up">
+                    <div class="arch-card__img-wrap">
+                        <img src="../фото для сайта/IMG_2351.WEBP" loading="lazy" alt="Фасад">
+                    </div>
+                    <span class="arch-card__label">Внешний вид</span>
+                </div>
+                <div class="arch-card arch-card--main anim-up">
+                    <div class="arch-card__img-wrap">
+                        <img src="../фото для сайта/IMG_2368.WEBP" loading="lazy" alt="Интерьер">
+                    </div>
+                    <span class="arch-card__label">Интерьер</span>
+                </div>
+                <div class="arch-card anim-up">
+                    <div class="arch-card__img-wrap">
+                        <img src="../фото для сайта/IMG_2371.WEBP" loading="lazy" alt="Детали">
+                    </div>
+                    <span class="arch-card__label">Детали</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== 5. УСЛОВИЯ И ПОДАРКИ (Журнальная верстка) ===== -->
+    <section class="conditions" id="conditions">
+        <div class="container conditions__grid">
+            
+            <!-- Левая часть: Цены -->
+            <div class="cond__info anim-up">
+                <h2 class="cond__title">Условия</h2>
+                
+                <div class="cond__price-block">
+                    <span class="cond__price-label">Аренда шатра</span>
+                    <div class="cond__price-val">8 500 ₽ <span>/ час</span></div>
+                </div>
+                
+                <div class="cond__price-block">
+                    <span class="cond__price-label">Банкетное меню</span>
+                    <div class="cond__price-val">от 4 500 ₽ <span>/ чел</span></div>
+                </div>
+                
+                <a href="#contact" class="btn-dark">Забронировать дату</a>
+            </div>
+            
+            <!-- Правая часть: Фото + Подарки -->
+            <div class="cond__gifts-visual anim-up">
+                <img src="../фото для сайта/a981990f-bad3-48b3-a182-7fba0d79b4a6.jpg" alt="Подарки" class="cond__bg-img" loading="lazy">
+                
+                <div class="cond__gifts-card">
+                    <h3>Наши подарки</h3>
+                    <ul>
+                        <li>Номер для молодоженов</li>
+                        <li>Рилсмейкер на мероприятие</li>
+                        <li>Свадебный торт Pinterest</li>
+                    </ul>
+                    <span class="cursive-sign">with love</span>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- ===== 6. ВЫЕЗДНАЯ ЦЕРЕМОНИЯ (Темный глянцевый блок) ===== -->
+    <section class="gallery-dark" id="ceremony">
+        <div class="container">
+            <div class="gallery-dark__inner">
+                <div class="gallery-dark__text anim-up">
+                    <h2 class="gallery-dark__title">Выездная <em>церемония</em></h2>
+                    <p>Идеальный фон для ваших клятв на фоне природы.</p>
+                </div>
+                <div class="gallery-dark__photos">
+                    <div class="arch-photo arch-photo--dark anim-up">
+                        <img src="../фото для сайта/IMG_2360.WEBP" loading="lazy" alt="Церемония">
+                    </div>
+                    <div class="arch-photo arch-photo--dark arch-photo--offset anim-up">
+                        <img src="../фото для сайта/IMG_2362.WEBP" loading="lazy" alt="Церемония">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== 7. СВАДЬБЫ И БАНКЕТНАЯ СЛУЖБА (Арочные галереи) ===== -->
+    <section class="gallery-arch">
+        <div class="container">
+            <div class="section-head section-head--center anim-up">
+                <h2 class="section-head__title">Свадьбы & Банкеты</h2>
+                <p class="section-head__sub">Безупречный сервис и невероятно вкусная кухня</p>
+            </div>
+            
+            <div class="arches-grid arches-grid--4">
+                <div class="arch-card anim-up">
+                    <div class="arch-card__img-wrap"><img src="../фото для сайта/IMG_2354.WEBP" loading="lazy" alt=""></div>
+                </div>
+                <div class="arch-card anim-up" style="margin-top: 40px">
+                    <div class="arch-card__img-wrap"><img src="../фото для сайта/IMG_2364.WEBP" loading="lazy" alt=""></div>
+                </div>
+                <div class="arch-card anim-up">
+                    <div class="arch-card__img-wrap"><img src="../фото для сайта/IMG_2359.WEBP" loading="lazy" alt=""></div>
+                </div>
+                <div class="arch-card anim-up" style="margin-top: 40px">
+                    <div class="arch-card__img-wrap"><img src="../фото для сайта/IMG_2353.WEBP" loading="lazy" alt=""></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== 8. ВИДЕО ===== -->
+    <section class="video-section">
+        <div class="container">
+            <div class="video-container anim-up">
+                <img src="../фото для сайта/IMG_2366.WEBP" loading="lazy" alt="Видео">
+                <button class="play-btn">
+                    <svg viewBox="0 0 24 24"><polygon points="7,5 19,12 7,19"/></svg>
+                </button>
+                <div class="video-caption">Смотреть промо-ролик</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== 9. КАК ПРОЕХАТЬ ===== -->
+    <section class="location" id="location">
+        <div class="container location__flex">
+            <div class="location__text anim-up">
+                <h2>Логистика <em>&</em> Маршрут</h2>
+                <div class="location__address">ул. Набережная, 1А</div>
+                <p>Центр города. Собственная просторная парковка для всех гостей мероприятия.</p>
+            </div>
+            <div class="location__map anim-up">
+                <div class="map-placeholder">Яндекс Карта</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== 10. ОТЗЫВЫ (Цитаты) ===== -->
+    <section class="reviews">
+        <div class="container">
+            <div class="reviews__slider anim-up">
+                <div class="review-slide">
+                    <div class="review-slide__quote">"</div>
+                    <h3 class="review-slide__text">Шатер невероятной красоты, все гости были в восторге. Идеальная площадка.</h3>
+                    <div class="review-slide__author">Дарья и Кирилл, июль 2026</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== 11. ФУТЕР (Лого, Контакты, Заявка) ===== -->
+    <footer class="footer" id="contact">
+        <div class="footer__bg"></div>
+        <div class="container footer__inner">
+            <div class="footer__left">
+                <img src="../РИВЬЕРА ХОЛЛ/логотип/лого бел.png" alt="Ривьера Холл" class="footer__logo">
+                
+                <div class="footer__contacts">
+                    <div class="footer__contact-item">
+                        <span class="lbl">Ваш менеджер</span>
+                        <strong>Екатерина</strong>
+                    </div>
+                    <div class="footer__contact-item">
+                        <span class="lbl">Телефон</span>
+                        <a href="tel:+79990000000" class="tel">+7 999 000-00-00</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer__right">
+                <h3 class="footer__form-title">Оставить заявку</h3>
+                <form class="glossy-form">
+                    <input type="text" placeholder="Имя" required>
+                    <input type="tel" placeholder="Телефон" required>
+                    <input type="text" placeholder="Дата торжества">
+                    <button type="submit">Забронировать</button>
+                </form>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

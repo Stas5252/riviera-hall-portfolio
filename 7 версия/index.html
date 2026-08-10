@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ривьера Холл — Праздник на набережной</title>
+    <meta name="description" content="Ривьера Холл — эксклюзивное пространство для мероприятий на набережной. Белоснежный шатер, вместимость до 220 гостей.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/style.css">
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
+    <script src="js/main.js" defer></script>
+</head>
+<body>
+
+    <!-- Навигация -->
+    <nav class="nav" id="nav">
+        <div class="container nav__inner">
+            <a href="#" class="nav__logo">
+                <img src="../РИВЬЕРА ХОЛЛ/логотип/лого бел.png" alt="Ривьера Холл" class="nav__logo-img" id="nav-logo-white">
+                <img src="../РИВЬЕРА ХОЛЛ/логотип/лого син.png" alt="Ривьера Холл" class="nav__logo-img nav__logo-img--blue" id="nav-logo-blue">
+            </a>
+            <div class="nav__links">
+                <a href="#about" class="nav__link">О площадке</a>
+                <a href="#gallery" class="nav__link">Галерея</a>
+                <a href="#conditions" class="nav__link">Условия</a>
+                <a href="#reviews" class="nav__link">Отзывы</a>
+            </div>
+            <a href="#contact" class="nav__cta">Забронировать</a>
+        </div>
+    </nav>
+
+    <!-- ===== 1. HERO ===== -->
+    <header class="hero" id="hero">
+        <div class="hero__overlay"></div>
+        <img src="../фото для сайта/IMG_2355.WEBP" alt="Шатер Ривьера Холл" class="hero__bg" loading="eager">
+        
+        <div class="container hero__content">
+            <p class="hero__tagline anim-fade">Праздник на набережной</p>
+            <h1 class="hero__title">
+                <span class="hero__title-line anim-slide-up">ривьера</span>
+                <span class="hero__title-line hero__title-line--sub anim-slide-up">холл <img src="../РИВЬЕРА ХОЛЛ/паттерн и цвет/волна.png" alt="" class="hero__wave-icon"></span>
+            </h1>
+            <div class="hero__bottom">
+                <a href="#about" class="hero__scroll-hint anim-fade">
+                    <span class="hero__scroll-line"></span>
+                    Листайте вниз
+                </a>
+                <div class="hero__stats anim-fade">
+                    <div class="hero__stat">
+                        <span class="hero__stat-num">220</span>
+                        <span class="hero__stat-label">гостей</span>
+                    </div>
+                    <div class="hero__stat">
+                        <span class="hero__stat-num">2026</span>
+                        <span class="hero__stat-label">открытие</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Marquee Лента (Как в MODO / The Act рефах) -->
+    <div class="marquee">
+        <div class="marquee__track">
+            <span class="marquee__item">Свадьбы</span>
+            <span class="marquee__dot"></span>
+            <span class="marquee__item">Юбилеи</span>
+            <span class="marquee__dot"></span>
+            <span class="marquee__item">Корпоративы</span>
+            <span class="marquee__dot"></span>
+            <span class="marquee__item">Конференции</span>
+            <span class="marquee__dot"></span>
+            <span class="marquee__item">Дни рождения</span>
+            <span class="marquee__dot"></span>
+            <span class="marquee__item">Фуршеты</span>
+            <span class="marquee__dot"></span>
+            <span class="marquee__item">Свадьбы</span>
+            <span class="marquee__dot"></span>
+            <span class="marquee__item">Юбилеи</span>
+            <span class="marquee__dot"></span>
+            <span class="marquee__item">Корпоративы</span>
+            <span class="marquee__dot"></span>
+            <span class="marquee__item">Конференции</span>
+            <span class="marquee__dot"></span>
+            <span class="marquee__item">Дни рождения</span>
+            <span class="marquee__dot"></span>
+            <span class="marquee__item">Фуршеты</span>
+            <span class="marquee__dot"></span>
+        </div>
+    </div>
+
+    <!-- ===== 2. О ПЛОЩАДКЕ ===== -->
+    <section class="about" id="about">
+        <div class="container about__grid">
+            <!-- Левая колонка: Фото с перекрытием (как Orris) -->
+            <div class="about__visual anim-up">
+                <div class="about__img-main">
+                    <img src="../фото для сайта/IMG_2352.WEBP" alt="Интерьер шатра" loading="lazy">
+                </div>
+                <div class="about__img-overlap">
+                    <img src="../фото для сайта/IMG_2356.WEBP" alt="Детали интерьера" loading="lazy">
+                </div>
+                <!-- Курсивный акцент (как Особняк / Monroe) -->
+                <span class="cursive-float">с любовью к деталям</span>
+            </div>
+            
+            <!-- Правая колонка: Текст -->
+            <div class="about__text">
+                <span class="about__label anim-up">О площадке</span>
+                <h2 class="about__heading anim-up">Ривьера холл — это новое красивое пространство для мероприятий <em>на набережной</em></h2>
+                <div class="about__body anim-up">
+                    <p>Новая площадка, открытие состоялось в июле 2026 года. Отдельно стоящий белоснежный шатер с огромным потолком-куполом.</p>
+                    <p>Роскошный шатер с элегантным современным интерьером и невероятно вкусной кухней станет идеальной площадкой для проведения свадьбы, корпоративных праздников и других торжеств.</p>
+                    <p>Функционирует в тёплое время года. Вместимость до 220 гостей. Шатер вентилируемый, оснащен кондиционерами. Белоснежная зона прекрасно подходящая для выездных церемоний, встречи гостей и отдыха.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Цифры/факты (как MODO — стильная лента с цифрами) -->
+        <div class="facts">
+            <div class="container facts__grid">
+                <div class="facts__item anim-up">
+                    <span class="facts__number">220</span>
+                    <span class="facts__desc">вместимость гостей</span>
+                </div>
+                <div class="facts__item anim-up">
+                    <span class="facts__number">2026</span>
+                    <span class="facts__desc">год открытия</span>
+                </div>
+                <div class="facts__item anim-up">
+                    <span class="facts__number">10+</span>
+                    <span class="facts__desc">форматов мероприятий</span>
+                </div>
+                <div class="facts__item anim-up">
+                    <span class="facts__number">24/7</span>
+                    <span class="facts__desc">персональный менеджер</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Услуги (Табы, как в Grape & Gold) -->
+        <div class="container services-section">
+            <div class="services anim-up">
+                <h3 class="services__title">Наши услуги</h3>
+                <div class="services__cols">
+                    <ul class="services__list">
+                        <li>Свадебные события</li>
+                        <li>Детские дни рождения</li>
+                        <li>Юбилеи</li>
+                        <li>Корпоративные события</li>
+                        <li>Имиджевые события</li>
+                    </ul>
+                    <ul class="services__list">
+                        <li>Выездная церемония брака</li>
+                        <li>Конференции</li>
+                        <li>Бизнес завтраки и обеды</li>
+                        <li>Фуршеты</li>
+                        <li>Презентации</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== 3. ГАЛЕРЕЯ ШАТРА ===== -->
+    <section class="gallery" id="gallery">
+        <div class="container">
+            <div class="section-head anim-up">
+                <span class="section-head__label">( пространство )</span>
+                <h2 class="section-head__title">Галерея шатра</h2>
+            </div>
+            <div class="mosaic mosaic--5">
+                <div class="mosaic__item mosaic__item--wide anim-up"><img src="../фото для сайта/IMG_2368.WEBP" loading="lazy" alt="Шатер"></div>
+                <div class="mosaic__item mosaic__item--tall anim-up"><img src="../фото для сайта/IMG_2361.WEBP" loading="lazy" alt="Шатер"></div>
+                <div class="mosaic__item anim-up"><img src="../фото для сайта/IMG_2371.WEBP" loading="lazy" alt="Шатер"></div>
+                <div class="mosaic__item anim-up"><img src="../фото для сайта/IMG_2370.WEBP" loading="lazy" alt="Шатер"></div>
+                <div class="mosaic__item mosaic__item--wide anim-up"><img src="../фото для сайта/IMG_2351.WEBP" loading="lazy" alt="Шатер"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== 4. УСЛОВИЯ И ПОДАРКИ ===== -->
+    <section class="conditions" id="conditions">
+        <div class="container">
+            <div class="section-head anim-up">
+                <span class="section-head__label">( стоимость )</span>
+                <h2 class="section-head__title">Условия и подарки</h2>
+            </div>
+            
+            <div class="cond__grid">
+                <!-- Цена: Тёмная карточка (как Baillotte dark hero) -->
+                <div class="cond__card cond__card--dark anim-up">
+                    <div class="cond__row">
+                        <span class="cond__label">Аренда шатра</span>
+                        <span class="cond__price">8 500 ₽ <small>/ час</small></span>
+                    </div>
+                    <hr class="cond__divider">
+                    <div class="cond__row">
+                        <span class="cond__label">Банкетное меню</span>
+                        <span class="cond__price">от 4 500 ₽ <small>/ чел</small></span>
+                    </div>
+                </div>
+                
+                <!-- Фото с Glassmorphism тегом -->
+                <div class="cond__photo anim-up">
+                    <img src="../фото для сайта/a981990f-bad3-48b3-a182-7fba0d79b4a6.jpg" loading="lazy" alt="Подарки">
+                    <div class="glass-tag">Бонусы</div>
+                </div>
+                
+                <!-- Подарки -->
+                <div class="cond__card cond__card--gifts anim-up">
+                    <h3 class="cond__gifts-title">Наши подарки</h3>
+                    <ul class="cond__gifts-list">
+                        <li>Номер для молодоженов</li>
+                        <li>Рилсмейкер на мероприятие</li>
+                        <li>Свадебный торт Pinterest</li>
+                    </ul>
+                    <span class="cursive-float cursive-float--small">with love</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== 5. ВЫЕЗДНАЯ ЦЕРЕМОНИЯ ===== -->
+    <section class="gallery gallery--dark">
+        <div class="container">
+            <div class="section-head section-head--light anim-up">
+                <span class="section-head__label">( церемония )</span>
+                <h2 class="section-head__title">Выездная церемония</h2>
+            </div>
+            <div class="mosaic mosaic--3">
+                <div class="mosaic__item mosaic__item--tall anim-up"><img src="../фото для сайта/IMG_2360.WEBP" loading="lazy" alt=""></div>
+                <div class="mosaic__item mosaic__item--wide anim-up"><img src="../фото для сайта/IMG_2362.WEBP" loading="lazy" alt=""></div>
+                <div class="mosaic__item anim-up"><img src="../фото для сайта/IMG_2372.WEBP" loading="lazy" alt=""></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== 6. СВАДЬБЫ ===== -->
+    <section class="gallery">
+        <div class="container">
+            <div class="section-head anim-up">
+                <span class="section-head__label">( события )</span>
+                <h2 class="section-head__title">Свадьбы</h2>
+            </div>
+            <div class="mosaic mosaic--4">
+                <div class="mosaic__item mosaic__item--wide anim-up"><img src="../фото для сайта/IMG_2354.WEBP" loading="lazy" alt=""></div>
+                <div class="mosaic__item anim-up"><img src="../фото для сайта/IMG_2364.WEBP" loading="lazy" alt=""></div>
+                <div class="mosaic__item anim-up"><img src="../фото для сайта/c168867c-9e5f-4c52-b353-25bfe04add2e.jpg" loading="lazy" alt=""></div>
+                <div class="mosaic__item mosaic__item--wide anim-up"><img src="../фото для сайта/IMG_2365.WEBP" loading="lazy" alt=""></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== 7. БАНКЕТНАЯ СЛУЖБА ===== -->
+    <section class="gallery gallery--alt">
+        <div class="container">
+            <div class="section-head anim-up">
+                <span class="section-head__label">( кухня )</span>
+                <h2 class="section-head__title">Банкетная служба</h2>
+            </div>
+            <div class="mosaic mosaic--3-alt">
+                <div class="mosaic__item anim-up"><img src="../фото для сайта/IMG_2359.WEBP" loading="lazy" alt=""></div>
+                <div class="mosaic__item mosaic__item--tall anim-up"><img src="../фото для сайта/IMG_2353.WEBP" loading="lazy" alt=""></div>
+                <div class="mosaic__item mosaic__item--wide anim-up"><img src="../фото для сайта/IMG_2357.WEBP" loading="lazy" alt=""></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== 8. ВИДЕО ===== -->
+    <section class="video-section">
+        <div class="container">
+            <div class="video-block anim-up">
+                <img src="../фото для сайта/IMG_2366.WEBP" loading="lazy" alt="Видео">
+                <div class="video-block__overlay">
+                    <div class="video-block__play">
+                        <svg viewBox="0 0 24 24" width="32" height="32" fill="white"><polygon points="5,3 19,12 5,21"/></svg>
+                    </div>
+                    <span class="video-block__label">Смотреть видео</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== 9. КАК ПРОЕХАТЬ ===== -->
+    <section class="location" id="location">
+        <div class="container location__grid">
+            <div class="location__info anim-up">
+                <div class="section-head">
+                    <span class="section-head__label">( маршрут )</span>
+                    <h2 class="section-head__title">Как проехать</h2>
+                </div>
+                <p class="location__address">ул. Набережная, 1А</p>
+                <p class="location__details">Центр города. Собственная просторная парковка для всех гостей мероприятия.</p>
+            </div>
+            <div class="location__map anim-up">
+                <div class="map-placeholder">Карта Yandex</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== 10. ОТЗЫВЫ (Как Monroe — "Love Letters") ===== -->
+    <section class="reviews" id="reviews">
+        <div class="container">
+            <div class="section-head section-head--center anim-up">
+                <span class="section-head__label">( впечатления )</span>
+                <h2 class="section-head__title">Отзывы гостей</h2>
+            </div>
+            <div class="reviews__grid">
+                <div class="reviews__card anim-up">
+                    <div class="reviews__quote">"</div>
+                    <p class="reviews__text">Идеальная площадка. Кондиционеры работают отлично, даже в жару было комфортно. Шатер невероятной красоты, все гости были в восторге.</p>
+                    <div class="reviews__author">
+                        <span class="reviews__name">Дарья и Кирилл</span>
+                        <span class="reviews__date">Свадьба, июль 2026</span>
+                    </div>
+                </div>
+                <div class="reviews__card anim-up">
+                    <div class="reviews__quote">"</div>
+                    <p class="reviews__text">Потрясающее место! Отмечали свадьбу, все гости остались в абсолютном восторге от вида и сервиса. Кухня — выше всяких похвал.</p>
+                    <div class="reviews__author">
+                        <span class="reviews__name">Анна и Максим</span>
+                        <span class="reviews__date">Свадьба, август 2026</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== 11. FOOTER ===== -->
+    <footer class="footer" id="contact">
+        <div class="footer__wave-bg">
+            <img src="../РИВЬЕРА ХОЛЛ/паттерн и цвет/паттерн пнг.png" alt="" class="footer__pattern">
+        </div>
+        <div class="container footer__inner">
+            <div class="footer__left">
+                <img src="../РИВЬЕРА ХОЛЛ/логотип/лого бел.png" alt="Ривьера Холл" class="footer__logo">
+                <div class="footer__contacts">
+                    <p class="footer__mgr">Ваш менеджер: Екатерина</p>
+                    <a href="tel:+79990000000" class="footer__phone">+7 (999) 000-00-00</a>
+                    <a href="mailto:info@rivierahall.ru" class="footer__email">info@rivierahall.ru</a>
+                </div>
+            </div>
+            <div class="footer__right">
+                <h3 class="footer__form-title">Оставить заявку</h3>
+                <form class="footer__form" id="contact-form">
+                    <div class="footer__field">
+                        <input type="text" id="name" placeholder=" " required>
+                        <label for="name">Ваше имя</label>
+                    </div>
+                    <div class="footer__field">
+                        <input type="tel" id="phone" placeholder=" " required>
+                        <label for="phone">Телефон</label>
+                    </div>
+                    <div class="footer__field">
+                        <input type="text" id="date" placeholder=" ">
+                        <label for="date">Желаемая дата</label>
+                    </div>
+                    <button type="submit" class="footer__submit">Отправить заявку</button>
+                </form>
+            </div>
+        </div>
+        <div class="container footer__bottom">
+            <span>© 2026 Ривьера Холл</span>
+            <span>Праздник на набережной</span>
+        </div>
+    </footer>
+
+</body>
+</html>

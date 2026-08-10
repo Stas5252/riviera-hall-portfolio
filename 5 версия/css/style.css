@@ -1,0 +1,263 @@
+@font-face {
+    font-family: 'Proletarsk';
+    src: url('../../РИВЬЕРА ХОЛЛ/шрифты/proletarsk/Proletarsk.otf') format('opentype');
+    font-weight: normal; font-style: normal;
+}
+@font-face {
+    font-family: 'VelaSans';
+    src: url('../../РИВЬЕРА ХОЛЛ/шрифты/VelaSans/VelaSans-Regular.ttf') format('truetype');
+    font-weight: 400; font-style: normal;
+}
+@font-face {
+    font-family: 'VelaSans';
+    src: url('../../РИВЬЕРА ХОЛЛ/шрифты/VelaSans/VelaSans-SemiBold.ttf') format('truetype');
+    font-weight: 600; font-style: normal;
+}
+
+:root {
+    --brand-blue: #1C3352; --brand-light: #4A6A8C;
+    --bg-color: #F8F6F2; --bg-light: #FFFFFF;
+    --text-color: #1a1a1a;
+    --ease: cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'VelaSans', sans-serif;
+    background-color: var(--bg-color); color: var(--text-color);
+    line-height: 1.6; overflow-x: hidden;
+    cursor: none; /* Кастомный курсор */
+}
+
+h1, h2, h3 { font-family: 'Proletarsk', serif; font-weight: normal; }
+.container { max-width: 1400px; margin: 0 auto; padding: 0 40px; }
+.container-fluid { width: 100%; padding: 0; }
+.bg-light { background-color: var(--bg-light); }
+.pb-large { padding-bottom: 120px; }
+
+/* ====== CUSTOM CURSOR ====== */
+.cursor {
+    position: fixed; top: 0; left: 0; width: 8px; height: 8px;
+    background: var(--brand-blue); border-radius: 50%;
+    transform: translate(-50%, -50%); pointer-events: none; z-index: 9999;
+}
+.cursor-follower {
+    position: fixed; top: 0; left: 0; width: 40px; height: 40px;
+    border: 1px solid rgba(28, 51, 82, 0.4); border-radius: 50%;
+    transform: translate(-50%, -50%); pointer-events: none; z-index: 9998;
+    transition: width 0.3s, height 0.3s, background 0.3s;
+}
+.cursor-follower.hover-active {
+    width: 80px; height: 80px; background: rgba(28, 51, 82, 0.1); border-color: transparent;
+}
+
+/* ====== SHAPES (ПИНТЕРЕСТ ФОРМЫ) ====== */
+.shape-arch { border-radius: 200px 200px 20px 20px; }
+.shape-pill-v { border-radius: 200px; }
+.shape-pill-h { border-radius: 200px; }
+.shape-circle { border-radius: 50%; }
+.shape-rect { border-radius: 20px; }
+
+/* ====== ANIMATION UTILS ====== */
+.text-reveal .line { overflow: hidden; display: block; }
+.text-reveal .word { display: inline-block; transform: translateY(110%); opacity: 0; }
+.fade-up { opacity: 0; transform: translateY(50px); }
+
+/* ====== 1. HERO ====== */
+.section-hero {
+    min-height: 100vh; display: flex; flex-direction: column; padding-top: 30px;
+    position: relative; overflow: hidden;
+}
+.nav { display: flex; justify-content: space-between; align-items: center; position: relative; z-index: 10; }
+.logo { height: 40px; }
+.btn-outline {
+    display: inline-block; padding: 12px 24px; border: 1px solid var(--brand-blue);
+    color: var(--brand-blue); text-decoration: none; font-size: 0.9rem;
+    text-transform: uppercase; letter-spacing: 2px; border-radius: 4px;
+}
+.hero-content {
+    flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center;
+    padding-top: 20px; z-index: 2; position: relative;
+}
+.hero-title {
+    font-size: clamp(4rem, 12vw, 10rem); line-height: 0.8;
+    text-align: center; color: var(--brand-blue); letter-spacing: 6px;
+    margin-bottom: 20px; z-index: 3; position: relative;
+}
+
+/* Тот самый шатер из полосок */
+.hero-tent-wrapper { width: 100vw; height: 80vh; position: absolute; bottom: -5vh; left: 0; z-index: 1; }
+.tent-shape {
+    width: 100%; height: 100%; display: flex; gap: 4px;
+    clip-path: polygon(50% 0%, 100% 35%, 100% 100%, 0% 100%, 0% 35%);
+}
+.tent-strip { flex: 1; height: 100%; overflow: hidden; }
+.tent-strip img { width: 100%; height: 100%; object-fit: cover; }
+
+/* ====== 2. INFO ====== */
+.section-info { padding: 150px 0; }
+.section-title { font-size: clamp(2rem, 4vw, 3.5rem); line-height: 1.1; color: var(--brand-blue); margin-bottom: 40px; }
+.info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+.info-text p { font-size: 1.2rem; color: #555; margin-bottom: 50px; max-width: 500px; }
+.info-stats { display: flex; gap: 50px; }
+.stat-num { font-family: 'Proletarsk'; font-size: 5rem; color: var(--brand-blue); line-height: 1; }
+.stat-lbl { font-size: 0.75rem; letter-spacing: 3px; text-transform: uppercase; color: #888; display: block; margin-top: 10px; }
+.info-image-wrapper { height: 700px; border-radius: 200px 200px 20px 20px; overflow: hidden; }
+.info-image { width: 100%; height: 130%; /* для параллакса */ }
+.info-image img { width: 100%; height: 100%; object-fit: cover; }
+
+/* ====== ГАЛЕРЕИ (MOODBOARD) ====== */
+.section-moodboard { position: relative; width: 100%; padding-top: 100px; }
+.sticky-title {
+    font-size: 4rem; color: var(--brand-blue);
+    position: absolute; top: 50px; left: 50%; transform: translateX(-50%);
+    z-index: 10; opacity: 0.8;
+}
+.moodboard-container {
+    position: relative; width: 100%; height: 150vh; /* Много места для параллакса */
+    overflow: hidden;
+}
+.mood-item { position: absolute; overflow: hidden; box-shadow: 0 30px 60px rgba(0,0,0,0.1); }
+.mood-item img { width: 100%; height: 100%; object-fit: cover; }
+
+/* Позиции для фото (Шатер) */
+.pos-1 { width: 350px; height: 500px; top: 15%; left: 10%; }
+.pos-2 { width: 500px; height: 300px; top: 40%; right: 15%; }
+.pos-3 { width: 400px; height: 600px; bottom: 10%; left: 20%; }
+.pos-4 { width: 350px; height: 350px; bottom: 25%; right: 25%; }
+
+/* Выездная церемония */
+.pos-5 { width: 300px; height: 600px; top: 10%; right: 10%; }
+.pos-6 { width: 400px; height: 400px; top: 30%; left: 15%; }
+.pos-7 { width: 450px; height: 650px; bottom: 5%; right: 25%; }
+.pos-8 { width: 400px; height: 300px; bottom: 20%; left: 5%; }
+
+/* Свадьбы */
+.pos-9 { width: 400px; height: 550px; top: 20%; left: 10%; }
+.pos-10 { width: 350px; height: 450px; top: 15%; right: 20%; }
+.pos-11 { width: 600px; height: 350px; bottom: 15%; left: 15%; }
+.pos-12 { width: 300px; height: 300px; bottom: 30%; right: 10%; }
+
+/* Банкетная служба */
+.pos-13 { width: 550px; height: 350px; top: 10%; left: 20%; }
+.pos-14 { width: 350px; height: 500px; top: 35%; right: 15%; }
+.pos-15 { width: 400px; height: 400px; bottom: 15%; left: 10%; }
+.pos-16 { width: 450px; height: 300px; bottom: 25%; right: 35%; }
+
+/* ====== 4. УСЛОВИЯ (PINTEREST) ====== */
+.section-pinterest-conditions { padding-top: 150px; }
+.section-heading { font-size: 4rem; text-align: center; margin-bottom: 80px; color: var(--brand-blue); }
+.moodboard-grid { display: grid; grid-template-columns: 1fr 350px 1fr; gap: 40px; align-items: center; }
+
+/* Price block */
+.price-block { padding: 50px; background: #fff; border-radius: 40px; box-shadow: 0 20px 40px rgba(0,0,0,0.02); }
+.price-row { padding: 15px 0; display: inline-block; }
+.mood-tag { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px; color: #999; margin-bottom: 10px; display: block; }
+.mood-price { font-family: 'Proletarsk'; font-size: 3.5rem; color: var(--brand-blue); line-height: 1; }
+.mood-unit { font-family: 'VelaSans'; font-size: 1rem; color: #999; }
+.price-separator { height: 1px; background: rgba(0,0,0,0.05); margin: 20px 0; }
+
+/* Arch block */
+.arch-block {
+    position: relative; width: 100%; height: 550px;
+    border-radius: 200px 200px 20px 20px; overflow: hidden;
+    box-shadow: 0 30px 60px rgba(28, 51, 82, 0.1);
+}
+.arch-bg { width: 100%; height: 120%; /* parallax */ object-fit: cover; }
+.gifts-glass {
+    position: absolute; bottom: 20px; left: 20px; right: 20px;
+    background: rgba(255,255,255,0.9); backdrop-filter: blur(15px);
+    padding: 30px; border-radius: 20px; text-align: center;
+}
+.glass-title { font-size: 1.8rem; color: var(--brand-blue); margin-bottom: 15px; }
+.glass-list { list-style: none; }
+.glass-list li { font-size: 1.1rem; padding: 8px 0; border-bottom: 1px solid rgba(0,0,0,0.05); color: #444; }
+
+/* Stickers block */
+.stickers-block { position: relative; height: 400px; display: flex; flex-direction: column; justify-content: center; }
+.sticker {
+    display: inline-block; padding: 12px 25px; background: var(--brand-blue); color: #fff;
+    border-radius: 50px; font-size: 0.95rem; position: absolute;
+    box-shadow: 0 10px 20px rgba(28, 51, 82, 0.15); letter-spacing: 1px;
+}
+.s-1 { top: 10%; left: 10%; transform: rotate(-5deg); z-index: 2; }
+.s-2 { top: 30%; right: 5%; background: #fff; color: var(--brand-blue); transform: rotate(3deg); z-index: 3; }
+.s-3 { bottom: 40%; left: 0%; transform: rotate(-2deg); z-index: 4; }
+.s-4 { bottom: 15%; right: 10%; background: #fff; color: var(--brand-blue); transform: rotate(6deg); z-index: 2; }
+.sticker-img {
+    width: 220px; height: 220px; border-radius: 50%; overflow: hidden;
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1); z-index: 1;
+}
+.sticker-img img { width: 100%; height: 100%; object-fit: cover; }
+
+/* ====== 8. VIDEO ====== */
+.section-video { padding: 150px 0; }
+.video-scale-wrapper {
+    width: 60%; margin: 0 auto; height: 70vh; border-radius: 40px; overflow: hidden;
+}
+.video-placeholder { width: 100%; height: 100%; position: relative; }
+.video-placeholder img { width: 100%; height: 100%; object-fit: cover; }
+.play-btn {
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+    width: 100px; height: 100px; background: rgba(255,255,255,0.9);
+    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    color: var(--brand-blue); font-family: 'Proletarsk'; font-size: 1.5rem;
+}
+
+/* ====== 9. LOCATION ====== */
+.section-location { padding-top: 150px; }
+.location-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 80px; align-items: center; }
+.location-map { height: 500px; background: #e0e0e0; display: flex; align-items: center; justify-content: center; }
+.map-dummy { font-family: 'Proletarsk'; font-size: 2rem; color: #999; }
+.location-info p { font-size: 1.2rem; color: #555; }
+
+/* ====== 10. REVIEWS ====== */
+.section-reviews { padding-top: 150px; overflow: hidden; }
+.reviews-slider { width: 100vw; }
+.reviews-track { display: flex; gap: 40px; padding: 0 40px; }
+.review-card {
+    min-width: 450px; background: var(--bg-light); padding: 50px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.05); display: flex; flex-direction: column; justify-content: center;
+}
+.review-text { font-size: 1.3rem; font-style: italic; color: #333; margin-bottom: 30px; line-height: 1.6; }
+.review-author { font-weight: 600; color: var(--brand-blue); text-transform: uppercase; letter-spacing: 1px; }
+
+/* ====== 11. FOOTER ====== */
+.footer { background: var(--brand-blue); color: #fff; padding: 150px 0 0 0; position: relative; overflow: hidden; }
+.footer-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; margin-bottom: 100px; }
+.footer-logo { height: 60px; margin-bottom: 50px; }
+.manager-name { font-size: 1.1rem; opacity: 0.7; margin-bottom: 10px; }
+.footer-phone { display: inline-block; font-family: 'Proletarsk'; font-size: 3.5rem; color: #fff; text-decoration: none; margin-bottom: 10px; }
+.footer-email { font-size: 1.2rem; opacity: 0.7; }
+.form-title { font-size: 3rem; margin-bottom: 40px; }
+.footer-form { display: flex; flex-direction: column; gap: 30px; }
+.footer-form input { background: transparent; border: none; border-bottom: 1px solid rgba(255,255,255,0.2); padding: 15px 0; color: #fff; font-size: 1.2rem; font-family: 'VelaSans'; }
+.footer-form input:focus { outline: none; border-bottom-color: #fff; }
+.btn-primary { background: #fff; color: var(--brand-blue); border: none; padding: 20px 50px; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; border-radius: 50px; width: fit-content; margin-top: 20px; }
+
+.footer-huge-text {
+    font-family: 'Proletarsk'; font-size: 22vw; line-height: 0.8;
+    color: rgba(255,255,255,0.05); text-align: center; white-space: nowrap;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+    .moodboard-grid, .location-grid, .footer-grid { grid-template-columns: 1fr; }
+    .arch-block, .stickers-block { grid-column: span 1; height: 500px; }
+}
+/* ================================================
+   ������������� ��������� ����
+   ================================================ */
+@media(max-width: 768px) {
+    body { overflow-x: hidden !important; }
+    .container, section, header, footer { padding-left: 20px !important; padding-right: 20px !important; box-sizing: border-box !important; }
+    h1, h2, h3, .hero-title, .title, .about__heading, .cond__title, .massive-serif, .seo-h2 { font-size: clamp(2rem, 8vw, 3.5rem) !important; line-height: 1.2 !important; margin-left: 0 !important; }
+    img { max-width: 100% !important; height: auto !important; }
+    .grid, .flex, .row, .about__grid, .services-grid, .conditions__grid, .gallery-dark__inner, .footer__inner, .arches-grid, .arches-grid--4 { display: flex !important; flex-direction: column !important; gap: 40px !important; }
+    .hero, .hero-art { min-height: 60vh !important; height: auto !important; padding: 100px 20px 40px !important; }
+    input, select, textarea { width: 100% !important; font-size: 16px !important; box-sizing: border-box !important; }
+    .nav__links, .nav-art__menu { display: none !important; }
+    .gifts-card, .cond__gifts-card, .gifts-box, .log-address { position: relative !important; bottom: 0 !important; right: 0 !important; left: 0 !important; width: 100% !important; margin-top: 20px !important; transform: none !important; }
+}
