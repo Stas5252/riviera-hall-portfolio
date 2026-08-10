@@ -330,72 +330,71 @@ body.nav-open .drawer{clip-path:circle(150% at calc(100% - 44px) 34px)}
 
 .album__overlay {
   position: absolute;
-  bottom: clamp(10px, 2vw, 30px);
-  right: clamp(10px, 2vw, 30px);
-  width: clamp(220px, 35%, 340px);
-  background-color: rgba(215, 222, 235, 0.95); /* #d7deeb with slight transparency */
-  backdrop-filter: blur(4px);
-  padding: clamp(14px, 2vw, 24px);
-  border-radius: 6px;
+  bottom: clamp(10px, 2vw, 24px);
+  right: clamp(10px, 2vw, 24px);
+  width: clamp(180px, 25%, 280px);
+  background-color: var(--paper); /* в фирменном цвете сайта */
+  padding: 14px 18px;
+  border-radius: 4px;
 }
 @media (max-width: 768px) {
   .album__overlay {
-    width: clamp(240px, 80%, 320px);
+    width: clamp(200px, 70%, 260px);
     right: 50%;
     transform: translateX(50%);
-    bottom: 15px;
+    bottom: 12px;
   }
 }
 
 .album__overlay .mark {
-  font-size: 9px;
-  margin-bottom: 6px;
+  font-size: 8px;
+  margin-bottom: 4px;
   display: block;
 }
 
 .album__overlay .statement {
-  font-size: clamp(18px, 2vw, 22px);
+  font-size: 16px;
   line-height: 1.1;
   margin-top: 0;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
 }
 
 .album__overlay .album__note {
   max-width: 100%;
   color: var(--ink-soft);
-  font-size: 11px;
+  font-size: 10px;
   line-height: 1.35;
   margin: 0;
 }
 .album__overlay .album__ticks {
-  margin-top: 10px;
-  font-size: 11px;
-  gap: 6px;
+  margin-top: 8px;
+  font-size: 10px;
+  gap: 4px;
 }
 .album__overlay .album__ticks li {
-  padding-left: 18px;
+  padding-left: 14px;
 }
 .album__overlay .album__ticks li::before {
-  width: 12px; height: 12px;
+  width: 10px; height: 10px;
 }
 
 .album__overlay .album__cta {
-  display: inline-flex; align-items: baseline; gap: .6em;
-  margin-top: 14px;
+  display: inline-flex; align-items: baseline; gap: .5em;
+  margin-top: 12px;
   padding-bottom: 3px; border-bottom: 1px solid currentColor;
-  font-size: 9px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase;
+  font-size: 8px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase;
   transition: gap .4s var(--ease);
 }
 .album__overlay .album__cta i {
-  font-style: normal; font-weight: 400; font-size: 8px; letter-spacing: .1em;
+  font-style: normal; font-weight: 400; font-size: 7px; letter-spacing: .1em;
   color: var(--ink-soft); text-transform: uppercase; flex: none;
 }
 .album__overlay .album__cta::after { content: '\2192'; transition: transform .4s var(--ease); }
 
 /* specific fix for the PDF link in banquet */
 .album__overlay .link {
-  font-size: 9px;
-  margin-top: 10px;
+  font-size: 8px;
+  margin-top: 8px;
   display: inline-block;
 }
 
