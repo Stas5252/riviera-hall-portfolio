@@ -1,0 +1,148 @@
+@charset "UTF-8";
+/* ═══════════════════════════════════════════════════════════
+   РИВЬЕРА ХОЛЛ — страницы галерей и просмотрщик фото
+   ═══════════════════════════════════════════════════════════ */
+
+.gpage{background:var(--paper)}
+
+/* ── шапка ─────────────────────────────────────────────────── */
+.gbar{
+  position:sticky;top:0;z-index:20;
+  display:flex;align-items:center;justify-content:space-between;gap:20px;
+  padding:calc(14px + env(safe-area-inset-top)) calc(var(--gap) + env(safe-area-inset-right))
+          14px calc(var(--gap) + env(safe-area-inset-left));
+  background:rgba(243,239,233,.88);backdrop-filter:blur(14px);
+  border-bottom:1px solid rgba(23,58,103,.12);
+}
+.gbar__back{
+  display:inline-flex;align-items:center;gap:8px;min-height:44px;margin-left:-6px;padding-inline:6px;
+  font-size:11px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--ink);
+}
+.gbar__back svg{width:17px;height:17px;transition:transform .35s var(--ease)}
+.gbar__logo img{height:22px;width:auto}
+@media (hover:hover){.gbar__back:hover svg{transform:translateX(-3px)}}
+
+/* ── заголовок страницы ────────────────────────────────────── */
+.gwrap{width:var(--rail);margin-inline:auto;padding-bottom:clamp(50px,8vw,110px)}
+.ghead{padding:clamp(34px,6vw,80px) 0 clamp(26px,4vw,48px);max-width:44ch}
+.ghead .statement{margin-bottom:clamp(14px,2vw,22px)}
+.ghead__note{margin:0;color:var(--ink-soft);font-size:clamp(14px,3.6vw,16px);line-height:1.55}
+.ghead__count{
+  display:inline-block;margin-top:clamp(16px,2.4vw,26px);padding:7px 16px;border-radius:100px;
+  border:1px solid rgba(23,58,103,.22);
+  font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-soft);
+}
+
+/* ── сетка миниатюр ────────────────────────────────────────── */
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:6px}
+.tile{
+  display:block;padding:0;margin:0;border:0;overflow:hidden;
+  aspect-ratio:1;background:var(--paper-2);border-radius:3px;cursor:zoom-in;
+  -webkit-tap-highlight-color:transparent;
+}
+.tile img{width:100%;height:100%;object-fit:cover;transition:transform .9s var(--slow),opacity .3s}
+.tile:focus-visible{outline:2px solid var(--sea);outline-offset:3px}
+@media (hover:hover){.tile:hover img{transform:scale(1.05)}}
+.tile:active img{opacity:.82}
+
+@media (min-width:600px){.grid{grid-template-columns:repeat(3,1fr);gap:8px}}
+@media (min-width:1000px){.grid{grid-template-columns:repeat(4,1fr);gap:10px}}
+
+/* первая плитка крупнее — задаёт ритм */
+@media (min-width:600px){
+  .tile:first-child{grid-column:span 2;grid-row:span 2;aspect-ratio:1}
+}
+
+/* ── другие галереи + призыв ───────────────────────────────── */
+.gnext{margin-top:clamp(46px,7vw,90px);padding-top:clamp(24px,3.4vw,40px);border-top:1px solid rgba(23,58,103,.14)}
+.gnext__row{display:grid;gap:2px}
+.gnext__row a{
+  display:flex;align-items:baseline;justify-content:space-between;gap:20px;
+  padding:clamp(15px,2.2vw,22px) 0;border-bottom:1px solid rgba(23,58,103,.12);
+  font-family:'Proletarsk',serif;font-size:clamp(22px,5.6vw,38px);line-height:1.15;
+  transition:color .4s var(--ease),padding-left .5s var(--slow);
+}
+.gnext__row a i{
+  font-style:normal;font-family:'Vela',sans-serif;font-weight:400;
+  font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);flex:none;
+}
+@media (hover:hover){.gnext__row a:hover{color:var(--sea);padding-left:clamp(14px,2vw,26px)}}
+
+.gbook{
+  display:flex;align-items:center;justify-content:center;gap:14px;
+  margin-top:clamp(38px,6vw,70px);min-height:56px;padding:0 28px;border-radius:100px;
+  background:var(--ink);color:#fff;
+  font-size:12px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;
+  transition:background .4s var(--ease);
+}
+.gbook svg{width:19px;height:19px}
+@media (hover:hover){.gbook:hover{background:var(--sea)}}
+
+/* ═══════════ ПРОСМОТРЩИК ═══════════ */
+.lb{
+  position:fixed;inset:0;z-index:120;display:none;
+  background:#0A1728;
+  opacity:0;transition:opacity .28s var(--ease);
+  touch-action:none;overscroll-behavior:contain;
+  -webkit-tap-highlight-color:transparent;
+}
+.lb.is-open{display:block}
+.lb.is-in{opacity:1}
+
+.lb__stage{position:absolute;inset:0;display:grid;place-items:center;overflow:hidden}
+.lb__img{
+  max-width:100%;max-height:100%;width:auto;height:auto;display:block;
+  transform-origin:0 0;will-change:transform;user-select:none;-webkit-user-drag:none;
+}
+.lb__img.is-anim{transition:transform .28s var(--ease)}
+
+/* верхняя и нижняя панели */
+.lb__top{
+  position:absolute;top:0;left:0;right:0;display:flex;align-items:center;justify-content:space-between;gap:16px;
+  padding:calc(10px + env(safe-area-inset-top)) calc(12px + env(safe-area-inset-right)) 10px calc(12px + env(safe-area-inset-left));
+  color:#fff;
+  background:linear-gradient(rgba(9,22,40,.65),transparent);
+  transition:opacity .3s var(--ease);
+}
+.lb__count{font-size:12px;letter-spacing:.16em;padding-left:8px;font-variant-numeric:tabular-nums}
+.lb__x{
+  width:44px;height:44px;display:grid;place-content:center;border-radius:50%;color:#fff;flex:none;
+  transition:background .3s var(--ease);
+}
+.lb__x svg{width:20px;height:20px}
+@media (hover:hover){.lb__x:hover{background:rgba(255,255,255,.14)}}
+
+.lb__cap{
+  position:absolute;left:0;right:0;bottom:0;
+  padding:14px calc(16px + env(safe-area-inset-right)) calc(16px + env(safe-area-inset-bottom)) calc(16px + env(safe-area-inset-left));
+  text-align:center;color:rgba(255,255,255,.82);
+  font-size:11px;letter-spacing:.2em;text-transform:uppercase;
+  background:linear-gradient(transparent,rgba(9,22,40,.6));
+  transition:opacity .3s var(--ease);
+}
+
+.lb__nav{
+  position:absolute;top:50%;transform:translateY(-50%);
+  width:52px;height:52px;display:none;place-content:center;border-radius:50%;
+  color:#fff;background:rgba(255,255,255,.1);backdrop-filter:blur(6px);
+  transition:background .3s var(--ease),opacity .3s;
+}
+.lb__nav svg{width:22px;height:22px}
+.lb__nav--prev{left:14px}
+.lb__nav--next{right:14px}
+.lb__nav[hidden]{display:none !important}
+@media (hover:hover) and (pointer:fine){
+  .lb__nav{display:grid}
+  .lb__nav:hover{background:rgba(255,255,255,.22)}
+}
+
+/* при зуме прячем интерфейс, чтобы не мешал */
+.lb.is-zoomed .lb__top,
+.lb.is-zoomed .lb__cap,
+.lb.is-zoomed .lb__nav{opacity:0;pointer-events:none}
+
+body.lb-lock{overflow:hidden}
+
+@media (prefers-reduced-motion:reduce){
+  .lb,.lb__img.is-anim,.tile img{transition:none}
+}
