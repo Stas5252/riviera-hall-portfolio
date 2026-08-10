@@ -177,6 +177,46 @@
       <!-- Image Waves Background -->
       <img src="./фото для сайта/waves_transparent.png" alt="" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: contain; pointer-events: none; z-index: 1;">
       
+      <!-- SVG Lines Background -->
+      <svg width="100%" height="100%" style="position: absolute; top: 0; left: 0; pointer-events: none; z-index: 1;" viewBox="0 0 1200 700" preserveAspectRatio="xMidYMid meet">
+        <style>
+          .diag-line { fill: none; stroke: var(--sea); stroke-width: 2.5px; stroke-linecap: round; }
+          .diag-dot { fill: var(--sea); }
+        </style>
+        
+        <!-- Wavy Lines from Left -->
+        <path class="diag-line" d="M 150,110 C 300,50 350,300 500,260" />
+        <circle class="diag-dot" cx="500" cy="260" r="3.5" />
+        
+        <path class="diag-line" d="M 150,230 C 250,150 350,400 420,330" />
+        <circle class="diag-dot" cx="420" cy="330" r="3.5" />
+        
+        <path class="diag-line" d="M 150,350 C 200,250 250,550 300,450" />
+        <circle class="diag-dot" cx="300" cy="450" r="3.5" />
+        
+        <path class="diag-line" d="M 150,470 C 280,380 320,490 355,420" />
+        <circle class="diag-dot" cx="355" cy="420" r="3.5" />
+        
+        <path class="diag-line" d="M 150,590 C 280,560 380,590 415,485" />
+        <circle class="diag-dot" cx="415" cy="485" r="3.5" />
+
+        <!-- Wavy Lines from Right -->
+        <path class="diag-line" d="M 1050,110 C 900,50 850,300 700,260" />
+        <circle class="diag-dot" cx="700" cy="260" r="3.5" />
+        
+        <path class="diag-line" d="M 1050,230 C 950,150 850,400 780,330" />
+        <circle class="diag-dot" cx="780" cy="330" r="3.5" />
+        
+        <path class="diag-line" d="M 1050,350 C 1000,250 950,550 900,450" />
+        <circle class="diag-dot" cx="900" cy="450" r="3.5" />
+        
+        <path class="diag-line" d="M 1050,470 C 920,380 880,490 845,420" />
+        <circle class="diag-dot" cx="845" cy="420" r="3.5" />
+        
+        <path class="diag-line" d="M 1050,590 C 920,560 820,590 785,485" />
+        <circle class="diag-dot" cx="785" cy="485" r="3.5" />
+      </svg>
+      
       <!-- Text Labels Left -->
       <div class="service-text-container" style="position: absolute; left: 0; top: 0; width: 100%; height: 100%; pointer-events: none;">
         <div class="service-text" style="left: 0; top: 15.71%; width: 140px; text-align: right;">Свадебные<br>события</div>
