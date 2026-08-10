@@ -330,56 +330,74 @@ body.nav-open .drawer{clip-path:circle(150% at calc(100% - 44px) 34px)}
 
 .album__overlay {
   position: absolute;
-  top: 65%; /* чуть ниже середины */
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: clamp(280px, 80%, 550px);
-  background-color: #d7deeb;
-  padding: clamp(16px, 2.5vw, 24px) clamp(20px, 3vw, 36px);
-  border-radius: 4px;
+  bottom: clamp(10px, 2vw, 30px);
+  right: clamp(10px, 2vw, 30px);
+  width: clamp(220px, 35%, 340px);
+  background-color: rgba(215, 222, 235, 0.95); /* #d7deeb with slight transparency */
+  backdrop-filter: blur(4px);
+  padding: clamp(14px, 2vw, 24px);
+  border-radius: 6px;
 }
 @media (max-width: 768px) {
   .album__overlay {
-    top: auto;
-    bottom: 8%;
-    width: 92%;
-    transform: translateX(-50%);
+    width: clamp(240px, 80%, 320px);
+    right: 50%;
+    transform: translateX(50%);
+    bottom: 15px;
   }
 }
 
 .album__overlay .mark {
-  font-size: 10px;
+  font-size: 9px;
+  margin-bottom: 6px;
+  display: block;
 }
 
 .album__overlay .statement {
-  font-size: clamp(24px, 3.5vw, 36px);
-  margin-top: 4px;
+  font-size: clamp(18px, 2vw, 22px);
+  line-height: 1.1;
+  margin-top: 0;
+  margin-bottom: 8px;
 }
 
 .album__overlay .album__note {
   max-width: 100%;
   color: var(--ink-soft);
-  font-size: 14px;
-  line-height: 1.4;
-  margin: clamp(10px, 1.5vw, 14px) 0 0;
+  font-size: 11px;
+  line-height: 1.35;
+  margin: 0;
 }
-.album__ticks {
-  margin-top: clamp(8px, 1vw, 12px);
-  font-size: 13px;
+.album__overlay .album__ticks {
+  margin-top: 10px;
+  font-size: 11px;
+  gap: 6px;
+}
+.album__overlay .album__ticks li {
+  padding-left: 18px;
+}
+.album__overlay .album__ticks li::before {
+  width: 12px; height: 12px;
 }
 
 .album__overlay .album__cta {
-  display: inline-flex; align-items: baseline; gap: .9em;
-  margin-top: clamp(16px, 2vw, 24px);
-  padding-bottom: 4px; border-bottom: 1px solid currentColor;
-  font-size: 11px; font-weight: 500; letter-spacing: .12em; text-transform: uppercase;
+  display: inline-flex; align-items: baseline; gap: .6em;
+  margin-top: 14px;
+  padding-bottom: 3px; border-bottom: 1px solid currentColor;
+  font-size: 9px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase;
   transition: gap .4s var(--ease);
 }
 .album__overlay .album__cta i {
-  font-style: normal; font-weight: 300; font-size: 10px; letter-spacing: .14em;
+  font-style: normal; font-weight: 400; font-size: 8px; letter-spacing: .1em;
   color: var(--ink-soft); text-transform: uppercase; flex: none;
 }
 .album__overlay .album__cta::after { content: '\2192'; transition: transform .4s var(--ease); }
+
+/* specific fix for the PDF link in banquet */
+.album__overlay .link {
+  font-size: 9px;
+  margin-top: 10px;
+  display: inline-block;
+}
 
 @media (hover: hover) {
   .album__card:hover .album__cover img { transform: scale(1.05); }
