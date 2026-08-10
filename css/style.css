@@ -330,17 +330,20 @@ body.nav-open .drawer{clip-path:circle(150% at calc(100% - 44px) 34px)}
 
 .album__overlay {
   position: absolute;
-  bottom: 0; 
-  right: 10%; /* offset slightly from right on big screens */
-  width: clamp(280px, 85%, 450px);
+  top: 65%; /* чуть ниже середины */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: clamp(300px, 85%, 700px);
   background-color: #d7deeb;
-  padding: clamp(30px, 4vw, 50px);
-  /* slight border radius to look premium, matching image 4 */
+  padding: clamp(20px, 3vw, 36px) clamp(24px, 4vw, 48px);
+  border-radius: 4px;
 }
 @media (max-width: 768px) {
   .album__overlay {
-    right: 0;
-    width: 100%;
+    top: auto;
+    bottom: 8%;
+    width: 92%;
+    transform: translateX(-50%);
   }
 }
 
