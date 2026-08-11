@@ -616,22 +616,22 @@ body.nav-open .drawer{clip-path:circle(150% at calc(100% - 44px) 34px)}
   border-radius: 24px;
   box-shadow: 0 15px 40px rgba(0,0,0,0.06), 0 4px 12px rgba(0,0,0,0.03);
   color: var(--ink);
-  padding: clamp(30px, 5vw, 60px);
+  padding: clamp(24px, 4vw, 40px);
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   text-align: left;
-  width: 900px;
+  width: 440px;
   max-width: 100%;
 }
 .review-quote-mark {
   font-family: Georgia, serif;
-  font-size: clamp(80px, 15vw, 140px);
+  font-size: clamp(60px, 10vw, 80px);
   line-height: 0.6;
   color: var(--ink-soft);
   opacity: 0.15;
-  margin-bottom: 20px;
+  margin-bottom: 16px;
 }
 .review-text {
   display: flex;
@@ -641,13 +641,13 @@ body.nav-open .drawer{clip-path:circle(150% at calc(100% - 44px) 34px)}
 }
 .review-text p { 
   font-family: 'Vela', sans-serif;
-  font-size: clamp(18px, 3vw, 30px);
+  font-size: clamp(16px, 2.5vw, 18px);
   font-weight: 300;
-  line-height: 1.4;
+  line-height: 1.5;
   margin: 0; 
 }
 .review-text footer { 
-  margin-top: clamp(30px, 5vw, 40px); 
+  margin-top: 24px; 
   padding-top: 0; 
   border-top: none;
   display: flex;
@@ -655,8 +655,8 @@ body.nav-open .drawer{clip-path:circle(150% at calc(100% - 44px) 34px)}
   align-items: flex-start;
   gap: 4px;
 }
-.review-text footer b { font-family: 'Montserrat', sans-serif; font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; margin: 0; }
-.review-text footer span { font-family: 'Caveat', cursive; font-size: 24px; color: var(--ink); opacity: 0.7; text-transform: none; letter-spacing: normal; }
+.review-text footer b { font-family: 'Montserrat', sans-serif; font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; margin: 0; }
+.review-text footer span { font-family: 'Caveat', cursive; font-size: 18px; color: var(--ink); opacity: 0.7; text-transform: none; letter-spacing: normal; }
 
 /* Навигация */
 .reviews-nav {
