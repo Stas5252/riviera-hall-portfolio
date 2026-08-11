@@ -26,7 +26,7 @@
 <link rel="preload" as="image" href="./фото для сайта/hero-1280w.webp" media="(min-width:801px)">
 <link rel="preload" as="font" type="font/woff2" href="fonts/proletarsk.woff2" crossorigin>
 <link rel="preload" as="font" type="font/woff2" href="fonts/velasans-light.woff2" crossorigin>
-<link rel="stylesheet" href="css/style.css?v=16">
+<link rel="stylesheet" href="css/style.css?v=17">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -556,7 +556,14 @@
         <button type="submit" class="send"><span>Связаться с управляющим</span>
           <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12h15m-6-7 7 7-7 7" stroke="currentColor" stroke-width="1.4"/></svg>
         </button>
-        <p class="form__ok" id="formOk">Заявка отправлена. Мы свяжемся с вами в ближайшее время.</p>
+        <div class="form__ok" id="formOk" role="status" aria-live="polite">
+          <svg class="form__ok-mark" viewBox="0 0 44 44" fill="none" aria-hidden="true">
+            <circle cx="22" cy="22" r="21" stroke="currentColor" stroke-width="1.2" opacity=".45"/>
+            <path d="M13 22.5l6 6 12-13" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <p class="form__ok-title">Спасибо за заявку!</p>
+          <p class="form__ok-sub">С вами свяжется управляющий.</p>
+        </div>
       </form>
     </div>
 
@@ -601,6 +608,6 @@
   </div>
 </div>
 
-<script src="js/main.js?v=16"></script>
+<script src="js/main.js?v=17"></script>
 </body>
 </html>

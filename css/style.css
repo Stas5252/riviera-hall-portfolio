@@ -635,8 +635,21 @@ body.nav-open .drawer{clip-path:circle(150% at calc(100% - 44px) 34px)}
 .send:hover::before{transform:none}
 .send:hover span,.send:hover svg{color:#fff}
 .form__fine{margin:16px 0 0;font-size:11px;line-height:1.6;color:rgba(255,255,255,.42);max-width:38ch}
-.form__ok{margin:14px 0 0;font-size:13px;color:var(--sky);opacity:0;transform:translateY(6px);transition:opacity .5s,transform .5s}
-.form__ok.on{opacity:1;transform:none}
+/* подтверждение после отправки */
+.form__ok{
+  display:none;margin:clamp(16px,2.4vw,24px) 0 0;padding:clamp(22px,3vw,30px);
+  border:1px solid rgba(150,183,218,.3);border-radius:4px;background:rgba(150,183,218,.07);
+  text-align:center;color:var(--sky);
+  opacity:0;transform:translateY(8px);transition:opacity .5s var(--ease),transform .6s var(--slow);
+}
+.form__ok.on{display:block;opacity:1;transform:none}
+.form__ok-mark{width:clamp(38px,7vw,46px);height:auto;margin:0 auto clamp(12px,1.8vw,16px);display:block}
+.form__ok-title{margin:0 0 .35em;font-family:'Proletarsk',serif;font-size:clamp(20px,4.6vw,26px);line-height:1.2;color:#fff}
+.form__ok-sub{margin:0;font-size:14px;line-height:1.5;color:rgba(255,255,255,.7)}
+.form__ok--err{border-color:rgba(232,160,160,.4);background:rgba(232,160,160,.08);color:#E8A0A0}
+.form__ok--err .form__ok-title{color:#E8A0A0}
+/* после успешной отправки поля не нужны */
+.form--sent .field,.form--sent .agree,.form--sent .send{display:none}
 
 .end__foot{
   margin-top:clamp(46px,6vw,90px);padding-top:22px;border-top:1px solid rgba(255,255,255,.15);

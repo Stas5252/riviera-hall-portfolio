@@ -236,10 +236,18 @@ if (form) {
   const agree = $('#agree');
   const okBox = $('#formOk');
 
-  const say = (text, isError) => {
-    okBox.textContent = text;
-    okBox.classList.toggle('form__ok--err', !!isError);
+  const okTitle = okBox.querySelector('.form__ok-title');
+  const okSub   = okBox.querySelector('.form__ok-sub');
+
+  const sayOk = () => {
+    form.classList.add('form--sent');          // прячем поля, остаётся благодарность
+    okBox.classList.remove('form__ok--err');
     okBox.classList.add('on');
+  };
+  const sayErr = (text) => {
+    okTitle.textContent = 'Заявка не отправилась';
+    okSub.textContent = text;
+    okBox.classList.add('form__ok--err', 'on');
   };
 
   form.addEventListener('submit', async (e) => {
@@ -277,13 +285,13 @@ if (form) {
       });
       if (!res.ok) throw new Error('HTTP ' + res.status);
 
-      say('Заявка отправлена. Мы свяжемся с вами в ближайшее время.', false);
+      sayOk();
       reachGoal('form_sent');
       form.reset();
     } catch (err) {
       // молча терять заявку нельзя — показываем телефон
-      say('Не удалось отправить заявку. Позвоните нам, пожалуйста: ' +
-          (document.querySelector('.mgr__tel')?.textContent.trim() || ''), true);
+      sayErr('Позвоните, пожалуйста, напрямую: ' +
+             (document.querySelector('.mgr__tel')?.textContent.trim() || ''));
       console.error('Форма не отправлена:', err);
     } finally {
       btn.disabled = false;
