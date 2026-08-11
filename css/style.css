@@ -20,8 +20,8 @@
   --ink-soft:#4A6A93;
   --sea:#358BC1;          /* волна, насыщенный конец градиента */
   --sky:#96B7DA;          /* волна, светлый конец */
-  --paper:#EAF2F8;        /* Нежный голубой фон */
-  --paper-2:#DFEAF4;      /* Чуть более плотный голубой */
+  --paper:#F3EFE9;        /* Тёплая бумага — фон сайта */
+  --paper-2:#EAE3D9;      /* песочный */
   --white:#FFFFFF;
 
   --gap:clamp(20px,5vw,80px);
@@ -324,7 +324,7 @@ body.nav-open .drawer{clip-path:circle(150% at calc(100% - 44px) 34px)}
 @keyframes run{to{transform:translateX(-50%)}}
 
 /* ══════════ О ПЛОЩАДКЕ ══════════ */
-.about{padding:clamp(72px,11vw,170px) 0 clamp(60px,8vw,120px);position:relative;overflow:hidden}
+.about{padding:clamp(72px,11vw,170px) 0 clamp(60px,8vw,120px);position:relative;overflow:hidden;background-color:#EAF0F6;}
 .about__squiggly{position:absolute;top:30%;left:-5%;width:110%;height:40%;z-index:0;pointer-events:none}
 .about .wrap{position:relative;z-index:1}
 .about__grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(28px,5vw,90px);align-items:start}
@@ -790,7 +790,7 @@ body.nav-open .burger i:last-child{transform:translateY(-5px) rotate(-45deg)}
 body.lock{position:fixed;left:0;right:0;width:100%;overflow:hidden}
 
 /* ── брендинг + арки ── */
-.brand-arches{padding:clamp(60px,9vw,100px) var(--gap);text-align:center;background-color:var(--paper);border-radius:0}
+.brand-arches{padding:clamp(60px,9vw,100px) var(--gap);text-align:center;background-color:transparent;border-radius:0}
 .brand-arches__title{
   margin:0;font-family:'Montserrat',sans-serif;font-weight:400;line-height:1;
   font-size:clamp(1.5rem,5vw,5rem);letter-spacing:0.1em;color:var(--ink);
