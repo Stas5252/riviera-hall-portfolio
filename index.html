@@ -26,7 +26,7 @@
 <link rel="preload" as="image" href="./фото для сайта/hero-1280w.webp" media="(min-width:801px)">
 <link rel="preload" as="font" type="font/woff2" href="fonts/proletarsk.woff2" crossorigin>
 <link rel="preload" as="font" type="font/woff2" href="fonts/velasans-light.woff2" crossorigin>
-<link rel="stylesheet" href="css/style.css?v=15">
+<link rel="stylesheet" href="css/style.css?v=16">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -71,6 +71,13 @@
   ]
 }
 </script>
+<noscript><style>
+  /* без JS занавес не уезжает, а блоки .rise остаются прозрачными — показываем всё сразу */
+  .curtain{display:none}
+  .rise{opacity:1;transform:none}
+  .hero__word .ch,.hero__second,.hero__line,.hero__facts{opacity:1;animation:none}
+  .cookie{position:static;margin:0 auto;opacity:1;transform:none}
+</style></noscript>
 </head>
 <body>
 
@@ -594,6 +601,6 @@
   </div>
 </div>
 
-<script src="js/main.js?v=15"></script>
+<script src="js/main.js?v=16"></script>
 </body>
 </html>
