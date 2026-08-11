@@ -629,8 +629,12 @@ body.nav-open .drawer{clip-path:circle(150% at calc(100% - 44px) 34px)}
   flex-direction: column;
   align-items: flex-start;
   text-align: left;
-  width: 440px;
-  max-width: 100%;
+  width: 100%;
+}
+@media (min-width: 900px) {
+  .review-card {
+    width: 440px;
+  }
 }
 .review-quote-mark {
   font-family: Georgia, serif;

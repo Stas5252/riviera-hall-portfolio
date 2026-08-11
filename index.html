@@ -30,8 +30,8 @@
      грузились с fonts.googleapis.com и cdn.jsdelivr.net — то есть IP каждого
      посетителя уходил за границу. По 152-ФЗ это трансграничная передача,
      а в политике сайта написано, что её нет. -->
-<link rel="stylesheet" href="vendor/swiper-bundle.min.css?v=57">
-<link rel="stylesheet" href="css/style.css?v=57">
+<link rel="stylesheet" href="vendor/swiper-bundle.min.css?v=51">
+<link rel="stylesheet" href="css/style.css?v=51">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -660,13 +660,208 @@
   </div>
 </footer>
 
+</div>
+  <div class="film__box rise">
+    <!-- Замените блок ниже на <video src="..."> или <iframe> с роликом площадки -->
+    <img width="1280" height="960" loading="lazy" decoding="async" src="./img/316f5564-c141-4ade-85d8-216bf23bffc5.jpg" alt="Видео о площадке Ривьера Холл">
+    <button class="film__play" aria-label="Смотреть видео">
+      <svg viewBox="0 0 44 44" aria-hidden="true"><polygon points="17,13 17,31 33,22" fill="currentColor"/></svg>
+    </button>
+    <span class="film__tag">1 мин · экскурсия по площадке</span>
+  </div>
+</section>
+
+<!-- ══════════ 09 · КАК ПРОЕХАТЬ ══════════ -->
+<section class="route" id="route">
+  <div class="wrap">
+    <div class="route__grid">
+      <div>
+        <span class="mark">09 — как проехать</span>
+        <h2 class="statement rise">В самом<br><em>центре города</em></h2>
+        <ul class="route__list rise" style="--d:.1s">
+          <li><b>Адрес</b><span>наб. —————, д. —<br><small>укажите точный адрес площадки</small></span></li>
+          <li><b>Ориентир</b><span>набережная, пешеходная зона</span></li>
+          <li><b>Парковка</b><span>вдоль набережной, рядом с площадкой</span></li>
+          <li><b>Пешком</b><span>от центра — 5–7 минут</span></li>
+        </ul>
+        <a href="#book" class="link">Записаться на просмотр</a>
+      </div>
+      <div class="route__map rise" style="--d:.16s">
+        <!-- ЗАПОЛНИТЬ: координаты площадки. Яндекс.Карты → правый клик по точке →
+             «Что здесь?». В ссылке порядок ДОЛГОТА,ШИРОТА.
+             Сейчас стоит центр Москвы — заглушка. -->
+        <iframe src="https://yandex.ru/map-widget/v1/?ll=37.620393%2C55.753960&z=13" width="100%" height="100%" frameborder="0" allowfullscreen="true" loading="lazy" title="Ривьера Холл на карте" style="position:relative;"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ 10 · ОТЗЫВЫ ══════════ -->
+<section class="says" id="reviews">
+  <div class="wrap">
+    <span class="mark">10 — отзывы</span>
+    
+    <div class="reviews-carousel-wrapper">
+      <div class="swiper reviews-slider">
+        <div class="swiper-wrapper">
+          <div class="review-card swiper-slide">
+            <div class="review-quote-mark">“</div>
+            <div class="review-text">
+              <p>Шатёр сам по себе красивый — декором ничего не пришлось дотягивать. Церемония под арками стала лучшим решением дня.</p>
+              <footer><b>Анна и Максим</b><span>Свадьба, май 2026</span></footer>
+            </div>
+          </div>
+          <div class="review-card swiper-slide">
+            <div class="review-quote-mark">“</div>
+            <div class="review-text">
+              <p>Юбилей компании на 180 человек. Кондиционеры спасли в жару, кухня — отдельный комплимент. Организация без единой шероховатости.</p>
+              <footer><b>Екатерина С.</b><span>Корпоратив, июль 2026</span></footer>
+            </div>
+          </div>
+          <div class="review-card swiper-slide">
+            <div class="review-quote-mark">“</div>
+            <div class="review-text">
+              <p>Набережная, зелень, белый купол — картинка, ради которой стоит ехать. А свой алкоголь заметно сэкономил бюджет вечера.</p>
+              <footer><b>Дарья и Кирилл</b><span>Свадьба, август 2026</span></footer>
+            </div>
+          </div>
+          <div class="review-card swiper-slide">
+            <div class="review-quote-mark">“</div>
+            <div class="review-text">
+              <p>Отмечали годик сыну. Пространства хватило и для аниматоров, и для огромной фотозоны. Очень светлый и уютный зал.</p>
+              <footer><b>Анна и Сергей</b><span>Детский праздник, июнь 2026</span></footer>
+            </div>
+          </div>
+          <div class="review-card swiper-slide">
+            <div class="review-quote-mark">“</div>
+            <div class="review-text">
+              <p>Великолепная локация для нашей свадьбы. Фуршет, выездная регистрация и банкет — все прошло идеально, как в сказке!</p>
+              <footer><b>Елена</b><span>Свадьба, сентябрь 2026</span></footer>
+            </div>
+          </div>
+          <div class="review-card swiper-slide">
+            <div class="review-quote-mark">“</div>
+            <div class="review-text">
+              <p>Проводили встречу закрытого бизнес-клуба. Отличная акустика, вкусный фуршет и высокий уровень приватности. Вернемся снова.</p>
+              <footer><b>Александр</b><span>Бизнес-ужин, октябрь 2026</span></footer>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="reviews-nav">
+        <button class="reviews-arrow reviews-arrow--prev" aria-label="Предыдущий отзыв">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+        </button>
+        <button class="reviews-arrow reviews-arrow--next" aria-label="Следующий отзыв">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ 11 · ЗАЯВКА И КОНТАКТЫ ══════════ -->
+<section class="booking-section" id="book">
+  <div class="booking-bg" aria-hidden="true">
+    <img width="800" height="533" src="./img/a981990f-bad3-48b3-a182-7fba0d79b4a6.jpg" alt="" loading="lazy" decoding="async">
+  </div>
+  <div class="wrap">
+    <div class="booking-header">
+      <img width="1405" height="407" src="./img/logo-white.png" alt="Ривьера Холл" class="booking-logo">
+    </div>
+    
+    <div class="booking-card rise">
+      <div class="mgr-profile">
+        <!-- то же фото, тот же кадр — просто WebP вместо PNG: 92 КБ вместо 592 КБ -->
+        <img width="1024" height="1024" src="./img/manager_maria.webp" alt="Мария" class="mgr-avatar">
+        <div class="mgr-info">
+          <b>Банкетный менеджер<br>Мария</b>
+        </div>
+      </div>
+      
+      <!-- ЗАПОЛНИТЬ: в data-endpoint — адрес обработчика заявок на вашем хостинге.
+           Пока пусто, форма не отправляет данные и честно показывает ошибку. -->
+      <form class="booking-form" id="form" data-endpoint="" novalidate>
+        <input type="text" name="name" required placeholder="Имя">
+        <input type="tel" name="tel" required placeholder="Телефон">
+        
+        <div class="trap" aria-hidden="true">
+          <label for="company">Не заполняйте это поле</label>
+          <input type="text" id="company" name="company" tabindex="-1" autocomplete="off">
+        </div>
+
+        <!-- Согласие на обработку персональных данных (ст. 9 152-ФЗ).
+             Атрибута checked здесь быть не должно: согласие даётся действием
+             пользователя, заранее проставленная галочка не считается согласием.
+             Ссылка вынесена за пределы <label>, иначе клик по ней заодно
+             переключал бы галочку. -->
+        <div class="agree agree--light">
+          <input type="checkbox" id="agree" name="agree" required>
+          <label class="agree__box" for="agree" aria-hidden="true"></label>
+          <span class="agree__text"><label for="agree">Я даю</label>
+          <a href="consent.html" target="_blank" rel="noopener">согласие на обработку персональных данных</a>
+          <label for="agree">и принимаю</label>
+          <a href="privacy.html" target="_blank" rel="noopener">Политику</a>.</span>
+        </div>
+
+        <button type="submit" class="btn-gradient send">Написать управляющему &rarr;</button>
+        <span class="booking-note">Вы получите расчет в течение суток</span>
+        
+        <div class="form__ok" id="formOk" role="status" aria-live="polite">
+          <svg class="form__ok-mark" viewBox="0 0 44 44" fill="none" aria-hidden="true">
+            <circle cx="22" cy="22" r="21" stroke="currentColor" stroke-width="1.2" opacity=".45"/>
+            <path d="M13 22.5l6 6 12-13" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <p class="form__ok-title">Спасибо за заявку!</p>
+          <p class="form__ok-sub">С вами свяжется управляющий.</p>
+        </div>
+      </form>
+      
+      <div class="booking-contacts">
+        <span>Контактная информация</span>
+        <b>+7 (000) 000-00-00</b>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="end-footer">
+  <div class="wrap">
+    <div class="end__legal">
+      <!-- Состав сведений об исполнителе — ст. 9 и 10 Закона «О защите прав потребителей»:
+           наименование, реквизиты, адрес и режим работы. Режим взят с фирменной таблички. -->
+      <p class="end__req">
+        <b data-fill="ИП">ИП Фамилия Имя Отчество</b>
+        <span>ИНН <b data-fill="ИНН">000000000000</b></span>
+        <span>ОГРНИП <b data-fill="ОГРНИП">000000000000000</b></span>
+        <span data-fill="адрес">индекс, регион, город, улица, дом</span>
+        <span>Ежедневно 9:00–23:00, без перерывов и выходных</span>
+      </p>
+      <p class="end__disclaimer">Информация на сайте носит справочный характер и не является
+      публичной офертой. Актуальную стоимость уточняйте у менеджера.</p>
+    </div>
+
+    <div class="end__foot">
+      <span>© 2026 Ривьера Холл</span>
+      <span class="end__docs">
+        <a href="privacy.html">Обработка персональных данных</a>
+        <a href="consent.html">Согласие на обработку</a>
+        <a href="terms.html">Пользовательское соглашение</a>
+        <a href="offer.html">Условия бронирования</a>
+      </span>
+      <a href="#top">Наверх ↑</a>
+    </div>
+  </div>
+</footer>
+
 </main>
 
 <!-- ══════════ МОБИЛЬНАЯ ПАНЕЛЬ ДЕЙСТВИЙ ══════════ -->
 
 
-<script src="vendor/swiper-bundle.min.js?v=57"></script>
-<script src="js/main.js?v=57"></script>
+<script src="vendor/swiper-bundle.min.js?v=58"></script>
+<script src="js/main.js?v=58"></script>
 <script src="js/consent.js?v=57"></script>
 </body>
 </html>
