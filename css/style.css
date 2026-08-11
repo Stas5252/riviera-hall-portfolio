@@ -468,40 +468,123 @@ body.nav-open .drawer{clip-path:circle(150% at calc(100% - 44px) 34px)}
   column-gap: clamp(16px, 2vw, 24px);
   margin-top: clamp(40px, 6vw, 60px);
 }
-.gifts-masonry {
-  column-count: 2;
-}
 @media (max-width: 900px) {
   .pin-masonry { column-count: 2; }
-  .gifts-masonry { column-count: 1; }
 }
 @media (max-width: 600px) {
   .pin-masonry { column-count: 1; }
 }
 
-.pin-card {
-  break-inside: avoid;
-  margin-bottom: clamp(16px, 2vw, 24px);
-  border-radius: 24px;
-  overflow: hidden;
-  box-shadow: 0 12px 40px rgba(0,0,0,0.03);
-  border: 1px solid rgba(0,0,0,0.03);
+/* ══════════ GIFTS EDITORIAL ══════════ */
+.gifts-editorial {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 500px;
+  width: 100%;
+  padding: 40px 0;
 }
-.pin-card img {
+.gifts-editorial__center {
+  position: relative;
+  width: 50%;
+  max-width: 400px;
+  z-index: 2;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.25);
+  border-radius: 4px;
+  overflow: hidden;
+}
+.gifts-editorial__center img {
   width: 100%;
   height: auto;
   display: block;
 }
 
+.gifts-note {
+  position: absolute;
+  z-index: 3;
+  font-family: 'Caveat', cursive;
+  color: #fff;
+  font-size: clamp(24px, 3.5vw, 32px);
+  line-height: 1.1;
+  text-align: center;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+}
+.gifts-note small {
+  font-family: 'Vela', sans-serif;
+  font-size: 13px;
+  opacity: 0.8;
+  display: block;
+  margin-top: 6px;
+  text-shadow: none;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.gifts-arrow {
+  width: 50px;
+  height: 50px;
+  color: rgba(255,255,255,0.9);
+  display: block;
+  margin: 0 auto;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+}
+
+.gifts-note--cake {
+  top: -5%;
+  left: -10%;
+}
+.gifts-note--cake .gifts-arrow { margin-bottom: 10px; }
+
+.gifts-note--reels {
+  bottom: 25%;
+  right: -20%;
+}
+.gifts-note--reels .gifts-arrow { margin-top: 10px; }
+
+.gifts-note--room {
+  bottom: -10%;
+  left: 10%;
+}
+.gifts-note--room .gifts-arrow { margin-bottom: 10px; }
+
+@media (max-width: 900px) {
+  .gifts-editorial { flex-direction: column; }
+  .gifts-editorial__center { width: 85%; margin: 20px 0; }
+  .gifts-note { position: relative; top: auto; left: auto; right: auto; bottom: auto; margin-bottom: 40px; color: var(--ink); text-shadow: none; }
+  .gifts-note small { color: var(--ink-soft); }
+  .gifts-note--cake, .gifts-note--reels, .gifts-note--room { top: auto; left: auto; right: auto; bottom: auto; }
+  .gifts-arrow { color: var(--ink-soft); filter: none; }
+  .gifts-note--reels .gifts-arrow { margin: 10px auto 0; }
+}
+
+.pin-card {
+  break-inside: avoid;
+  margin-bottom: clamp(16px, 2vw, 24px);
+  border-radius: 4px;
+  padding: clamp(30px, 4vw, 50px);
+  position: relative;
+  overflow: hidden;
+}
+.pin-card::before {
+  content: "“";
+  font-family: 'Proletarsk', serif;
+  font-size: 140px;
+  line-height: 1;
+  position: absolute;
+  top: -10px;
+  left: 15px;
+  opacity: 0.08;
+  color: inherit;
+  pointer-events: none;
+}
 .pin-text {
-  padding: clamp(24px, 4vw, 40px);
+  padding: 0;
+  position: relative; z-index: 1;
   text-align: left;
 }
-.pin-text i { font-style: normal; font-size: 10px; letter-spacing: .15em; opacity: 0.6; margin-bottom: 8px; display: block; }
-.pin-text h3 { font-family: 'Proletarsk', serif; font-size: clamp(18px, 2vw, 24px); margin: 0 0 12px; line-height: 1.1; }
-.pin-text p { font-size: clamp(14px, 1.6vw, 16px); line-height: 1.5; margin: 0; opacity: 0.85; }
-.pin-text footer { margin-top: 20px; }
-.pin-text footer b { display: block; font-family: 'Proletarsk', serif; font-size: clamp(15px, 1.6vw, 17px); font-weight: normal; margin-bottom: 4px; }
+.pin-text p { font-size: clamp(17px, 2vw, 24px); line-height: 1.4; font-style: italic; font-weight: 300; margin: 0; opacity: 0.95; }
+.pin-text footer { margin-top: 30px; }
+.pin-text footer b { display: block; font-family: 'Montserrat', sans-serif; font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 6px; }
 .pin-text footer span { display: block; font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; opacity: 0.6; }
 
 /* в•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђ Р¦Р•Р Р•РњРћРќРРЇ в•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђ */

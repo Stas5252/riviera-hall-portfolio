@@ -26,7 +26,10 @@
 <link rel="preload" as="image" href="./img/hero-1280w.webp" media="(min-width:801px)">
 <link rel="preload" as="font" type="font/woff2" href="fonts/proletarsk.woff2" crossorigin>
 <link rel="preload" as="font" type="font/woff2" href="fonts/velasans-light.woff2" crossorigin>
-<link rel="stylesheet" href="css/style.css?v=25">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css?v=26">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -366,31 +369,36 @@
       </div>
 
       <div class="terms__right">
-        <p class="gifts__kicker rise">Подарок каждой паре,<br>которая бронирует дату</p>
-        <div class="pin-masonry gifts-masonry rise">
-          <!-- Подарок 1 -->
-          <article class="pin-card" style="background: var(--sky); color: var(--ink);">
-            <img src="./img/gift_cake.png" alt="Торт" loading="lazy">
-            <div class="pin-text">
-              <i>01</i><h3>Торт в стиле Pinterest</h3><p>Кондитерская работа под вашу палитру и декор — как с доски вдохновения.</p>
-            </div>
-          </article>
+        <div class="gifts-editorial rise">
+          <!-- Central Image -->
+          <div class="gifts-editorial__center">
+            <img src="./editorial_wedding_gifts_1786452674183.png" alt="Подарки от Ривьера Холл" loading="lazy">
+          </div>
           
-          <!-- Подарок 2 -->
-          <article class="pin-card" style="background: var(--paper-2); color: var(--ink);">
-            <img src="./img/gift_reels.png" alt="Рилсмейкер" loading="lazy">
-            <div class="pin-text">
-              <i>02</i><h3>Мобильный рилсмейкер</h3><p>Снимает ролики весь вечер. Готовые рилсы — сразу после праздника.</p>
-            </div>
-          </article>
+          <!-- Notes around the image -->
+          <div class="gifts-note gifts-note--cake">
+            <svg class="gifts-arrow" viewBox="0 0 50 50" aria-hidden="true">
+              <path d="M10,40 Q25,10 40,30" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              <path d="M35,30 L40,30 L38,25" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+            <p>Торт в стиле Pinterest<br><small>кондитерская работа под вашу палитру</small></p>
+          </div>
           
-          <!-- Подарок 3 -->
-          <article class="pin-card" style="background: var(--ink-deep); color: #fff;">
-            <img src="./img/gift_champagne.png" alt="Номер" loading="lazy">
-            <div class="pin-text">
-              <i>03</i><h3 style="color:#fff">Номер для молодых</h3><p>Отдельный номер в подарок — чтобы вечер закончился спокойно и красиво.</p>
-            </div>
-          </article>
+          <div class="gifts-note gifts-note--reels">
+            <p>Мобильный рилсмейкер<br><small>ролики готовы сразу после праздника</small></p>
+            <svg class="gifts-arrow" viewBox="0 0 50 50" aria-hidden="true">
+              <path d="M40,40 Q25,10 10,30" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              <path d="M15,30 L10,30 L12,25" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          
+          <div class="gifts-note gifts-note--room">
+            <svg class="gifts-arrow" viewBox="0 0 50 50" aria-hidden="true">
+              <path d="M10,10 Q25,40 40,20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              <path d="M35,20 L40,20 L38,25" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+            <p>Номер для молодых<br><small>чтобы вечер закончился красиво</small></p>
+          </div>
         </div>
       </div>
     </div>
