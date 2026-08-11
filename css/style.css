@@ -847,16 +847,23 @@ body.lock{position:fixed;left:0;right:0;width:100%;overflow:hidden}
 .diagram-wrapper__lines{position:absolute;top:0;left:0;pointer-events:none;z-index:3}
 .diagram-wrapper__lines--m{display:none}   /* включается на узких экранах */
 /* non-scaling-stroke — чтобы толщина не менялась вместе с масштабом viewBox */
-.diag-line{fill:none;stroke:var(--sea);stroke-width:3.5px;stroke-linecap:round;vector-effect:non-scaling-stroke}
-.diag-dot{fill:var(--sea)}
+.diag-line{display:none}
+.diag-dot{display:none}
+.diagram-wrapper__lines{display:none !important}
 .service-text-container{position:absolute;inset:0;margin:0;padding:0;list-style:none;pointer-events:none}
 .service-text{
   position:absolute;top:var(--y);transform:translateY(-50%);width:140px;
   font-size:.85rem;font-weight:500;text-transform:uppercase;letter-spacing:.05em;
   color:var(--ink);line-height:1.4;
 }
+.service-text::before {
+  content: ""; position: absolute; top: 50%; transform: translateY(-50%);
+  width: 10px; height: 10px; border-radius: 50%; background: var(--sea);
+}
 .service-text--l{left:0;text-align:right}
+.service-text--l::before{right:-20px}
 .service-text--r{right:0;text-align:left}
+.service-text--r::before{left:-20px}
 
 /* ── мобильная панель действий ── */
 .dock{
