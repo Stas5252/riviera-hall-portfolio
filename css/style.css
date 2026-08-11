@@ -765,30 +765,28 @@ body.nav-open .drawer{clip-path:circle(150% at calc(100% - 44px) 34px)}
 
 /* в•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђ РљРђРљ РџР РћР•РҐРђРўР¬ в•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђ */
 .route { padding: clamp(40px, 6vw, 80px) 0; }
-.route__grid { position: relative; display: flex; align-items: stretch; }
+.route__grid { 
+  background: #fff;
+  border-radius: 32px;
+  padding: clamp(30px, 5vw, 60px);
+  box-shadow: 0 15px 50px rgba(0,0,0,0.06);
+  display: grid; 
+  grid-template-columns: 1.15fr 0.85fr; 
+  gap: clamp(30px, 5vw, 60px);
+  align-items: stretch; 
+}
 .route__grid > div:first-child {
-  position: relative;
-  z-index: 2;
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
-  padding: clamp(24px, 4vw, 40px);
-  border-radius: 20px;
-  box-shadow: 0 15px 40px rgba(0,0,0,0.08);
-  width: 100%;
-  max-width: 440px;
-  margin-right: -100px; /* pull map under the card */
-  margin-top: 20px;
-  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .route__map {
   width: 100%;
-  flex: 1;
   height: auto;
   min-height: 450px;
   background: var(--paper-2);
-  border-radius: 24px;
+  border-radius: 20px;
   overflow: hidden;
-  z-index: 1;
 }
 .route__map iframe { width: 100%; height: 100%; border: 0; display: block; }
 .route__stub { height: 100%; display: grid; place-content: center; justify-items: center; gap: 12px; color: var(--ink-soft); }
@@ -802,21 +800,19 @@ body.nav-open .drawer{clip-path:circle(150% at calc(100% - 44px) 34px)}
 .route__list small { display: block; font-size: 11px; opacity: 0.6; margin-top: 2px; }
 
 @media (max-width: 900px) {
-  .route__grid { flex-direction: column; align-items: stretch; gap: 20px; }
+  .route__grid { 
+    grid-template-columns: 1fr; 
+    padding: 24px; 
+    gap: 30px; 
+    border-radius: 24px;
+  }
   .route__grid > div:first-child {
-    position: relative;
-    max-width: none;
-    margin-bottom: 0;
-    padding: 30px 20px;
-    z-index: 2;
+    padding: 0;
   }
   .route__map {
-    max-width: 100%;
     height: 350px;
-    border-radius: 20px;
-    margin-left: 0;
-    position: relative;
-    z-index: 1;
+    min-height: auto;
+    border-radius: 16px;
   }
 }
 
