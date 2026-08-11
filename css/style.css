@@ -600,7 +600,8 @@ body.nav-open .drawer{clip-path:circle(150% at calc(100% - 44px) 34px)}
   gap: 20px;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
-  padding-bottom: 20px;
+  padding: 15px 15px 30px 15px; /* space for shadows */
+  margin: -15px -15px 0 -15px; /* negate padding visually */
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
 }
@@ -609,13 +610,23 @@ body.nav-open .drawer{clip-path:circle(150% at calc(100% - 44px) 34px)}
 .review-card {
   flex: 0 0 100%;
   scroll-snap-align: center;
-  background: transparent;
+  background: #fff;
+  border-radius: 24px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.06), 0 4px 12px rgba(0,0,0,0.03);
   color: var(--ink);
-  padding: 0 10px;
+  padding: clamp(30px, 6vw, 60px);
+  position: relative;
   display: flex;
   flex-direction: column;
 }
-
+.review-quote-mark {
+  font-family: 'Proletarsk', serif;
+  font-size: clamp(60px, 10vw, 100px);
+  line-height: 0.8;
+  color: var(--ink);
+  opacity: 0.08;
+  margin-bottom: 20px;
+}
 .review-text {
   text-align: left;
   display: flex;
@@ -623,21 +634,29 @@ body.nav-open .drawer{clip-path:circle(150% at calc(100% - 44px) 34px)}
   flex-grow: 1;
 }
 .review-text p { 
-  font-family: 'Proletarsk', serif; 
-  font-size: clamp(26px, 4vw, 48px); 
-  line-height: 1.25; 
+  font-family: 'Vela', sans-serif;
+  font-size: clamp(20px, 3.5vw, 28px);
+  font-weight: 300;
+  line-height: 1.4;
   margin: 0; 
 }
-.review-text footer { margin-top: clamp(30px, 5vw, 50px); padding-top: 0; border-top: none; }
-.review-text footer b { display: block; font-family: 'Montserrat', sans-serif; font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 6px; }
-.review-text footer span { display: block; font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--ink); opacity: 0.5; }
+.review-text footer { 
+  margin-top: clamp(30px, 5vw, 40px); 
+  padding-top: 0; 
+  border-top: none;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.review-text footer b { font-family: 'Montserrat', sans-serif; font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; margin: 0; }
+.review-text footer span { font-family: 'Caveat', cursive; font-size: 24px; color: var(--ink); opacity: 0.7; text-transform: none; letter-spacing: normal; }
 
 /* Навигация */
 .reviews-nav {
   display: flex;
   gap: 12px;
   justify-content: flex-end;
-  margin-top: 20px;
+  margin-top: 10px;
   padding: 0 10px;
 }
 .reviews-arrow {
