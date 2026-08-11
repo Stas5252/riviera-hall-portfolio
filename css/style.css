@@ -546,31 +546,37 @@ body.nav-open .drawer{clip-path:circle(150% at calc(100% - 44px) 34px)}
 }
 
 .gifts-note--cake {
-  top: -5%;
-  left: -10%;
+  top: 0%;
+  left: 5%;
 }
-.gifts-note--cake .gifts-arrow { margin-bottom: 10px; }
+.gifts-note--cake .gifts-arrow { margin-bottom: 10px; transform: rotate(-15deg); }
 
 .gifts-note--reels {
   bottom: 25%;
-  right: -20%;
+  right: -5%;
 }
-.gifts-note--reels .gifts-arrow { margin-top: 10px; }
+.gifts-note--reels .gifts-arrow { margin-top: 10px; transform: rotate(15deg) scaleY(-1); }
 
 .gifts-note--room {
-  bottom: -10%;
-  left: 10%;
+  bottom: -5%;
+  left: 15%;
 }
-.gifts-note--room .gifts-arrow { margin-bottom: 10px; }
+.gifts-note--room .gifts-arrow { margin-bottom: 10px; transform: rotate(10deg); }
 
 @media (max-width: 900px) {
-  .gifts-editorial { flex-direction: column; }
-  .gifts-editorial__center { width: 85%; margin: 20px 0; }
-  .gifts-note { position: relative; top: auto; left: auto; right: auto; bottom: auto; margin-bottom: 40px; color: #fff; text-shadow: none; }
-  .gifts-note small { color: rgba(255,255,255,0.7); }
-  .gifts-note--cake, .gifts-note--reels, .gifts-note--room { top: auto; left: auto; right: auto; bottom: auto; }
-  .gifts-arrow { color: rgba(255,255,255,0.9); filter: none; }
-  .gifts-note--reels .gifts-arrow { margin: 10px auto 0; }
+  .gifts-editorial { min-height: 550px; padding: 20px 0; }
+  .gifts-editorial__center { margin: auto; }
+  .gifts-center-title { font-size: 44px; }
+  
+  .gifts-note { font-size: 22px; max-width: 160px; line-height: 1.2; text-shadow: none; color: #fff; }
+  .gifts-note small { color: rgba(255,255,255,0.7); font-size: 11px; margin-top: 4px; }
+  .gifts-arrow { width: 35px; height: 35px; color: rgba(255,255,255,0.9); filter: none; }
+  
+  /* Вращаем текст вокруг центра на мобильных */
+  .gifts-note--cake { top: 5%; left: 5%; }
+  .gifts-note--reels { top: 40%; right: 5%; bottom: auto; text-align: right; }
+  .gifts-note--reels .gifts-arrow { margin: 10px 0 0 auto; }
+  .gifts-note--room { bottom: 5%; left: 5%; }
 }
 
 /* ══════════ REVIEWS SLIDER ══════════ */
