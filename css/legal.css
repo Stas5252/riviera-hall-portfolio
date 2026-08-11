@@ -1,0 +1,39 @@
+@charset "UTF-8";
+/* Страницы документов: политика, соглашение */
+
+.legal{max-width:74ch}
+.legal__note{
+  margin:0 0 clamp(30px,5vw,52px);padding:clamp(16px,2.4vw,22px) clamp(18px,2.6vw,26px);
+  border-left:2px solid var(--sea);background:rgba(53,139,193,.07);border-radius:0 4px 4px 0;
+  font-size:14px;line-height:1.6;color:var(--ink);
+}
+.legal__note b{font-weight:500}
+
+.legal__block{margin-bottom:clamp(30px,4.6vw,52px)}
+.legal__block h2{
+  margin:0 0 .8em;font-family:'Proletarsk',serif;
+  font-size:clamp(19px,4.4vw,26px);line-height:1.2;color:var(--ink);
+}
+.legal__block p{margin:0 0 1em;color:var(--ink-soft);font-size:clamp(14px,3.5vw,15px);line-height:1.7}
+.legal__block p:last-child{margin-bottom:0}
+.legal__block a{color:var(--sea);border-bottom:1px solid rgba(53,139,193,.4)}
+.legal__block .ticks li{font-size:clamp(13.5px,3.4vw,15px);color:var(--ink-soft);line-height:1.55}
+
+.legal__req{margin:0 0 1.2em;border-top:1px solid rgba(23,58,103,.14)}
+.legal__req li{
+  display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:6px 20px;
+  padding:12px 0;border-bottom:1px solid rgba(23,58,103,.12);
+}
+.legal__req span{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft)}
+.legal__req b{font-weight:400;font-size:15px;color:var(--ink);text-align:right}
+
+/* незаполненные места видно сразу */
+[data-fill]{
+  background:rgba(232,160,160,.22);box-shadow:0 0 0 2px rgba(232,160,160,.22);
+  border-radius:2px;
+}
+
+@media (max-width:560px){
+  .legal__req li{flex-direction:column;align-items:flex-start}
+  .legal__req b{text-align:left}
+}

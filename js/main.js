@@ -196,18 +196,99 @@ if (says.length) {
   if (!calm) setInterval(() => show(n + 1), 8000);
 }
 
+/* ── cookie: аналитика только после явного согласия ─────── */
+const METRIKA_ID = '';                 // ← ID счётчика Яндекс.Метрики, пока пусто
+const COOKIE_KEY = 'rh-cookie';
+
+const loadMetrika = () => {
+  if (!METRIKA_ID || window.ym) return;
+  (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0];
+   k.async=1;k.src=r;a.parentNode.insertBefore(k,a)})
+   (window,document,'script','https://mc.yandex.ru/metrika/tag.js','ym');
+  ym(METRIKA_ID, 'init', { webvisor: true, clickmap: true, accurateTrackBounce: true, trackLinks: true });
+};
+
+const cookieBox = $('#cookie');
+if (cookieBox) {
+  const saved = localStorage.getItem(COOKIE_KEY);
+  if (saved === 'yes') loadMetrika();
+  else if (saved !== 'no') {
+    cookieBox.hidden = false;
+    requestAnimationFrame(() => cookieBox.classList.add('on'));
+  }
+  const decide = (answer) => {
+    localStorage.setItem(COOKIE_KEY, answer);
+    cookieBox.classList.remove('on');
+    setTimeout(() => { cookieBox.hidden = true; }, calm ? 0 : 400);
+    if (answer === 'yes') loadMetrika();
+  };
+  $('#cookieYes').addEventListener('click', () => decide('yes'));
+  $('#cookieNo').addEventListener('click', () => decide('no'));
+}
+
+/* цель для Метрики — вызывается после успешной отправки заявки */
+const reachGoal = (goal) => { if (window.ym && METRIKA_ID) ym(METRIKA_ID, 'reachGoal', goal); };
+
 /* ── форма ──────────────────────────────────────────────── */
 const form = $('#form');
 if (form) {
-  form.addEventListener('submit', (e) => {
+  const agree = $('#agree');
+  const okBox = $('#formOk');
+
+  const say = (text, isError) => {
+    okBox.textContent = text;
+    okBox.classList.toggle('form__ok--err', !!isError);
+    okBox.classList.add('on');
+  };
+
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
-    const need = [...form.querySelectorAll('[required]')];
+
+    const need = [...form.querySelectorAll('input[required]')];
     const bad = need.find(i => !i.value.trim());
     if (bad) { bad.focus(); bad.style.borderColor = '#E8A0A0'; return; }
     need.forEach(i => i.style.borderColor = '');
-    // TODO: отправка на почту / в CRM / в Telegram-бота
-    $('#formOk').classList.add('on');
-    form.reset();
+
+    if (agree && !agree.checked) {
+      agree.closest('.agree').classList.add('agree--err');
+      agree.focus();
+      return;
+    }
+    agree?.closest('.agree').classList.remove('agree--err');
+
+    const btn = form.querySelector('.send');
+    btn.disabled = true;
+    btn.classList.add('is-sending');
+
+    const payload = Object.fromEntries(new FormData(form).entries());
+    payload.page = location.href;
+    payload.ts = new Date().toISOString();
+
+    try {
+      // ENDPOINT задаётся после выбора хостинга: почта, Telegram-бот или CRM
+      const ENDPOINT = form.dataset.endpoint || '';
+      if (!ENDPOINT) throw new Error('endpoint not configured');
+
+      const res = await fetch(ENDPOINT, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+      if (!res.ok) throw new Error('HTTP ' + res.status);
+
+      say('Заявка отправлена. Мы свяжемся с вами в ближайшее время.', false);
+      reachGoal('form_sent');
+      form.reset();
+    } catch (err) {
+      // молча терять заявку нельзя — показываем телефон
+      say('Не удалось отправить заявку. Позвоните нам, пожалуйста: ' +
+          (document.querySelector('.mgr__tel')?.textContent.trim() || ''), true);
+      console.error('Форма не отправлена:', err);
+    } finally {
+      btn.disabled = false;
+      btn.classList.remove('is-sending');
+    }
   });
 }
 

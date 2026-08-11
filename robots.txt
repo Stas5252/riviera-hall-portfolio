@@ -1,0 +1,14 @@
+User-agent: *
+Allow: /
+Disallow: /РИВЬЕРА ХОЛЛ/
+Disallow: /рефы для дизайна сайта/
+Disallow: /20 версия/
+Disallow: /21 версия/
+Disallow: /*?
+Allow: /*.css
+Allow: /*.js
+Allow: /*.webp
+Allow: /*.png
+Allow: /*.jpg
+
+Sitemap: https://riviera-hall.ru/sitemap.xml

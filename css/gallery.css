@@ -146,3 +146,11 @@ body.lb-lock{overflow:hidden}
 @media (prefers-reduced-motion:reduce){
   .lb,.lb__img.is-anim,.tile img{transition:none}
 }
+
+.gfoot{
+  display:flex;flex-wrap:wrap;gap:10px 24px;justify-content:space-between;
+  margin:clamp(34px,5vw,60px) 0 0;padding-top:20px;border-top:1px solid rgba(23,58,103,.14);
+  font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);
+}
+.gfoot a{border-bottom:1px solid rgba(23,58,103,.28);padding-bottom:2px}
+@media (hover:hover){.gfoot a:hover{color:var(--ink);border-color:var(--ink)}}

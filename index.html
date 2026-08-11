@@ -7,6 +7,18 @@
 <meta name="description" content="Ривьера Холл — новое пространство для свадеб, церемоний и корпоративных событий. Белоснежный шатёр с куполом на набережной в центре города. До 220 гостей.">
 <meta name="theme-color" content="#173A67">
 <meta name="format-detection" content="telephone=no">
+<link rel="canonical" href="https://riviera-hall.ru/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Ривьера Холл">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:url" content="https://riviera-hall.ru/">
+<meta property="og:title" content="Ривьера Холл — белоснежный шатёр на набережной">
+<meta property="og:description" content="Новое пространство для свадеб, церемоний и корпоративных событий. Белоснежный шатёр с куполом на набережной. До 220 гостей.">
+<meta property="og:image" content="https://riviera-hall.ru/фото для сайта/og-cover.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="manifest" href="site.webmanifest">
 <link rel="icon" href="favicon/favicon.ico" sizes="32x32">
 <link rel="icon" type="image/png" href="favicon/icon-192.png" sizes="192x192">
 <link rel="apple-touch-icon" href="favicon/apple-touch-icon.png">
@@ -14,7 +26,51 @@
 <link rel="preload" as="image" href="./фото для сайта/hero-1280w.webp" media="(min-width:801px)">
 <link rel="preload" as="font" type="font/woff2" href="fonts/proletarsk.woff2" crossorigin>
 <link rel="preload" as="font" type="font/woff2" href="fonts/velasans-light.woff2" crossorigin>
-<link rel="stylesheet" href="css/style.css?v=13">
+<link rel="stylesheet" href="css/style.css?v=14">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "EventVenue",
+  "@id": "https://riviera-hall.ru/#venue",
+  "name": "Ривьера Холл",
+  "description": "Белоснежный шатёр с куполом на набережной для свадеб, выездных церемоний и корпоративных событий. До 220 гостей.",
+  "url": "https://riviera-hall.ru/",
+  "image": "https://riviera-hall.ru/фото для сайта/og-cover.jpg",
+  "logo": "https://riviera-hall.ru/favicon/icon-512.png",
+  "telephone": "+7-000-000-00-00",
+  "priceRange": "от 8500 ₽/час",
+  "maximumAttendeeCapacity": 220,
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "RU",
+    "addressLocality": "УКАЖИТЕ ГОРОД",
+    "streetAddress": "УКАЖИТЕ УЛИЦУ И ДОМ",
+    "postalCode": "000000"
+  },
+  "geo": { "@type": "GeoCoordinates", "latitude": 0, "longitude": 0 },
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+    "opens": "10:00", "closes": "22:00"
+  },
+  "amenityFeature": [
+    { "@type": "LocationFeatureSpecification", "name": "Кондиционирование", "value": true },
+    { "@type": "LocationFeatureSpecification", "name": "Выездная регистрация", "value": true },
+    { "@type": "LocationFeatureSpecification", "name": "Своя банкетная служба", "value": true },
+    { "@type": "LocationFeatureSpecification", "name": "Свой алкоголь без пробкового сбора", "value": true }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Главная", "item": "https://riviera-hall.ru/" },
+    { "@type": "ListItem", "position": 2, "name": "Галерея шатра", "item": "https://riviera-hall.ru/gallery-tent.html" }
+  ]
+}
+</script>
 </head>
 <body>
 
@@ -484,17 +540,33 @@
         <div class="field"><input type="text" name="date" placeholder=" "><label>Желаемая дата</label></div>
         <div class="field"><input type="text" name="kind" placeholder=" "><label>Формат события</label></div>
         <div class="field"><input type="text" name="guests" placeholder=" "><label>Количество гостей</label></div>
+        <label class="agree">
+          <input type="checkbox" name="agree" id="agree" required>
+          <span class="agree__box" aria-hidden="true"></span>
+          <span class="agree__text">Я даю согласие на обработку моих персональных данных
+          в соответствии с <a href="privacy.html" target="_blank" rel="noopener">Политикой обработки персональных данных</a></span>
+        </label>
         <button type="submit" class="send"><span>Оставить заявку</span>
           <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12h15m-6-7 7 7-7 7" stroke="currentColor" stroke-width="1.4"/></svg>
         </button>
-        <p class="form__fine">Нажимая кнопку, вы соглашаетесь на обработку персональных данных.</p>
         <p class="form__ok" id="formOk">Заявка отправлена. Мы свяжемся с вами в ближайшее время.</p>
       </form>
     </div>
 
+    <div class="end__legal">
+      <p class="end__req">
+        <b data-fill="ИП">ИП Фамилия Имя Отчество</b>
+        <span>ИНН <b data-fill="ИНН">000000000000</b></span>
+        <span>ОГРНИП <b data-fill="ОГРНИП">000000000000000</b></span>
+        <span data-fill="адрес">индекс, регион, город, улица, дом</span>
+      </p>
+      <p class="end__disclaimer">Информация на сайте носит справочный характер и не является
+      публичной офертой. Актуальную стоимость уточняйте у менеджера.</p>
+    </div>
+
     <div class="end__foot">
       <span>© 2026 Ривьера Холл</span>
-      <span>Набережная · центр города</span>
+      <a href="privacy.html">Обработка персональных данных</a>
       <a href="#top">Наверх ↑</a>
     </div>
   </div>
@@ -511,6 +583,17 @@
   <a href="#book" class="dock__book">Забронировать дату</a>
 </div>
 
-<script src="js/main.js?v=12"></script>
+<!-- ══════════ COOKIE ══════════ -->
+<div class="cookie" id="cookie" role="dialog" aria-label="Использование cookie" hidden>
+  <p class="cookie__text">Мы используем cookie, чтобы сайт работал и чтобы понимать, какие
+  страницы вам интересны. Аналитику включаем только с вашего согласия —
+  <a href="privacy.html">подробнее в Политике</a>.</p>
+  <div class="cookie__row">
+    <button type="button" class="cookie__btn cookie__btn--no" id="cookieNo">Отклонить</button>
+    <button type="button" class="cookie__btn cookie__btn--yes" id="cookieYes">Принять</button>
+  </div>
+</div>
+
+<script src="js/main.js?v=14"></script>
 </body>
 </html>
