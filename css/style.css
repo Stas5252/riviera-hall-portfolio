@@ -1056,3 +1056,6 @@ body.cookie-up .dock{transform:translateY(125%)}
 @media (max-width:860px){
   .cookie{max-width:none}
 }
+
+/* ловушка для ботов: человек её не видит и не наводит табом */
+.trap{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}

@@ -26,7 +26,7 @@
 <link rel="preload" as="image" href="./img/hero-1280w.webp" media="(min-width:801px)">
 <link rel="preload" as="font" type="font/woff2" href="fonts/proletarsk.woff2" crossorigin>
 <link rel="preload" as="font" type="font/woff2" href="fonts/velasans-light.woff2" crossorigin>
-<link rel="stylesheet" href="css/style.css?v=18">
+<link rel="stylesheet" href="css/style.css?v=19">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -164,9 +164,9 @@
   </div>
 
   <div class="hero__facts">
-    <div><b>220</b><span>гостей посадка</span></div>
-    <div><b>120</b><span>гостей фуршет</span></div>
-    <div><b>8 500 ₽</b><span>аренда за час, от</span></div>
+    <div><b class="num" data-to="220">0</b><span>гостей посадка</span></div>
+    <div><b class="num" data-to="120">0</b><span>гостей фуршет</span></div>
+    <div><b class="num" data-to="8500" data-suffix=" ₽">0 ₽</b><span>аренда за час, от</span></div>
     <div><b>свой</b><span>алкоголь можно</span></div>
   </div>
   </div>
@@ -546,6 +546,10 @@
              autocomplete="name" maxlength="60"><label>Ваше имя</label></div>
         <div class="field"><input type="tel" name="tel" required placeholder=" "
              autocomplete="tel" inputmode="tel" maxlength="20"><label>Телефон</label></div>
+        <div class="trap" aria-hidden="true">
+          <label for="company">Не заполняйте это поле</label>
+          <input type="text" id="company" name="company" tabindex="-1" autocomplete="off">
+        </div>
         <label class="agree">
           <input type="checkbox" name="agree" id="agree" required>
           <span class="agree__box" aria-hidden="true"></span>
@@ -597,7 +601,7 @@
   <a href="#book" class="dock__book">Забронировать дату</a>
 </div>
 
-<script src="js/main.js?v=18"></script>
-<script src="js/consent.js?v=18"></script>
+<script src="js/main.js?v=19"></script>
+<script src="js/consent.js?v=19"></script>
 </body>
 </html>
