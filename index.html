@@ -26,7 +26,7 @@
 <link rel="preload" as="image" href="./img/hero-1280w.webp" media="(min-width:801px)">
 <link rel="preload" as="font" type="font/woff2" href="fonts/proletarsk.woff2" crossorigin>
 <link rel="preload" as="font" type="font/woff2" href="fonts/velasans-light.woff2" crossorigin>
-<link rel="stylesheet" href="css/style.css?v=23">
+<link rel="stylesheet" href="css/style.css?v=24">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -397,64 +397,55 @@
   </div>
 </section>
 
-<!-- ══════════ 04 · ГАЛЕРЕИ (Журнальный Стэк) ══════════ -->
-<section class="galleries-stack" id="galleries">
-  <div class="wrap">
-    <span class="mark">04 — галереи</span>
-    <div class="stack-container">
+<!-- ══════════ 04 · ГАЛЕРЕИ (Единый фон) ══════════ -->
+<section class="galleries-single-bg" id="galleries">
+  <img class="galleries__bg" src="./img/IMG_2354.WEBP" alt="Галереи" loading="lazy">
+  <div class="galleries__overlay"></div>
+  <div class="wrap galleries__wrap">
+    <span class="mark mark--light">04 — галереи</span>
+    
+    <div class="galleries-grid rise">
       
       <!-- Шатёр -->
-      <a href="gallery-tent.html" class="stack-card rise" style="z-index: 4;">
-        <img class="stack-card__bg" src="./img/IMG_2354.WEBP" alt="Шатёр" loading="lazy">
-        <div class="stack-card__box" style="background: var(--ink-deep); color: var(--white);">
-          <div class="stack-card__content">
-            <h2 class="stack-card__title">Шатёр</h2>
-            <div class="stack-card__meta">
-              <span>Смотреть<br>галерею</span>
-              <span>8 фото</span>
-            </div>
+      <a href="gallery-tent.html" class="stack-card__box" style="background: var(--ink-deep); color: var(--white);">
+        <div class="stack-card__content">
+          <h2 class="stack-card__title">Шатёр</h2>
+          <div class="stack-card__meta">
+            <span>Смотреть<br>галерею</span>
+            <span>8 фото</span>
           </div>
         </div>
       </a>
 
       <!-- Выездная церемония -->
-      <a href="gallery-ceremony.html" class="stack-card rise" style="--d: .1s; z-index: 3;">
-        <img class="stack-card__bg" src="./img/IMG_2371.WEBP" alt="Выездная церемония" loading="lazy">
-        <div class="stack-card__box" style="background: var(--sky); color: var(--ink-deep);">
-          <div class="stack-card__content">
-            <h2 class="stack-card__title">Выездная<br><em>церемония</em></h2>
-            <div class="stack-card__meta">
-              <span>Смотреть<br>галерею</span>
-              <span>6 фото</span>
-            </div>
+      <a href="gallery-ceremony.html" class="stack-card__box" style="background: var(--sky); color: var(--ink-deep);">
+        <div class="stack-card__content">
+          <h2 class="stack-card__title">Выездная<br><em>церемония</em></h2>
+          <div class="stack-card__meta">
+            <span>Смотреть<br>галерею</span>
+            <span>6 фото</span>
           </div>
         </div>
       </a>
 
       <!-- Свадьбы -->
-      <a href="gallery-weddings.html" class="stack-card rise" style="--d: .2s; z-index: 2;">
-        <img class="stack-card__bg" src="./img/IMG_2367.WEBP" alt="Свадьбы" loading="lazy">
-        <div class="stack-card__box" style="background: var(--paper); color: var(--ink-deep);">
-          <div class="stack-card__content">
-            <h2 class="stack-card__title">Свадьбы</h2>
-            <div class="stack-card__meta">
-              <span>Смотреть<br>галерею</span>
-              <span>7 фото</span>
-            </div>
+      <a href="gallery-weddings.html" class="stack-card__box" style="background: var(--paper); color: var(--ink-deep);">
+        <div class="stack-card__content">
+          <h2 class="stack-card__title">Свадьбы</h2>
+          <div class="stack-card__meta">
+            <span>Смотреть<br>галерею</span>
+            <span>7 фото</span>
           </div>
         </div>
       </a>
 
       <!-- Банкетная служба -->
-      <a href="gallery-banquet.html" class="stack-card rise" style="--d: .3s; z-index: 1;">
-        <img class="stack-card__bg" src="./img/a981990f-bad3-48b3-a182-7fba0d79b4a6.jpg" alt="Банкетная служба" loading="lazy">
-        <div class="stack-card__box" style="background: #D3CDC6; color: var(--ink-deep);">
-          <div class="stack-card__content">
-            <h2 class="stack-card__title">Банкетная<br><em>служба</em></h2>
-            <div class="stack-card__meta">
-              <span>Смотреть<br>галерею</span>
-              <span>6 фото</span>
-            </div>
+      <a href="gallery-banquet.html" class="stack-card__box" style="background: #D3CDC6; color: var(--ink-deep);">
+        <div class="stack-card__content">
+          <h2 class="stack-card__title">Банкетная<br><em>служба</em></h2>
+          <div class="stack-card__meta">
+            <span>Смотреть<br>галерею</span>
+            <span>6 фото</span>
           </div>
         </div>
       </a>

@@ -350,11 +350,52 @@ body.nav-open .drawer{clip-path:circle(150% at calc(100% - 44px) 34px)}
   margin:18px 0 0;text-align:center;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--ink-soft);
 }
 
+.galleries-single-bg { position: relative; padding: clamp(80px, 12vw, 160px) 0 clamp(60px, 9vw, 120px); overflow: hidden; background: var(--ink-deep); }
+.galleries__bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; }
+.galleries__overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.15); z-index: 1; }
+.galleries__wrap { position: relative; z-index: 2; }
+.galleries-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: clamp(12px, 2vw, 24px);
+  margin-top: clamp(40px, 6vw, 60px);
+}
+@media (max-width: 1024px) { .galleries-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 600px) { .galleries-grid { grid-template-columns: 1fr; gap: 16px; } }
+
+.stack-card__box {
+  position: relative; z-index: 2;
+  width: 100%; height: 100%; min-height: clamp(180px, 20vw, 240px);
+  padding: clamp(24px, 4vw, 40px);
+  border-radius: 2px;
+  text-decoration: none;
+  display: flex; align-items: flex-end;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  transition: transform 0.4s var(--slow), box-shadow 0.4s var(--slow);
+}
+.stack-card__box:hover { transform: translateY(-8px); box-shadow: 0 15px 40px rgba(0,0,0,0.2); }
+
+.stack-card__content {
+  display: flex; flex-direction: column; justify-content: space-between; gap: clamp(30px, 4vw, 50px);
+  width: 100%; height: 100%;
+}
+.stack-card__title {
+  margin: 0; font-family: 'Proletarsk', serif; font-size: clamp(24px, 3.5vw, 36px);
+  font-weight: 400; line-height: 1; text-transform: none;
+}
+.stack-card__title em { font-style: italic; font-weight: 300; display: block; padding-left: .5em; }
+.stack-card__meta {
+  display: flex; width: 100%; justify-content: space-between; align-items: flex-end; gap: 10px; text-align: left;
+  font-family: 'Montserrat', sans-serif; font-size: clamp(9px, 1.2vw, 11px); font-weight: 500;
+  letter-spacing: 0.15em; text-transform: uppercase;
+  opacity: 0.85; line-height: 1.4;
+}
+
 .tally{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(14px,2vw,30px);border-top:1px solid rgba(23,58,103,.16);padding-top:clamp(22px,3vw,42px)}
 .tally__i b{display:block;font-family:'Proletarsk',serif;font-size:clamp(30px,4.4vw,66px);line-height:1;letter-spacing:-.02em}
 .tally__i span{display:block;margin-top:10px;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);line-height:1.5}
 
-/* в•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђ РЎРџР˜РЎРћРљ РЈРЎР›РЈР“ в•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђ */
+/* ══════════ СПИСОК УСЛУГ ══════════ */
 .menu-list{padding:clamp(50px,7vw,110px) 0;border-top:1px solid rgba(23,58,103,.14)}
 .roster li{
   position:relative;display:flex;align-items:baseline;justify-content:space-between;gap:20px;
@@ -379,66 +420,8 @@ body.nav-open .drawer{clip-path:circle(150% at calc(100% - 44px) 34px)}
 .peek.on{opacity:1;transform:translate(-50%,-50%) scale(1)}
 .peek img{width:100%;height:100%;object-fit:cover}
 
-/* в•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђ Р“РћР Р˜Р—РћРќРўРђР›Р¬РќРђРЇ Р“РђР›Р•Р Р•РЇ в•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђ */
+/* ══════════ ГОРИЗОНТАЛЬНАЯ ГАЛЕРЕЯ ══════════ */
 /* ── анонс галереи: один кадр + переход на отдельную страницу ── */
-/* ══════════ ГАЛЕРЕИ (Журнальный Стэк W Yooni) ══════════ */
-.galleries-stack { padding: clamp(80px, 12vw, 150px) 0; background: var(--paper-2); }
-.stack-container {
-  display: flex; flex-direction: column; align-items: center; margin-top: clamp(40px, 6vw, 60px);
-}
-.stack-card {
-  width: 100%; max-width: 1000px;
-  min-height: clamp(300px, 40vw, 500px);
-  padding: 0;
-  margin-bottom: -50px; /* overlapping effect */
-  text-decoration: none;
-  display: flex; align-items: flex-end; justify-content: space-between;
-  box-shadow: 0 -15px 40px rgba(0,0,0,0.12);
-  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-  position: relative;
-  overflow: hidden;
-  border-radius: 4px;
-}
-.stack-card::before {
-  content: ''; position: absolute; inset: 0; background: rgba(0,0,0,0.15); z-index: 1; transition: opacity 0.4s;
-}
-.stack-card:hover { transform: translateY(-15px); }
-.stack-card:hover::before { opacity: 0; }
-
-.stack-card__bg {
-  position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; transition: transform 0.8s var(--slow);
-}
-.stack-card:hover .stack-card__bg { transform: scale(1.03); }
-
-.stack-card__box {
-  position: relative; z-index: 2;
-  width: 100%; max-width: 440px;
-  padding: clamp(30px, 4vw, 50px);
-  margin: clamp(20px, 3vw, 40px);
-  border-radius: 2px;
-}
-
-.stack-card__content {
-  display: flex; flex-direction: column; align-items: flex-start; gap: clamp(30px, 4vw, 50px); width: 100%; position: relative; z-index: 2;
-}
-.stack-card__title {
-  margin: 0; font-family: 'Proletarsk', serif; font-size: clamp(28px, 4vw, 44px);
-  font-weight: 400; line-height: 1; text-transform: none;
-}
-.stack-card__title em { font-style: italic; font-weight: 300; display: block; padding-left: .5em; }
-.stack-card__meta {
-  display: flex; width: 100%; justify-content: space-between; align-items: flex-end; gap: 20px; text-align: left;
-  font-family: 'Montserrat', sans-serif; font-size: clamp(9px, 1.2vw, 11px); font-weight: 500;
-  letter-spacing: 0.15em; text-transform: uppercase;
-  opacity: 0.85; line-height: 1.4;
-}
-
-@media (max-width: 600px) {
-  .stack-card { margin-bottom: -20px; box-shadow: 0 -10px 20px rgba(0,0,0,0.08); min-height: 380px; }
-  .stack-card__box { margin: 15px; padding: 24px; max-width: calc(100% - 30px); }
-  .stack-card__content { gap: 24px; }
-  .stack-card__meta { flex-direction: row; gap: 10px; }
-}
 
 /* ── старая горизонтальная лента (оставлена для других блоков) ── */
 .reel{padding:clamp(56px,8vw,120px) 0 clamp(56px,8vw,110px);background:var(--paper-2)}
