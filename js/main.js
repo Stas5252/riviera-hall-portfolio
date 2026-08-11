@@ -12,7 +12,7 @@ const calm = matchMedia('(prefers-reduced-motion: reduce)').matches;
    Поэтому всё, что зависит от разметки главной, проверяется на существование. */
 
 /* ── занавес ────────────────────────────────────────────── */
-setTimeout(() => document.body.classList.add('ready'), 300);
+setTimeout(() => document.body.classList.add('ready'), 900);
 
 /* ── шапка: прячется вниз, темнеет после героя ──────────── */
 const bar = $('#bar');
