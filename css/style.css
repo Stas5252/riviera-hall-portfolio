@@ -392,12 +392,12 @@ body.nav-open .drawer{clip-path:circle(150% at calc(100% - 44px) 34px)}
 }
 
 @media (max-width: 600px) {
-  .stack-card__box { min-height: auto; padding: 20px 24px; border-radius: 12px; }
-  .stack-card__content { flex-direction: row; align-items: center; justify-content: space-between; gap: 15px; }
-  .stack-card__title { font-size: 22px; }
-  .stack-card__title em { display: inline; padding-left: 6px; }
-  .stack-card__meta { flex-direction: column; width: auto; align-items: flex-end; gap: 4px; text-align: right; }
-  .stack-card__meta span br { display: none; } /* keep text on one line */
+  .stack-card__box { min-height: 130px; padding: 22px; border-radius: 16px; }
+  .stack-card__content { flex-direction: column; align-items: flex-start; justify-content: space-between; gap: 15px; }
+  .stack-card__title { font-size: 24px; }
+  .stack-card__title em { display: block; padding-left: 0.5em; }
+  .stack-card__meta { flex-direction: row; width: 100%; align-items: flex-end; gap: 10px; text-align: left; }
+  .stack-card__meta span br { display: inline; } 
 }
 
 .tally{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(14px,2vw,30px);border-top:1px solid rgba(23,58,103,.16);padding-top:clamp(22px,3vw,42px)}
