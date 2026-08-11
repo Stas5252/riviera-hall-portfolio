@@ -564,45 +564,65 @@ body.nav-open .drawer{clip-path:circle(150% at calc(100% - 44px) 34px)}
 .gifts-note--room .gifts-arrow { margin-bottom: 10px; transform: rotate(10deg); }
 
 @media (max-width: 900px) {
-  .gifts-editorial { min-height: 650px; padding: 20px 0; overflow: visible; }
-  .gifts-editorial__center { margin: auto; overflow: visible; width: 100%; max-width: none; }
-  .gifts-center-title { font-size: clamp(40px, 15vw, 64px); text-align: center; width: 100%; word-break: break-word; line-height: 1; }
+  .gifts-editorial { 
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "cake cake" "title title" "room reels";
+    gap: 15px;
+    padding: 20px 0;
+    min-height: auto;
+  }
+  .gifts-editorial__center { grid-area: title; margin: 10px 0; width: 100%; max-width: none; overflow: visible; box-shadow: none; background: transparent; }
+  .gifts-center-title { font-size: clamp(40px, 15vw, 64px); text-align: center; width: 100%; word-break: break-word; line-height: 1; text-shadow: 0 2px 10px rgba(0,0,0,0.5); }
   
-  .gifts-note { font-size: 22px; max-width: 170px; line-height: 1.2; text-shadow: none; color: #fff; }
-  .gifts-note small { color: rgba(255,255,255,0.7); font-size: 11px; margin-top: 4px; }
-  .gifts-arrow { width: 35px; height: 35px; color: rgba(255,255,255,0.9); filter: none; }
+  .gifts-note { position: static; max-width: none; font-size: 20px; text-align: center; line-height: 1.1; text-shadow: 0 1px 4px rgba(0,0,0,0.5); }
+  .gifts-note small { display: block; font-size: 11px; margin-top: 4px; color: rgba(255,255,255,0.8); }
+  .gifts-arrow { width: 28px; height: 28px; color: rgba(255,255,255,0.9); margin: 0 auto; filter: drop-shadow(0 1px 2px rgba(0,0,0,0.5)); }
   
-  /* Разбрасываем текст ВОКРУГ слова ПОДАРКИ (без наложений) */
-  .gifts-note--cake { top: 3%; left: 5%; text-align: left; }
-  .gifts-note--cake .gifts-arrow { transform: rotate(45deg); margin: 5px 0 0 20px; }
+  .gifts-note--cake { grid-area: cake; padding-left: 10%; text-align: left; }
+  .gifts-note--cake .gifts-arrow { transform: rotate(110deg); margin: 5px 0 -5px 30px; }
   
-  .gifts-note--reels { top: auto; bottom: 22%; right: 5%; text-align: right; }
-  .gifts-note--reels .gifts-arrow { transform: rotate(135deg) scaleY(1); margin: 10px 20px 0 auto; }
+  .gifts-note--reels { grid-area: reels; padding-right: 5%; text-align: right; }
+  .gifts-note--reels .gifts-arrow { transform: rotate(-45deg); margin: -10px 20px 5px auto; }
   
-  .gifts-note--room { top: auto; bottom: 2%; left: 5%; text-align: left; }
-  .gifts-note--room .gifts-arrow { transform: rotate(-45deg); margin: 0 0 10px 20px; }
+  .gifts-note--room { grid-area: room; padding-left: 5%; text-align: left; }
+  .gifts-note--room .gifts-arrow { transform: rotate(-135deg); margin: -10px auto 5px 20px; }
 }
 
 /* ══════════ REVIEWS SLIDER ══════════ */
 .reviews-carousel-wrapper {
-  display: flex;
-  align-items: center;
+  position: relative;
   margin-top: clamp(24px, 4vw, 40px);
 }
 .reviews-arrow {
-  background: none;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  background: var(--ink);
+  color: #fff;
   border: none;
-  color: var(--ink);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
   cursor: pointer;
-  padding: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
-  opacity: 0.5;
-  transition: opacity 0.3s ease;
-  flex-shrink: 0;
+  opacity: 0.9;
+  transition: transform 0.2s, opacity 0.2s;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
-.reviews-arrow:hover { opacity: 1; }
+.reviews-arrow:hover { transform: translateY(-50%) scale(1.05); opacity: 1; }
+.reviews-arrow:active { transform: translateY(-50%) scale(0.95); }
+.reviews-arrow svg { width: 20px; height: 20px; }
+.reviews-arrow--prev { left: -20px; }
+.reviews-arrow--next { right: -20px; }
+@media (max-width: 900px) {
+  .reviews-arrow { width: 38px; height: 38px; opacity: 1; box-shadow: 0 2px 8px rgba(0,0,0,0.2); }
+  .reviews-arrow--prev { left: -10px; }
+  .reviews-arrow--next { right: -10px; }
+}
 
 .reviews-slider {
   display: flex;
