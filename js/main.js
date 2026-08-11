@@ -270,6 +270,14 @@ if ($('.reviews-slider')) {
     loop: true,
     grabCursor: true,
     spaceBetween: 20,
+    slidesPerView: 1,
+    breakpoints: {
+      900: {
+        slidesPerView: 'auto',
+        centeredSlides: true,
+        spaceBetween: 40,
+      }
+    },
     navigation: {
       nextEl: '.reviews-arrow--next',
       prevEl: '.reviews-arrow--prev',

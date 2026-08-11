@@ -616,32 +616,34 @@ body.nav-open .drawer{clip-path:circle(150% at calc(100% - 44px) 34px)}
   border-radius: 24px;
   box-shadow: 0 15px 40px rgba(0,0,0,0.06), 0 4px 12px rgba(0,0,0,0.03);
   color: var(--ink);
-  padding: clamp(40px, 6vw, 80px) clamp(30px, 10vw, 160px);
+  padding: clamp(30px, 5vw, 60px);
   position: relative;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
+  align-items: flex-start;
+  text-align: left;
+  width: 900px;
+  max-width: 100%;
 }
 .review-quote-mark {
   font-family: Georgia, serif;
-  font-size: clamp(80px, 12vw, 120px);
+  font-size: clamp(80px, 15vw, 140px);
   line-height: 0.6;
-  color: var(--ink);
-  opacity: 0.08;
-  margin-bottom: 30px;
+  color: var(--ink-soft);
+  opacity: 0.15;
+  margin-bottom: 20px;
 }
 .review-text {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   flex-grow: 1;
 }
 .review-text p { 
   font-family: 'Vela', sans-serif;
-  font-size: clamp(18px, 3vw, 24px);
+  font-size: clamp(18px, 3vw, 30px);
   font-weight: 300;
-  line-height: 1.5;
+  line-height: 1.4;
   margin: 0; 
 }
 .review-text footer { 
@@ -650,7 +652,7 @@ body.nav-open .drawer{clip-path:circle(150% at calc(100% - 44px) 34px)}
   border-top: none;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   gap: 4px;
 }
 .review-text footer b { font-family: 'Montserrat', sans-serif; font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; margin: 0; }
@@ -763,7 +765,7 @@ body.nav-open .drawer{clip-path:circle(150% at calc(100% - 44px) 34px)}
 
 /* в•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђ РљРђРљ РџР РћР•РҐРђРўР¬ в•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђ */
 .route { padding: clamp(40px, 6vw, 80px) 0; }
-.route__grid { position: relative; display: flex; align-items: center; }
+.route__grid { position: relative; display: flex; align-items: stretch; }
 .route__grid > div:first-child {
   position: relative;
   z-index: 2;
@@ -775,11 +777,14 @@ body.nav-open .drawer{clip-path:circle(150% at calc(100% - 44px) 34px)}
   width: 100%;
   max-width: 440px;
   margin-right: -100px; /* pull map under the card */
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 .route__map {
   width: 100%;
   flex: 1;
-  height: 450px;
+  height: auto;
+  min-height: 450px;
   background: var(--paper-2);
   border-radius: 24px;
   overflow: hidden;
