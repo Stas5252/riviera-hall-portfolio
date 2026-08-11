@@ -115,15 +115,19 @@ const counters = new IntersectionObserver((entries) => {
     const el = e.target;
     const to = +el.dataset.to;
     const suffix = el.dataset.suffix || '';
-    if (calm) { el.textContent = to.toLocaleString('ru-RU') + suffix; return; }
-    const t0 = performance.now(), dur = 1500;
-    const step = (t) => {
-      const k = Math.min(1, (t - t0) / dur);
-      const eased = 1 - Math.pow(1 - k, 3);
-      el.textContent = Math.round(to * eased).toLocaleString('ru-RU') + suffix;
-      if (k < 1) requestAnimationFrame(step);
-    };
-    requestAnimationFrame(step);
+    const delay = +(el.dataset.delay || 0);
+    
+    setTimeout(() => {
+      if (calm) { el.textContent = to.toLocaleString('ru-RU') + suffix; return; }
+      const t0 = performance.now(), dur = 1500;
+      const step = (t) => {
+        const k = Math.min(1, (t - t0) / dur);
+        const eased = 1 - Math.pow(1 - k, 3);
+        el.textContent = Math.round(to * eased).toLocaleString('ru-RU') + suffix;
+        if (k < 1) requestAnimationFrame(step);
+      };
+      requestAnimationFrame(step);
+    }, delay);
   });
 }, { threshold: .6 });
 $$('.num').forEach(el => counters.observe(el));
