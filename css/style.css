@@ -564,19 +564,23 @@ body.nav-open .drawer{clip-path:circle(150% at calc(100% - 44px) 34px)}
 .gifts-note--room .gifts-arrow { margin-bottom: 10px; transform: rotate(10deg); }
 
 @media (max-width: 900px) {
-  .gifts-editorial { min-height: 550px; padding: 20px 0; }
-  .gifts-editorial__center { margin: auto; }
-  .gifts-center-title { font-size: 44px; }
+  .gifts-editorial { min-height: 650px; padding: 20px 0; overflow: visible; }
+  .gifts-editorial__center { margin: auto; overflow: visible; width: 100%; max-width: none; }
+  .gifts-center-title { font-size: clamp(40px, 15vw, 64px); text-align: center; width: 100%; word-break: break-word; line-height: 1; }
   
-  .gifts-note { font-size: 22px; max-width: 160px; line-height: 1.2; text-shadow: none; color: #fff; }
+  .gifts-note { font-size: 22px; max-width: 170px; line-height: 1.2; text-shadow: none; color: #fff; }
   .gifts-note small { color: rgba(255,255,255,0.7); font-size: 11px; margin-top: 4px; }
   .gifts-arrow { width: 35px; height: 35px; color: rgba(255,255,255,0.9); filter: none; }
   
-  /* Вращаем текст вокруг центра на мобильных */
-  .gifts-note--cake { top: 5%; left: 5%; }
-  .gifts-note--reels { top: 40%; right: 5%; bottom: auto; text-align: right; }
-  .gifts-note--reels .gifts-arrow { margin: 10px 0 0 auto; }
-  .gifts-note--room { bottom: 5%; left: 5%; }
+  /* Разбрасываем текст ВОКРУГ слова ПОДАРКИ (без наложений) */
+  .gifts-note--cake { top: 3%; left: 5%; text-align: left; }
+  .gifts-note--cake .gifts-arrow { transform: rotate(45deg); margin: 5px 0 0 20px; }
+  
+  .gifts-note--reels { top: auto; bottom: 22%; right: 5%; text-align: right; }
+  .gifts-note--reels .gifts-arrow { transform: rotate(135deg) scaleY(1); margin: 10px 20px 0 auto; }
+  
+  .gifts-note--room { top: auto; bottom: 2%; left: 5%; text-align: left; }
+  .gifts-note--room .gifts-arrow { transform: rotate(-45deg); margin: 0 0 10px 20px; }
 }
 
 /* ══════════ REVIEWS SLIDER ══════════ */
