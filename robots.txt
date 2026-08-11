@@ -1,14 +1,16 @@
 User-agent: *
 Allow: /
+
+# Рабочие материалы, которые не должны попадать в индекс.
+# На сайте они не используются: логотип и PDF меню перенесены в /img и корень,
+# потому что кириллица с пробелами в URL ломается на части хостингов.
 Disallow: /РИВЬЕРА ХОЛЛ/
 Disallow: /рефы для дизайна сайта/
 Disallow: /20 версия/
 Disallow: /21 версия/
-Disallow: /*?
-Allow: /*.css
-Allow: /*.js
-Allow: /*.webp
-Allow: /*.png
-Allow: /*.jpg
+Disallow: /_архив/
+
+# Строки Disallow: /*? здесь раньше не было смысла: она задевала
+# style.css?v=51 и js/main.js?v=51, без которых робот не отрисует страницу.
 
 Sitemap: https://riviera-hall.ru/sitemap.xml

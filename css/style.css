@@ -12,6 +12,13 @@
 @font-face{font-family:'Vela';src:url('../fonts/velasans-medium.woff2') format('woff2');font-weight:500;font-display:swap}
 @font-face{font-family:'Vela';src:url('../fonts/velasans-semibold.woff2') format('woff2');font-weight:600;font-display:swap}
 @font-face{font-family:'Montserrat';src:url('../fonts/montserrat-variablefont_wght.woff2') format('woff2');font-weight:100 900;font-display:swap}
+/* Caveat — тот же рукописный шрифт, что и был, только локально, а не с
+   fonts.googleapis.com. Начертание не меняется. Урезан до кириллицы, латиницы
+   и цифр: 48 КБ вместо 152 КБ. */
+@font-face{font-family:'Caveat';src:url('../fonts/caveat-ru.woff2') format('woff2');font-weight:400 600;font-display:swap;
+  unicode-range:U+0401,U+0410-044F,U+0451,U+2116}
+@font-face{font-family:'Caveat';src:url('../fonts/caveat-lat.woff2') format('woff2');font-weight:400 600;font-display:swap;
+  unicode-range:U+0020-007E,U+00A0,U+2013-2014,U+2018-201F,U+2026,U+20AC}
 
 :root{
   /* фирменная палитра */
@@ -967,7 +974,7 @@ body.nav-open .drawer{clip-path:circle(150% at calc(100% - 44px) 34px)}
 .form__ok--err .form__ok-title { color:#D85B5B; }
 .form__ok--err .form__ok-mark { color:#D85B5B; }
 
-.form--sent input, .form--sent textarea, .form--sent .btn-gradient, .form--sent .booking-note { display: none; }
+.form--sent input, .form--sent textarea, .form--sent .btn-gradient, .form--sent .booking-note, .form--sent .agree { display: none; }
 
 .end-footer {
   background: var(--ink-deep); color: #fff; padding: clamp(40px, 6vw, 60px) 0;
@@ -1322,6 +1329,22 @@ body.lock{position:fixed;left:0;right:0;width:100%;overflow:hidden}
 .agree__text a{color:var(--sky);border-bottom:1px solid rgba(150,183,218,.5)}
 .agree--err .agree__box{border-color:#E8A0A0;animation:shake .4s}
 .agree--err .agree__text{color:#E8A0A0}
+
+/* Базовый .agree рассчитан на тёмный фон. Форма заявки живёт на белой карточке,
+   поэтому здесь переопределяются только цвета — раскладка та же. */
+.agree--light{position:relative;margin-top:0}
+/* .booking-form input задаёт полям рамку и ширину 100% — до галочки это
+   докатываться не должно */
+.agree--light input{position:absolute;width:1px;height:1px;opacity:0;margin:0;border:none;padding:0}
+.agree--light .agree__box{display:block;border-color:rgba(23,58,103,.35);background:transparent;cursor:pointer}
+.agree--light .agree__box::after{border-color:#fff}
+.agree--light input:checked + .agree__box{background:var(--ink);border-color:var(--ink)}
+.agree--light input:focus-visible + .agree__box{outline:2px solid var(--ink);outline-offset:2px}
+.agree--light .agree__text{color:var(--ink-soft)}
+.agree--light .agree__text label{cursor:pointer}
+.agree--light .agree__text a{color:var(--ink);border-bottom-color:rgba(23,58,103,.4)}
+.agree--light.agree--err .agree__box{border-color:#C0392B}
+.agree--light.agree--err .agree__text{color:#C0392B}
 @keyframes shake{25%{transform:translateX(-4px)}75%{transform:translateX(4px)}}
 
 .send:disabled{opacity:.6;cursor:progress}
@@ -1443,3 +1466,10 @@ body.cookie-up .dock{transform:translateY(125%)}
 }
 .end__foot a { border-bottom: 1px solid rgba(255, 255, 255, 0.25); padding-bottom: 2px; }
 .end__foot a:hover { color: #fff; border-color: #fff; }
+/* Ссылки на документы держим одной группой, иначе space-between растащил бы
+   их по всей ширине и подвал развалился бы на пять колонок. */
+.end__docs { display: flex; flex-wrap: wrap; gap: 10px 22px; }
+@media (max-width: 860px) {
+  .end__foot { justify-content: flex-start; }
+  .end__docs { gap: 8px 18px; }
+}

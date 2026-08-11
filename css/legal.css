@@ -27,6 +27,36 @@
 .legal__req span{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft)}
 .legal__req b{font-weight:400;font-size:15px;color:var(--ink);text-align:right}
 
+/* таблица состава cookie */
+.legal__table{
+  /* table-layout:fixed — иначе длинные имена cookie растягивают колонку
+     и таблица вылезает за ширину текстовой колонки .legal */
+  width:100%;table-layout:fixed;border-collapse:collapse;margin:0 0 1.4em;
+  font-size:clamp(13px,3.2vw,14px);line-height:1.5;
+}
+.legal__table col.c-name{width:26%}
+.legal__table col.c-purpose{width:38%}
+.legal__table col.c-term{width:22%}
+.legal__table col.c-consent{width:14%}
+.legal__table th,.legal__table td{
+  padding:10px 12px;text-align:left;vertical-align:top;
+  border-bottom:1px solid rgba(23,58,103,.12);
+}
+.legal__table th{
+  font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-weight:500;
+  color:var(--ink);border-bottom-color:rgba(23,58,103,.28);
+}
+.legal__table td{color:var(--ink-soft);overflow-wrap:anywhere}
+.legal__table td:first-child{color:var(--ink)}
+@media (max-width:620px){
+  .legal__table,.legal__table tbody,.legal__table tr,.legal__table td{display:block;width:100%}
+  .legal__table thead{display:none}
+  .legal__table tr{padding:12px 0;border-bottom:1px solid rgba(23,58,103,.12)}
+  .legal__table td{border:none;padding:2px 0}
+  .legal__table td:first-child{font-weight:500;white-space:normal}
+  .legal__table td:not(:first-child)::before{content:attr(data-th) ': ';color:var(--ink);opacity:.7}
+}
+
 /* незаполненные места видно сразу */
 [data-fill]{
   background:rgba(232,160,160,.22);box-shadow:0 0 0 2px rgba(232,160,160,.22);

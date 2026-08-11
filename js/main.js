@@ -240,8 +240,11 @@ if (form) {
       form.reset();
     } catch (err) {
       // молча терять заявку нельзя — показываем телефон
-      sayErr('Позвоните, пожалуйста, напрямую: ' +
-             (document.querySelector('.mgr__tel')?.textContent.trim() || ''));
+      // Селектор .mgr__tel остался от прежней вёрстки, такого узла на странице нет —
+      // сообщение выходило оборванным: «Позвоните, пожалуйста, напрямую:» и пустота.
+      const tel = document.querySelector('.booking-contacts b, .drawer__tel')?.textContent.trim();
+      sayErr(tel ? 'Позвоните, пожалуйста, напрямую: ' + tel
+                 : 'Попробуйте, пожалуйста, позвонить нам напрямую.');
       console.error('Форма не отправлена:', err);
     } finally {
       btn.disabled = false;
@@ -259,15 +262,33 @@ $$('a[href^="#"]').forEach(a => {
     if (!t) return;
     e.preventDefault();
     // отступ на высоту закреплённой шапки, чтобы заголовок не уезжал под неё
-    const off = id === '#top' ? 0 : bar.offsetHeight + 10;
+    // (на страницах галерей и документов шапки нет — отсюда проверка)
+    const off = id === '#top' ? 0 : (bar ? bar.offsetHeight + 10 : 10);
     scrollTo({ top: Math.max(0, t.getBoundingClientRect().top + scrollY - off), behavior: calm ? 'auto' : 'smooth' });
   });
 });
 
 /* ── карусель отзывов (Swiper) ──────────────────────────── */
-if ($('.reviews-slider')) {
+/* Библиотека могла не догрузиться — без этой проверки падает весь скрипт,
+   а вместе с ним меню, форма и счётчики. */
+if ($('.reviews-slider') && window.Swiper) {
   new Swiper('.reviews-slider', {
-    loop: true,
+    /* speed:0 при включённом «уменьшить движение» — не косметика, а починка.
+       В CSS для таких пользователей стоит transition-duration:.01ms !important,
+       оно перебивает 300ms, которые Swiper ставит инлайном. Событие transitionend
+       при такой длительности не приходит, Swiper остаётся с animating:true
+       и после первого клика стрелки перестают листать совсем.
+       С нулевой скоростью он переключает слайд сразу, без ожидания анимации. */
+    speed: calm ? 0 : 300,
+    /* Было loop:true — и карусель не листалась вообще: стрелки нажимаются,
+       activeIndex не меняется, слайд отщёлкивает назад. Режим loop в Swiper 11
+       не уживается с этой связкой: slidesPerView:'auto' + centeredSlides +
+       overflow:visible у контейнера (он нужен, чтобы на десктопе выглядывали
+       соседние карточки). Проверено перебором: с loop:false листается,
+       с loop:true — нет, при прочих равных.
+       rewind даёт то же ощущение бесконечности: после последнего отзыва
+       переходим к первому, только без плавной склейки. */
+    rewind: true,
     grabCursor: true,
     spaceBetween: 20,
     slidesPerView: 1,

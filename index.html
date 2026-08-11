@@ -26,11 +26,12 @@
 <link rel="preload" as="image" href="./img/hero-1280w.webp" media="(min-width:801px)">
 <link rel="preload" as="font" type="font/woff2" href="fonts/proletarsk.woff2" crossorigin>
 <link rel="preload" as="font" type="font/woff2" href="fonts/velasans-light.woff2" crossorigin>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-<link rel="stylesheet" href="css/style.css?v=50">
+<!-- Шрифт Caveat и Swiper лежат локально. Выглядят точно так же, но раньше
+     грузились с fonts.googleapis.com и cdn.jsdelivr.net — то есть IP каждого
+     посетителя уходил за границу. По 152-ФЗ это трансграничная передача,
+     а в политике сайта написано, что её нет. -->
+<link rel="stylesheet" href="vendor/swiper-bundle.min.css?v=57">
+<link rel="stylesheet" href="css/style.css?v=57">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -55,7 +56,7 @@
   "openingHoursSpecification": {
     "@type": "OpeningHoursSpecification",
     "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
-    "opens": "10:00", "closes": "22:00"
+    "opens": "09:00", "closes": "23:00"
   },
   "amenityFeature": [
     { "@type": "LocationFeatureSpecification", "name": "Кондиционирование", "value": true },
@@ -107,13 +108,16 @@
 <!-- ══════════ ШАПКА ══════════ -->
 <header class="bar" id="bar">
   <a href="#top" class="bar__logo" aria-label="Ривьера Холл">
-    <img width="1405" height="407" src="./РИВЬЕРА ХОЛЛ/логотип/лого бел.png" alt="Ривьера Холл">
+    <img width="1405" height="407" src="./img/logo-white.png" alt="Ривьера Холл">
   </a>
+  <!-- Названия пунктов не менялись. Раньше «Шатёр» и «Церемония» вели на #tent
+       и #ceremony — этих секций на странице нет, клик просто ничего не делал.
+       Теперь ведут на страницы галерей с теми же названиями. -->
   <nav class="bar__nav">
     <a href="#about">Площадка</a>
-    <a href="#tent">Шатёр</a>
+    <a href="gallery-tent.html">Шатёр</a>
     <a href="#terms">Условия</a>
-    <a href="#ceremony">Церемония</a>
+    <a href="gallery-ceremony.html">Церемония</a>
     <a href="#reviews">Отзывы</a>
   </nav>
   <a href="#book" class="bar__cta"><span>Написать управляющему</span></a>
@@ -125,11 +129,11 @@
   <nav>
     <a href="#about">01 &nbsp;Площадка</a>
     <a href="#services">02 &nbsp;Что проводим</a>
-    <a href="#tent">03 &nbsp;Шатёр</a>
+    <a href="gallery-tent.html">03 &nbsp;Шатёр</a>
     <a href="#terms">04 &nbsp;Условия и подарки</a>
-    <a href="#ceremony">05 &nbsp;Выездная церемония</a>
-    <a href="#weddings">06 &nbsp;Свадьбы</a>
-    <a href="#banquet">07 &nbsp;Банкетная служба</a>
+    <a href="gallery-ceremony.html">05 &nbsp;Выездная церемония</a>
+    <a href="gallery-weddings.html">06 &nbsp;Свадьбы</a>
+    <a href="gallery-banquet.html">07 &nbsp;Банкетная служба</a>
     <a href="#film">08 &nbsp;Видео</a>
     <a href="#route">09 &nbsp;Как проехать</a>
     <a href="#reviews">10 &nbsp;Отзывы</a>
@@ -366,7 +370,9 @@
           <li><b>Регистрация</b><span>выездная, на территории</span></li>
           <li><b>Расположение</b><span>набережная, центр города</span></li>
         </ul>
-        <a href="./РИВЬЕРА ХОЛЛ/МЕНЮ РИВЬЕРА.pdf" target="_blank" rel="noopener" class="link link--light">Посмотреть меню</a>
+        <!-- PDF переехал в корень: папка «РИВЬЕРА ХОЛЛ» закрыта в robots.txt,
+             плюс кириллица с пробелами в адресе ломается на части хостингов -->
+        <a href="./menu-riviera-hall.pdf" target="_blank" rel="noopener" class="link link--light">Посмотреть меню</a>
       </div>
 
       <div class="terms__right">
@@ -399,7 +405,7 @@
 
 <!-- ══════════ 04 · ГАЛЕРЕИ (Единый фон) ══════════ -->
 <section class="galleries-single-bg" id="galleries">
-  <img class="galleries__bg" src="./img/316f5564-c141-4ade-85d8-216bf23bffc5.jpg" alt="Галереи" loading="lazy">
+  <img class="galleries__bg" width="1280" height="934" src="./img/316f5564-c141-4ade-85d8-216bf23bffc5.jpg" alt="Галереи" loading="lazy" decoding="async">
   <div class="galleries__overlay"></div>
   <div class="wrap galleries__wrap">
     <span class="mark mark--light">04 — галереи</span>
@@ -486,7 +492,10 @@
         <a href="#book" class="link">Записаться на просмотр</a>
       </div>
       <div class="route__map rise" style="--d:.16s">
-        <iframe src="https://yandex.ru/map-widget/v1/?ll=37.620393%2C55.753960&z=13" width="100%" height="100%" frameborder="0" allowfullscreen="true" style="position:relative;"></iframe>
+        <!-- ЗАПОЛНИТЬ: координаты площадки. Яндекс.Карты → правый клик по точке →
+             «Что здесь?». В ссылке порядок ДОЛГОТА,ШИРОТА.
+             Сейчас стоит центр Москвы — заглушка. -->
+        <iframe src="https://yandex.ru/map-widget/v1/?ll=37.620393%2C55.753960&z=13" width="100%" height="100%" frameborder="0" allowfullscreen="true" loading="lazy" title="Ривьера Холл на карте" style="position:relative;"></iframe>
       </div>
     </div>
   </div>
@@ -560,23 +569,25 @@
 <!-- ══════════ 11 · ЗАЯВКА И КОНТАКТЫ ══════════ -->
 <section class="booking-section" id="book">
   <div class="booking-bg" aria-hidden="true">
-    <img src="./img/a981990f-bad3-48b3-a182-7fba0d79b4a6.jpg" alt="">
+    <img width="800" height="533" src="./img/a981990f-bad3-48b3-a182-7fba0d79b4a6.jpg" alt="" loading="lazy" decoding="async">
   </div>
   <div class="wrap">
     <div class="booking-header">
-      <img src="./РИВЬЕРА ХОЛЛ/логотип/лого бел.png" alt="Ривьера Холл" class="booking-logo">
+      <img width="1405" height="407" src="./img/logo-white.png" alt="Ривьера Холл" class="booking-logo">
     </div>
     
     <div class="booking-card rise">
       <div class="mgr-profile">
-        <img src="./img/manager_maria.png" alt="Мария" class="mgr-avatar">
+        <!-- то же фото, тот же кадр — просто WebP вместо PNG: 92 КБ вместо 592 КБ -->
+        <img width="1024" height="1024" src="./img/manager_maria.webp" alt="Мария" class="mgr-avatar">
         <div class="mgr-info">
           <b>Банкетный менеджер<br>Мария</b>
-          <span>Ко мне обратились 1844 пользователей</span>
         </div>
       </div>
       
-      <form class="booking-form" id="form" novalidate>
+      <!-- ЗАПОЛНИТЬ: в data-endpoint — адрес обработчика заявок на вашем хостинге.
+           Пока пусто, форма не отправляет данные и честно показывает ошибку. -->
+      <form class="booking-form" id="form" data-endpoint="" novalidate>
         <input type="text" name="name" required placeholder="Имя">
         <input type="tel" name="tel" required placeholder="Телефон">
         
@@ -584,7 +595,21 @@
           <label for="company">Не заполняйте это поле</label>
           <input type="text" id="company" name="company" tabindex="-1" autocomplete="off">
         </div>
-        
+
+        <!-- Согласие на обработку персональных данных (ст. 9 152-ФЗ).
+             Атрибута checked здесь быть не должно: согласие даётся действием
+             пользователя, заранее проставленная галочка не считается согласием.
+             Ссылка вынесена за пределы <label>, иначе клик по ней заодно
+             переключал бы галочку. -->
+        <div class="agree agree--light">
+          <input type="checkbox" id="agree" name="agree" required>
+          <label class="agree__box" for="agree" aria-hidden="true"></label>
+          <span class="agree__text"><label for="agree">Я даю</label>
+          <a href="consent.html" target="_blank" rel="noopener">согласие на обработку персональных данных</a>
+          <label for="agree">и принимаю</label>
+          <a href="privacy.html" target="_blank" rel="noopener">Политику</a>.</span>
+        </div>
+
         <button type="submit" class="btn-gradient send">Написать управляющему &rarr;</button>
         <span class="booking-note">Вы получите расчет в течение суток</span>
         
@@ -609,11 +634,14 @@
 <footer class="end-footer">
   <div class="wrap">
     <div class="end__legal">
+      <!-- Состав сведений об исполнителе — ст. 9 и 10 Закона «О защите прав потребителей»:
+           наименование, реквизиты, адрес и режим работы. Режим взят с фирменной таблички. -->
       <p class="end__req">
         <b data-fill="ИП">ИП Фамилия Имя Отчество</b>
         <span>ИНН <b data-fill="ИНН">000000000000</b></span>
         <span>ОГРНИП <b data-fill="ОГРНИП">000000000000000</b></span>
         <span data-fill="адрес">индекс, регион, город, улица, дом</span>
+        <span>Ежедневно 9:00–23:00, без перерывов и выходных</span>
       </p>
       <p class="end__disclaimer">Информация на сайте носит справочный характер и не является
       публичной офертой. Актуальную стоимость уточняйте у менеджера.</p>
@@ -621,7 +649,12 @@
 
     <div class="end__foot">
       <span>© 2026 Ривьера Холл</span>
-      <a href="privacy.html">Обработка персональных данных</a>
+      <span class="end__docs">
+        <a href="privacy.html">Обработка персональных данных</a>
+        <a href="consent.html">Согласие на обработку</a>
+        <a href="terms.html">Пользовательское соглашение</a>
+        <a href="offer.html">Условия бронирования</a>
+      </span>
       <a href="#top">Наверх ↑</a>
     </div>
   </div>
@@ -632,8 +665,8 @@
 <!-- ══════════ МОБИЛЬНАЯ ПАНЕЛЬ ДЕЙСТВИЙ ══════════ -->
 
 
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-<script src="js/main.js?v=22"></script>
-<script src="js/consent.js?v=20"></script>
+<script src="vendor/swiper-bundle.min.js?v=57"></script>
+<script src="js/main.js?v=57"></script>
+<script src="js/consent.js?v=57"></script>
 </body>
 </html>
