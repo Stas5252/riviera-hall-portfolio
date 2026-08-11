@@ -42,7 +42,7 @@ body{
   font-size:clamp(15px,1.02vw,17px);line-height:1.62;
   overflow-x:clip;-webkit-font-smoothing:antialiased;
 }
-/* РїРѕР»РѕС‚РЅРѕ, РєРѕС‚РѕСЂРѕРµ РЅР°РµР·Р¶Р°РµС‚ РЅР° Р·Р°РєСЂРµРїР»С‘РЅРЅС‹Р№ РїРµСЂРІС‹Р№ СЌРєСЂР°РЅ */
+/* полотно, которое наезжает на закреплённый первый экран */
 .flow{position:relative;z-index:2;background:var(--paper)}
 img{display:block;max-width:100%}
 a{color:inherit;text-decoration:none}
@@ -52,11 +52,12 @@ p{margin:0 0 1.05em}
 button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
 ::selection{background:var(--ink);color:var(--paper)}
 
+
 .wrap{width:var(--rail);margin-inline:auto}
 /* чтобы переход по якорю не заводил заголовок под закреплённую шапку */
 [id]{scroll-margin-top:86px}
 
-/* в”Ђв”Ђ РѕР±С‰РёРµ С‚РёРїРѕРіСЂР°С„РёС‡РµСЃРєРёРµ РїСЂРёРјРёС‚РёРІС‹ в”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђ */
+/* ─── общие типографические примитивы ─────────────────── */
 .mark{
   display:inline-block;font-size:11px;font-weight:500;letter-spacing:.24em;
   text-transform:uppercase;color:var(--ink-soft);margin-bottom:clamp(18px,2.6vw,34px);
@@ -84,6 +85,17 @@ button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
 .link:hover{gap:1em}
 .link:hover::after{transform:translateX(4px)}
 .link--light{color:var(--white)}
+
+.cta-btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:.7em;
+  margin-top:1.6em;padding:clamp(14px,2vw,18px) clamp(28px,4vw,48px);
+  font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
+  color:#fff;background:var(--sea);border:none;border-radius:4px;cursor:pointer;
+  transition:background .35s var(--ease),transform .35s var(--ease),box-shadow .35s var(--ease);
+}
+.cta-btn::after{content:'\2192';transition:transform .4s var(--ease)}
+.cta-btn:hover{background:var(--ink);transform:translateY(-2px);box-shadow:0 6px 24px rgba(23,58,103,.25)}
+.cta-btn:hover::after{transform:translateX(4px)}
 
 /* РїРѕСЏРІР»РµРЅРёРµ РїСЂРё СЃРєСЂРѕР»Р»Рµ */
 .rise{opacity:0;transform:translateY(34px);transition:opacity 1s var(--slow) var(--d,0s),transform 1.1s var(--slow) var(--d,0s)}
@@ -696,7 +708,7 @@ body.nav-open .burger i:last-child{transform:translateY(-5px) rotate(-45deg)}
 body.lock{position:fixed;left:0;right:0;width:100%;overflow:hidden}
 
 /* ── брендинг + арки ── */
-.brand-arches{padding:clamp(60px,9vw,100px) var(--gap);text-align:center}
+.brand-arches{padding:clamp(60px,9vw,100px) var(--gap);text-align:center;background-color:var(--sky);border-radius:0}
 .brand-arches__title{
   margin:0;font-family:'Montserrat',sans-serif;font-weight:700;line-height:1;
   font-size:clamp(2rem,8vw,8rem);text-transform:uppercase;letter-spacing:-.02em;color:var(--ink);
@@ -851,21 +863,20 @@ body.lock{position:fixed;left:0;right:0;width:100%;overflow:hidden}
   .hero__facts b{font-size:clamp(19px,5.4vw,26px)}
   .hero__facts span{margin-top:2px;font-size:10px;letter-spacing:.1em}
 
-  .ribbon__run span{font-size:clamp(17px,5vw,24px)}
+  .ribbon{display:none}
 
   /* о площадке */
   .about{padding:clamp(52px,12vw,80px) 0 clamp(40px,9vw,70px)}
   .about__grid{gap:20px}
   .about__body p{max-width:none}
-  .brand-arches{padding-inline:0}
-  .brand-arches__title,.brand-arches__sub{padding-inline:var(--gap)}
+  .brand-arches{padding-inline:var(--gap)}
+  .brand-arches__title,.brand-arches__sub{padding-inline:0}
   .arches-grid-3{
-    grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:min(72%,280px);
-    gap:14px;overflow-x:auto;scroll-snap-type:x proximity;
-    padding-inline:var(--gap);scrollbar-width:none;-ms-overflow-style:none;
+    grid-template-columns:repeat(3,1fr);
+    gap:clamp(8px,2vw,14px);
   }
-  .arches-grid-3::-webkit-scrollbar{display:none}
-  .brand-arch-item{scroll-snap-align:center}
+  .brand-arch-img{aspect-ratio:3/5}
+  .brand-arch-item figcaption{font-size:9px;letter-spacing:.12em;margin-top:8px}
 
   .tally{gap:20px 16px;padding-top:22px}
   .tally__i b{font-size:clamp(26px,8vw,40px)}
