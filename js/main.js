@@ -187,23 +187,7 @@ $$('[data-rail]').forEach(rail => {
 });
 
 /* ── отзывы ─────────────────────────────────────────────── */
-const says = $$('#saysTrack .say');
-const sayPics = $$('.says__pics img');
-if (says.length) {
-  let n = 0;
-  const count = $('#sayCount');
-  const show = (k) => {
-    says[n].classList.remove('is-on');
-    sayPics[n]?.classList.remove('is-on');
-    n = (k + says.length) % says.length;
-    says[n].classList.add('is-on');
-    sayPics[n]?.classList.add('is-on');
-    count.textContent = `${String(n + 1).padStart(2, '0')} / ${String(says.length).padStart(2, '0')}`;
-  };
-  $('#sayNext').addEventListener('click', () => show(n + 1));
-  $('#sayPrev').addEventListener('click', () => show(n - 1));
-  if (!calm) setInterval(() => show(n + 1), 8000);
-}
+/* Отзывы теперь используют CSS 3D-анимацию при наведении (без JS) */
 
 /* ── форма ──────────────────────────────────────────────── */
 const form = $('#form');
