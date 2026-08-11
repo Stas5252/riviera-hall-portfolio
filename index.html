@@ -10,7 +10,11 @@
 <link rel="icon" href="favicon/favicon.ico" sizes="32x32">
 <link rel="icon" type="image/png" href="favicon/icon-192.png" sizes="192x192">
 <link rel="apple-touch-icon" href="favicon/apple-touch-icon.png">
-<link rel="stylesheet" href="css/style.css?v=12">
+<link rel="preload" as="image" href="./фото для сайта/hero-800w.webp" media="(max-width:800px)">
+<link rel="preload" as="image" href="./фото для сайта/hero-1280w.webp" media="(min-width:801px)">
+<link rel="preload" as="font" type="font/woff2" href="fonts/proletarsk.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="fonts/velasans-light.woff2" crossorigin>
+<link rel="stylesheet" href="css/style.css?v=13">
 </head>
 <body>
 
@@ -36,7 +40,7 @@
 <!-- ══════════ ШАПКА ══════════ -->
 <header class="bar" id="bar">
   <a href="#top" class="bar__logo" aria-label="Ривьера Холл">
-    <img src="./РИВЬЕРА ХОЛЛ/логотип/лого бел.png" alt="Ривьера Холл">
+    <img width="1405" height="407" src="./РИВЬЕРА ХОЛЛ/логотип/лого бел.png" alt="Ривьера Холл">
   </a>
   <nav class="bar__nav">
     <a href="#about">Площадка</a>
@@ -75,7 +79,7 @@
 <section class="hero" id="top">
   <div class="hero__frame" id="heroFrame">
     <div class="hero__stack" id="heroStack">
-      <figure class="shot is-on" style="background-image:url('./фото для сайта/abb86d6c-c770-48a6-8192-bbcc9fd5fdc3.png')"></figure>
+      <figure class="shot shot--hero is-on"></figure>
     </div>
     <div class="hero__veil"></div>
   </div>
@@ -154,19 +158,19 @@
     <div class="arches-grid-3">
       <figure class="brand-arch-item">
         <div class="brand-arch-img">
-          <img loading="lazy" decoding="async" src="./фото для сайта/IMG_2362.WEBP" alt="Купол шатра изнутри">
+          <img width="1280" height="960" loading="lazy" decoding="async" src="./фото для сайта/IMG_2362.WEBP" alt="Купол шатра изнутри">
         </div>
         <figcaption>Белоснежный купол</figcaption>
       </figure>
       <figure class="brand-arch-item">
         <div class="brand-arch-img">
-          <img loading="lazy" decoding="async" src="./фото для сайта/IMG_2356.WEBP" alt="Шатёр вечером у воды">
+          <img width="1280" height="960" loading="lazy" decoding="async" src="./фото для сайта/IMG_2356.WEBP" alt="Шатёр вечером у воды">
         </div>
         <figcaption>События у воды</figcaption>
       </figure>
       <figure class="brand-arch-item">
         <div class="brand-arch-img">
-          <img loading="lazy" decoding="async" src="./фото для сайта/IMG_2371.WEBP" alt="Выездная церемония под арками">
+          <img width="1200" height="896" loading="lazy" decoding="async" src="./фото для сайта/IMG_2371.WEBP" alt="Выездная церемония под арками">
         </div>
         <figcaption>Выездные церемонии</figcaption>
       </figure>
@@ -192,7 +196,10 @@
     <div class="diagram-wrapper">
 
       <!-- Central Image -->
-      <img loading="lazy" decoding="async" class="diagram-wrapper__pic" src="./фото для сайта/59205cea-e367-42c5-9684-c1b99ae5a88e.png" alt="Шатёр Ривьера Холл">
+      <img loading="lazy" decoding="async" class="diagram-wrapper__pic" width="1100" height="1100"
+           src="./фото для сайта/tent-diagram-1100w.webp"
+           srcset="./фото для сайта/tent-diagram-640w.webp 640w, ./фото для сайта/tent-diagram-1100w.webp 1100w"
+           sizes="(max-width:900px) 50vw, 800px" alt="Шатёр Ривьера Холл">
 
       <!-- SVG Lines Background -->
       <svg class="diagram-wrapper__lines" width="100%" height="100%" viewBox="0 0 1200 700" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
@@ -268,7 +275,7 @@
   <div class="wrap">
     <div class="album__card rise">
       <a href="gallery-tent.html" class="album__cover" aria-label="Открыть галерею, 8 фото">
-        <img loading="lazy" decoding="async" src="./фото для сайта/IMG_2354.WEBP" alt="Шатёр вечером">
+        <img width="1280" height="934" loading="lazy" decoding="async" src="./фото для сайта/IMG_2354.WEBP" alt="Шатёр вечером">
       </a>
       <div class="album__overlay">
         <span class="mark">03 — галерея</span>
@@ -318,7 +325,7 @@
   <div class="wrap">
     <div class="album__card rise">
       <a href="gallery-ceremony.html" class="album__cover" aria-label="Открыть галерею, 6 фото">
-        <img loading="lazy" decoding="async" src="./фото для сайта/IMG_2371.WEBP" alt="Выездная церемония">
+        <img width="1200" height="896" loading="lazy" decoding="async" src="./фото для сайта/IMG_2371.WEBP" alt="Выездная церемония">
       </a>
       <div class="album__overlay">
         <span class="mark">05 — галерея</span>
@@ -335,7 +342,7 @@
   <div class="wrap">
     <div class="album__card rise">
       <a href="gallery-weddings.html" class="album__cover" aria-label="Открыть галерею, 7 фото">
-        <img loading="lazy" decoding="async" src="./фото для сайта/IMG_2367.WEBP" alt="Первый танец">
+        <img width="1280" height="956" loading="lazy" decoding="async" src="./фото для сайта/IMG_2367.WEBP" alt="Первый танец">
       </a>
       <div class="album__overlay">
         <span class="mark">06 — галерея</span>
@@ -352,7 +359,7 @@
   <div class="wrap">
     <div class="album__card rise">
       <a href="gallery-banquet.html" class="album__cover" aria-label="Открыть галерею, 6 фото">
-        <img loading="lazy" decoding="async" src="./фото для сайта/a981990f-bad3-48b3-a182-7fba0d79b4a6.jpg" alt="Сервировка стола">
+        <img width="800" height="533" loading="lazy" decoding="async" src="./фото для сайта/a981990f-bad3-48b3-a182-7fba0d79b4a6.jpg" alt="Сервировка стола">
       </a>
       <div class="album__overlay">
         <span class="mark">07 — галерея</span>
@@ -378,7 +385,7 @@
   </div>
   <div class="film__box rise">
     <!-- Замените блок ниже на <video src="..."> или <iframe> с роликом площадки -->
-    <img loading="lazy" decoding="async" src="./фото для сайта/IMG_2356.WEBP" alt="Видео о площадке Ривьера Холл">
+    <img width="1280" height="960" loading="lazy" decoding="async" src="./фото для сайта/IMG_2356.WEBP" alt="Видео о площадке Ривьера Холл">
     <button class="film__play" aria-label="Смотреть видео">
       <svg viewBox="0 0 44 44" aria-hidden="true"><polygon points="17,13 17,31 33,22" fill="currentColor"/></svg>
     </button>
@@ -419,9 +426,9 @@
     <div class="says__box">
       <div class="says__pics" aria-hidden="true">
         <div class="card__arch">
-          <img loading="lazy" decoding="async" class="is-on" src="./фото для сайта/IMG_2367.WEBP" alt="">
-          <img loading="lazy" decoding="async" src="./фото для сайта/IMG_2370.WEBP" alt="">
-          <img loading="lazy" decoding="async" src="./фото для сайта/IMG_2365.WEBP" alt="">
+          <img width="1280" height="956" loading="lazy" decoding="async" class="is-on" src="./фото для сайта/IMG_2367.WEBP" alt="">
+          <img width="1280" height="956" loading="lazy" decoding="async" src="./фото для сайта/IMG_2370.WEBP" alt="">
+          <img width="1280" height="956" loading="lazy" decoding="async" src="./фото для сайта/IMG_2365.WEBP" alt="">
         </div>
       </div>
       <div class="says__quote">
@@ -454,7 +461,7 @@
   <div class="wrap">
     <div class="end__grid">
       <div class="end__left">
-        <img src="./РИВЬЕРА ХОЛЛ/логотип/лого бел.png" alt="Ривьера Холл" class="end__logo">
+        <img width="1405" height="407" src="./РИВЬЕРА ХОЛЛ/логотип/лого бел.png" alt="Ривьера Холл" class="end__logo">
         <span class="mark mark--light">11 — заявка</span>
         <h2 class="statement statement--light rise">Забронируем<br><em>вашу дату</em></h2>
         <p class="end__note rise" style="--d:.1s">Ответим в течение рабочего дня, подберём свободные даты и рассчитаем смету под ваш формат.</p>

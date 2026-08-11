@@ -5,13 +5,13 @@
    РЁСЂРёС„С‚С‹ вЂ” С„РёСЂРјРµРЅРЅС‹Рµ: Proletarsk (РґРёСЃРїР»РµР№) + Vela Sans (С‚РµРєСЃС‚).
    в•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђ */
 
-@font-face{font-family:'Proletarsk';src:url('../fonts/PROLETARSK.TTF') format('truetype');font-weight:400;font-display:swap}
-@font-face{font-family:'Vela';src:url('../fonts/VELASANS-EXTRALIGHT.TTF') format('truetype');font-weight:200;font-display:swap}
-@font-face{font-family:'Vela';src:url('../fonts/VELASANS-LIGHT.TTF') format('truetype');font-weight:300;font-display:swap}
-@font-face{font-family:'Vela';src:url('../fonts/VELASANS-REGULAR.TTF') format('truetype');font-weight:400;font-display:swap}
-@font-face{font-family:'Vela';src:url('../fonts/VELASANS-MEDIUM.TTF') format('truetype');font-weight:500;font-display:swap}
-@font-face{font-family:'Vela';src:url('../fonts/VELASANS-SEMIBOLD.TTF') format('truetype');font-weight:600;font-display:swap}
-@font-face{font-family:'Montserrat';src:url('../fonts/MONTSERRAT-VARIABLEFONT_WGHT.TTF') format('truetype');font-weight:100 900;font-display:swap}
+@font-face{font-family:'Proletarsk';src:url('../fonts/proletarsk.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'Vela';src:url('../fonts/velasans-extralight.woff2') format('woff2');font-weight:200;font-display:swap}
+@font-face{font-family:'Vela';src:url('../fonts/velasans-light.woff2') format('woff2');font-weight:300;font-display:swap}
+@font-face{font-family:'Vela';src:url('../fonts/velasans-regular.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'Vela';src:url('../fonts/velasans-medium.woff2') format('woff2');font-weight:500;font-display:swap}
+@font-face{font-family:'Vela';src:url('../fonts/velasans-semibold.woff2') format('woff2');font-weight:600;font-display:swap}
+@font-face{font-family:'Montserrat';src:url('../fonts/montserrat-variablefont_wght.woff2') format('woff2');font-weight:100 900;font-display:swap}
 
 :root{
   /* С„РёСЂРјРµРЅРЅР°СЏ РїР°Р»РёС‚СЂР° */
@@ -168,6 +168,10 @@ body.nav-open .drawer{clip-path:circle(150% at calc(100% - 44px) 34px)}
   transition:opacity 1.8s var(--ease);
 }
 .shot.is-on{opacity:1;animation:drift 12s linear forwards}
+/* первый экран: телефон качает 100 КБ вместо 2,5 МБ */
+.shot--hero{background-image:url('../фото для сайта/hero-800w.webp')}
+@media (min-width:801px){.shot--hero{background-image:url('../фото для сайта/hero-1280w.webp')}}
+@media (min-width:1441px){.shot--hero{background-image:url('../фото для сайта/hero-1920w.webp')}}
 @keyframes drift{from{transform:scale(1.06)}to{transform:scale(1.15)}}
 .hero__veil{
   position:absolute;inset:0;
