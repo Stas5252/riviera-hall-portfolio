@@ -264,4 +264,17 @@ $$('a[href^="#"]').forEach(a => {
   });
 });
 
+/* ── карусель отзывов ───────────────────────────────────── */
+const reviewSlider = $('.reviews-slider');
+const btnPrev = $('.reviews-arrow--prev');
+const btnNext = $('.reviews-arrow--next');
+if (reviewSlider && btnPrev && btnNext) {
+  btnPrev.addEventListener('click', () => {
+    reviewSlider.scrollBy({ left: -reviewSlider.clientWidth, behavior: 'smooth' });
+  });
+  btnNext.addEventListener('click', () => {
+    reviewSlider.scrollBy({ left: reviewSlider.clientWidth, behavior: 'smooth' });
+  });
+}
+
 })();

@@ -29,7 +29,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=28">
+<link rel="stylesheet" href="css/style.css?v=29">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -371,8 +371,8 @@
       <div class="terms__right">
         <div class="gifts-editorial rise">
           <!-- Central Image -->
-          <div class="gifts-editorial__center">
-            <img src="./img/editorial_wedding_gifts.png" alt="Подарки от Ривьера Холл" loading="lazy">
+          <div class="gifts-editorial__center gifts-editorial__center--text">
+            <h3 class="gifts-center-title">Подарки</h3>
           </div>
           
           <!-- Notes around the image -->
@@ -509,43 +509,53 @@
   <div class="wrap">
     <span class="mark">10 — отзывы</span>
     
-    <div class="reviews-grid">
-      <div class="review-card">
-        <div class="review-text">
-          <p>Шатёр сам по себе красивый — декором ничего не пришлось дотягивать. Церемония под арками стала лучшим решением дня.</p>
-          <footer><b>Анна и Максим</b><span>Свадьба, май 2026</span></footer>
+    <div class="reviews-carousel-wrapper" style="position: relative;">
+      <button class="reviews-arrow reviews-arrow--prev" aria-label="Предыдущий отзыв">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+      </button>
+      
+      <div class="reviews-slider">
+        <div class="review-card">
+          <div class="review-text">
+            <p>Шатёр сам по себе красивый — декором ничего не пришлось дотягивать. Церемония под арками стала лучшим решением дня.</p>
+            <footer><b>Анна и Максим</b><span>Свадьба, май 2026</span></footer>
+          </div>
+        </div>
+        <div class="review-card">
+          <div class="review-text">
+            <p>Юбилей компании на 180 человек. Кондиционеры спасли в жару, кухня — отдельный комплимент. Организация без единой шероховатости.</p>
+            <footer><b>Екатерина С.</b><span>Корпоратив, июль 2026</span></footer>
+          </div>
+        </div>
+        <div class="review-card">
+          <div class="review-text">
+            <p>Набережная, зелень, белый купол — картинка, ради которой стоит ехать. А свой алкоголь заметно сэкономил бюджет вечера.</p>
+            <footer><b>Дарья и Кирилл</b><span>Свадьба, август 2026</span></footer>
+          </div>
+        </div>
+        <div class="review-card">
+          <div class="review-text">
+            <p>Отмечали годик сыну. Пространства хватило и для аниматоров, и для огромной фотозоны. Очень светлый и уютный зал.</p>
+            <footer><b>Анна и Сергей</b><span>Детский праздник, июнь 2026</span></footer>
+          </div>
+        </div>
+        <div class="review-card">
+          <div class="review-text">
+            <p>Великолепная локация для нашей свадьбы. Фуршет, выездная регистрация и банкет — все прошло идеально, как в сказке!</p>
+            <footer><b>Елена</b><span>Свадьба, сентябрь 2026</span></footer>
+          </div>
+        </div>
+        <div class="review-card">
+          <div class="review-text">
+            <p>Проводили встречу закрытого бизнес-клуба. Отличная акустика, вкусный фуршет и высокий уровень приватности. Вернемся снова.</p>
+            <footer><b>Александр</b><span>Бизнес-ужин, октябрь 2026</span></footer>
+          </div>
         </div>
       </div>
-      <div class="review-card">
-        <div class="review-text">
-          <p>Юбилей компании на 180 человек. Кондиционеры спасли в жару, кухня — отдельный комплимент. Организация без единой шероховатости.</p>
-          <footer><b>Екатерина С.</b><span>Корпоратив, июль 2026</span></footer>
-        </div>
-      </div>
-      <div class="review-card">
-        <div class="review-text">
-          <p>Набережная, зелень, белый купол — картинка, ради которой стоит ехать. А свой алкоголь заметно сэкономил бюджет вечера.</p>
-          <footer><b>Дарья и Кирилл</b><span>Свадьба, август 2026</span></footer>
-        </div>
-      </div>
-      <div class="review-card">
-        <div class="review-text">
-          <p>Отмечали годик сыну. Пространства хватило и для аниматоров, и для огромной фотозоны. Очень светлый и уютный зал.</p>
-          <footer><b>Анна и Сергей</b><span>Детский праздник, июнь 2026</span></footer>
-        </div>
-      </div>
-      <div class="review-card">
-        <div class="review-text">
-          <p>Великолепная локация для нашей свадьбы. Фуршет, выездная регистрация и банкет — все прошло идеально, как в сказке!</p>
-          <footer><b>Елена</b><span>Свадьба, сентябрь 2026</span></footer>
-        </div>
-      </div>
-      <div class="review-card">
-        <div class="review-text">
-          <p>Проводили встречу закрытого бизнес-клуба. Отличная акустика, вкусный фуршет и высокий уровень приватности. Вернемся снова.</p>
-          <footer><b>Александр</b><span>Бизнес-ужин, октябрь 2026</span></footer>
-        </div>
-      </div>
+      
+      <button class="reviews-arrow reviews-arrow--next" aria-label="Следующий отзыв">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+      </button>
     </div>
   </div>
 </section>
@@ -625,7 +635,7 @@
 <!-- ══════════ МОБИЛЬНАЯ ПАНЕЛЬ ДЕЙСТВИЙ ══════════ -->
 
 
-<script src="js/main.js?v=19"></script>
-<script src="js/consent.js?v=19"></script>
+<script src="js/main.js?v=20"></script>
+<script src="js/consent.js?v=20"></script>
 </body>
 </html>

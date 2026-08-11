@@ -494,6 +494,22 @@ body.nav-open .drawer{clip-path:circle(150% at calc(100% - 44px) 34px)}
   border-radius: 4px;
   overflow: hidden;
 }
+.gifts-editorial__center--text {
+  box-shadow: none;
+  background: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.gifts-center-title {
+  font-family: 'Proletarsk', serif;
+  font-size: clamp(40px, 8vw, 80px);
+  color: #fff;
+  text-transform: uppercase;
+  margin: 0;
+  letter-spacing: 0.05em;
+  text-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
 .gifts-editorial__center img {
   width: 100%;
   height: auto;
@@ -558,23 +574,43 @@ body.nav-open .drawer{clip-path:circle(150% at calc(100% - 44px) 34px)}
 }
 
 /* ══════════ REVIEWS SLIDER ══════════ */
+.reviews-carousel-wrapper {
+  display: flex;
+  align-items: center;
+  margin-top: clamp(24px, 4vw, 40px);
+}
+.reviews-arrow {
+  background: none;
+  border: none;
+  color: var(--ink);
+  cursor: pointer;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.5;
+  transition: opacity 0.3s ease;
+  flex-shrink: 0;
+}
+.reviews-arrow:hover { opacity: 1; }
+
 .reviews-slider {
   display: flex;
-  gap: 16px;
+  flex: 1;
+  gap: 20px;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   padding-bottom: 20px;
-  margin-top: clamp(24px, 4vw, 40px);
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
 }
 .reviews-slider::-webkit-scrollbar { display: none; }
 
 .review-card {
-  flex: 0 0 clamp(260px, 80vw, 340px);
+  flex: 0 0 100%;
   scroll-snap-align: start;
   border-radius: 8px;
-  padding: clamp(24px, 3.5vw, 32px);
+  padding: clamp(24px, 3.5vw, 40px);
   background: var(--paper-2);
   color: var(--ink);
   position: relative;
