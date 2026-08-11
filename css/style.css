@@ -757,18 +757,55 @@ body.nav-open .drawer{clip-path:circle(150% at calc(100% - 44px) 34px)}
 }
 
 /* в•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђ РљРђРљ РџР РћР•РҐРђРўР¬ в•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђ */
-.route{padding:clamp(66px,9vw,140px) 0}
-.route__grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(30px,4.6vw,80px);align-items:center}
-.route__list{margin-top:clamp(20px,2.6vw,36px);border-top:1px solid rgba(23,58,103,.16)}
-.route__list li{display:flex;justify-content:space-between;gap:24px;padding:15px 0;border-bottom:1px solid rgba(23,58,103,.13);font-size:14px}
-.route__list b{font-weight:500}
-.route__list span{text-align:right;color:var(--ink-soft)}
-.route__list small{display:block;font-size:11px;letter-spacing:.1em;text-transform:uppercase;opacity:.55;margin-top:3px}
-.route__map{aspect-ratio:16/11;background:var(--paper-2);overflow:hidden;border-radius:3px}
-.route__map iframe{width:100%;height:100%;border:0;display:block}
-.route__stub{height:100%;display:grid;place-content:center;justify-items:center;gap:12px;color:var(--ink-soft)}
-.route__stub svg{width:38px;height:38px}
-.route__stub p{margin:0;font-size:11px;letter-spacing:.22em;text-transform:uppercase}
+.route { padding: clamp(40px, 6vw, 80px) 0; }
+.route__grid { position: relative; display: flex; align-items: center; }
+.route__grid > div:first-child {
+  position: absolute;
+  left: 0;
+  z-index: 2;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  padding: clamp(24px, 4vw, 40px);
+  border-radius: 20px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+  width: 100%;
+  max-width: 440px;
+}
+.route__map {
+  width: 100%;
+  max-width: 85%;
+  height: 450px;
+  background: var(--paper-2);
+  border-radius: 24px;
+  overflow: hidden;
+  margin-left: auto;
+}
+.route__map iframe { width: 100%; height: 100%; border: 0; display: block; }
+.route__stub { height: 100%; display: grid; place-content: center; justify-items: center; gap: 12px; color: var(--ink-soft); }
+.route__stub svg { width: 38px; height: 38px; }
+.route__stub p { margin: 0; font-size: 11px; letter-spacing: .22em; text-transform: uppercase; }
+
+.route__list { margin-top: 24px; margin-bottom: 24px; border-top: 1px solid rgba(0,0,0,0.05); }
+.route__list li { display: flex; flex-direction: column; gap: 4px; padding: 14px 0; border-bottom: 1px solid rgba(0,0,0,0.05); font-size: 14px; line-height: 1.4; }
+.route__list b { font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 11px; letter-spacing: 0.05em; text-transform: uppercase; color: var(--ink); }
+.route__list span { text-align: left; color: var(--ink); opacity: 0.8; }
+.route__list small { display: block; font-size: 11px; opacity: 0.6; margin-top: 2px; }
+
+@media (max-width: 900px) {
+  .route__grid { flex-direction: column; align-items: stretch; }
+  .route__grid > div:first-child {
+    position: relative;
+    max-width: none;
+    margin-bottom: -30px;
+    padding: 30px 20px;
+  }
+  .route__map {
+    max-width: 100%;
+    height: 350px;
+    border-radius: 20px;
+    margin-left: 0;
+  }
+}
 
 /* ══════════ 10 · ОТЗЫВЫ И ДЕТАЛИ (3x3 Flip Grid) ══════════ */
 .mood-reviews { background: var(--paper-2); padding: clamp(60px, 9vw, 120px) 0; }
@@ -1173,10 +1210,7 @@ body.lock{position:fixed;left:0;right:0;width:100%;overflow:hidden}
   .film__tag{bottom:12px;width:calc(100% - 32px);text-align:center;font-size:10px;letter-spacing:.14em}
 
   /* как проехать */
-  .route{padding:clamp(50px,11vw,90px) 0}
-  .route__list li{flex-direction:column;gap:3px;padding:13px 0}
-  .route__list span{text-align:left}
-  .route__map{aspect-ratio:4/3}
+  /* как проехать -> перенесено в основной блок через media query */
 
   /* заявка */
   .end{padding-top:clamp(50px,11vw,90px)}
