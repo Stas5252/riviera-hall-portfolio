@@ -8,6 +8,9 @@ const $  = (s, r = document) => r.querySelector(s);
 const $$ = (s, r = document) => [...r.querySelectorAll(s)];
 const calm = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+/* Скрипт подключается и к страницам без шапки и меню — там этих узлов нет.
+   Поэтому всё, что зависит от разметки главной, проверяется на существование. */
+
 /* ── занавес ────────────────────────────────────────────── */
 addEventListener('load', () => setTimeout(() => document.body.classList.add('ready'), 900));
 setTimeout(() => document.body.classList.add('ready'), 3200); // страховка
@@ -16,6 +19,7 @@ setTimeout(() => document.body.classList.add('ready'), 3200); // страхов�
 const bar = $('#bar');
 let lastY = 0;
 const onBar = () => {
+  if (!bar) return;
   const y = scrollY;
   bar.classList.toggle('solid', y > innerHeight * .45);
   bar.classList.toggle('tuck', y > lastY && y > innerHeight * .75 && !document.body.classList.contains('nav-open'));
@@ -37,13 +41,15 @@ const setNav = (open) => {
     body.style.top = '';
     scrollTo({ top: lockY, behavior: 'instant' });
   }
-  burger.setAttribute('aria-expanded', open ? 'true' : 'false');
-  if (drawer) drawer.setAttribute('aria-hidden', open ? 'false' : 'true');
+  burger?.setAttribute('aria-expanded', open ? 'true' : 'false');
+  drawer?.setAttribute('aria-hidden', open ? 'false' : 'true');
 };
-setNav(false);
-burger.addEventListener('click', () => setNav(!document.body.classList.contains('nav-open')));
-$$('#drawer a').forEach(a => a.addEventListener('click', () => setNav(false)));
-addEventListener('keydown', (e) => { if (e.key === 'Escape') setNav(false); });
+if (burger) {
+  setNav(false);
+  burger.addEventListener('click', () => setNav(!document.body.classList.contains('nav-open')));
+  $$('#drawer a').forEach(a => a.addEventListener('click', () => setNav(false)));
+  addEventListener('keydown', (e) => { if (e.key === 'Escape') setNav(false); });
+}
 
 /* ── смена кадров в героe ───────────────────────────────── */
 const shots = $$('#heroStack .shot');
@@ -196,40 +202,6 @@ if (says.length) {
   if (!calm) setInterval(() => show(n + 1), 8000);
 }
 
-/* ── cookie: аналитика только после явного согласия ─────── */
-const METRIKA_ID = '';                 // ← ID счётчика Яндекс.Метрики, пока пусто
-const COOKIE_KEY = 'rh-cookie';
-
-const loadMetrika = () => {
-  if (!METRIKA_ID || window.ym) return;
-  (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-   m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0];
-   k.async=1;k.src=r;a.parentNode.insertBefore(k,a)})
-   (window,document,'script','https://mc.yandex.ru/metrika/tag.js','ym');
-  ym(METRIKA_ID, 'init', { webvisor: true, clickmap: true, accurateTrackBounce: true, trackLinks: true });
-};
-
-const cookieBox = $('#cookie');
-if (cookieBox) {
-  const saved = localStorage.getItem(COOKIE_KEY);
-  if (saved === 'yes') loadMetrika();
-  else if (saved !== 'no') {
-    cookieBox.hidden = false;
-    requestAnimationFrame(() => cookieBox.classList.add('on'));
-  }
-  const decide = (answer) => {
-    localStorage.setItem(COOKIE_KEY, answer);
-    cookieBox.classList.remove('on');
-    setTimeout(() => { cookieBox.hidden = true; }, calm ? 0 : 400);
-    if (answer === 'yes') loadMetrika();
-  };
-  $('#cookieYes').addEventListener('click', () => decide('yes'));
-  $('#cookieNo').addEventListener('click', () => decide('no'));
-}
-
-/* цель для Метрики — вызывается после успешной отправки заявки */
-const reachGoal = (goal) => { if (window.ym && METRIKA_ID) ym(METRIKA_ID, 'reachGoal', goal); };
-
 /* ── форма ──────────────────────────────────────────────── */
 const form = $('#form');
 if (form) {
@@ -286,7 +258,7 @@ if (form) {
       if (!res.ok) throw new Error('HTTP ' + res.status);
 
       sayOk();
-      reachGoal('form_sent');
+      window.rhGoal?.('form_sent');
       form.reset();
     } catch (err) {
       // молча терять заявку нельзя — показываем телефон

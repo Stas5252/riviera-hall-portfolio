@@ -169,9 +169,9 @@ body.nav-open .drawer{clip-path:circle(150% at calc(100% - 44px) 34px)}
 }
 .shot.is-on{opacity:1;animation:drift 12s linear forwards}
 /* первый экран: телефон качает 100 КБ вместо 2,5 МБ */
-.shot--hero{background-image:url('../фото для сайта/hero-800w.webp')}
-@media (min-width:801px){.shot--hero{background-image:url('../фото для сайта/hero-1280w.webp')}}
-@media (min-width:1441px){.shot--hero{background-image:url('../фото для сайта/hero-1920w.webp')}}
+.shot--hero{background-image:url('../img/hero-800w.webp')}
+@media (min-width:801px){.shot--hero{background-image:url('../img/hero-1280w.webp')}}
+@media (min-width:1441px){.shot--hero{background-image:url('../img/hero-1920w.webp')}}
 @keyframes drift{from{transform:scale(1.06)}to{transform:scale(1.15)}}
 .hero__veil{
   position:absolute;inset:0;
