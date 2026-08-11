@@ -1212,3 +1212,25 @@ body.cookie-up .dock{transform:translateY(125%)}
 
 /* ловушка для ботов: человек её не видит и не наводит табом */
 .trap{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+
+/* ══════════ ВЕРНУЛ СЛУЧАЙНО УДАЛЕННЫЕ СТИЛИ ФУТЕРА ══════════ */
+.btn-gradient.send {
+  position: relative; overflow: hidden; margin-top: clamp(20px, 2.6vw, 34px);
+  display: inline-flex; align-items: center; justify-content: center; gap: 14px;
+  padding: 19px 34px; border-radius: 100px; background: var(--sky); color: #fff;
+  font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 500;
+  border: none; cursor: pointer; transition: background 0.4s;
+}
+.btn-gradient.send:hover { background: var(--ink); }
+
+.end__legal { margin-top: clamp(34px, 5vw, 60px); padding-top: clamp(20px, 2.6vw, 30px); border-top: 1px solid rgba(255, 255, 255, 0.15); }
+.end__req { display: flex; flex-wrap: wrap; gap: 6px 22px; margin: 0 0 10px; font-size: 12px; line-height: 1.6; color: rgba(255, 255, 255, 0.62); }
+.end__req b { font-weight: 400; color: rgba(255, 255, 255, 0.82); }
+.end__disclaimer { margin: 0; font-size: 11px; line-height: 1.6; color: rgba(255, 255, 255, 0.4); max-width: 64ch; }
+.end__foot {
+  margin-top: clamp(46px, 6vw, 90px); padding-top: 22px; border-top: 1px solid rgba(255, 255, 255, 0.15);
+  display: flex; flex-wrap: wrap; gap: 16px; justify-content: space-between;
+  font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255, 255, 255, 0.5);
+}
+.end__foot a { border-bottom: 1px solid rgba(255, 255, 255, 0.25); padding-bottom: 2px; }
+.end__foot a:hover { color: #fff; border-color: #fff; }
