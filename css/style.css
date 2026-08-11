@@ -607,20 +607,11 @@ body.nav-open .drawer{clip-path:circle(150% at calc(100% - 44px) 34px)}
   margin-top: clamp(40px, 6vw, 60px);
 }
 .reviews-slider {
-  display: flex;
-  gap: 20px;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  padding: 15px 0 30px 0; /* space for shadows vertically */
-  margin: 0; 
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: none;
+  overflow: visible !important; /* to show card shadows */
+  padding-bottom: 40px; /* space for bottom shadow */
 }
-.reviews-slider::-webkit-scrollbar { display: none; }
 
 .review-card {
-  flex: 0 0 100%;
-  scroll-snap-align: center;
   background: #fff;
   border-radius: 24px;
   box-shadow: 0 15px 40px rgba(0,0,0,0.06), 0 4px 12px rgba(0,0,0,0.03);

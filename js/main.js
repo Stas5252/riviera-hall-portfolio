@@ -264,16 +264,16 @@ $$('a[href^="#"]').forEach(a => {
   });
 });
 
-/* ── карусель отзывов ───────────────────────────────────── */
-const reviewSlider = $('.reviews-slider');
-const btnPrev = $('.reviews-arrow--prev');
-const btnNext = $('.reviews-arrow--next');
-if (reviewSlider && btnPrev && btnNext) {
-  btnPrev.addEventListener('click', () => {
-    reviewSlider.scrollBy({ left: -reviewSlider.clientWidth, behavior: 'smooth' });
-  });
-  btnNext.addEventListener('click', () => {
-    reviewSlider.scrollBy({ left: reviewSlider.clientWidth, behavior: 'smooth' });
+/* ── карусель отзывов (Swiper) ──────────────────────────── */
+if ($('.reviews-slider')) {
+  new Swiper('.reviews-slider', {
+    loop: true,
+    grabCursor: true,
+    spaceBetween: 20,
+    navigation: {
+      nextEl: '.reviews-arrow--next',
+      prevEl: '.reviews-arrow--prev',
+    },
   });
 }
 
