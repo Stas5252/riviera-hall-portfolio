@@ -65,17 +65,11 @@ if (shots.length > 1 && !calm) {
 const heroType  = $('.hero__lower');
 const portalImg = $('#portalImg');
 const portalBox = portalImg && portalImg.parentElement;
-const dock      = $('#dock');
+
 const bookBox   = $('#book');
 
 const onScroll = () => {
   onBar();
-
-  // мобильная панель действий: после первого экрана и до формы заявки
-  if (dock) {
-    const formNear = bookBox && bookBox.getBoundingClientRect().top < innerHeight * .75;
-    document.body.classList.toggle('dock-on', scrollY > innerHeight * .85 && !formNear);
-  }
 
   // 0 → 1 по мере ухода первого экрана: текст мягко уходит вглубь
   if (heroType) {
@@ -117,7 +111,6 @@ const counters = new IntersectionObserver((entries) => {
     const delay = +(el.dataset.delay || 0);
     
     setTimeout(() => {
-      if (calm) { el.textContent = to.toLocaleString('ru-RU') + suffix; return; }
       const t0 = performance.now(), dur = 1500;
       const step = (t) => {
         const k = Math.min(1, (t - t0) / dur);
@@ -128,7 +121,7 @@ const counters = new IntersectionObserver((entries) => {
       requestAnimationFrame(step);
     }, delay);
   });
-}, { threshold: .6 });
+}, { threshold: .25 });
 $$('.num').forEach(el => counters.observe(el));
 
 /* ── медальон с фото у списка услуг ─────────────────────── */
@@ -186,8 +179,6 @@ $$('[data-rail]').forEach(rail => {
   rail.addEventListener('pointercancel', up);
 });
 
-/* ── отзывы ─────────────────────────────────────────────── */
-/* Отзывы теперь используют CSS 3D-анимацию при наведении (без JS) */
 
 /* ── форма ──────────────────────────────────────────────── */
 const form = $('#form');
