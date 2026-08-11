@@ -26,7 +26,7 @@
 <link rel="preload" as="image" href="./фото для сайта/hero-1280w.webp" media="(min-width:801px)">
 <link rel="preload" as="font" type="font/woff2" href="fonts/proletarsk.woff2" crossorigin>
 <link rel="preload" as="font" type="font/woff2" href="fonts/velasans-light.woff2" crossorigin>
-<link rel="stylesheet" href="css/style.css?v=14">
+<link rel="stylesheet" href="css/style.css?v=15">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -520,10 +520,10 @@
         <img width="1405" height="407" src="./РИВЬЕРА ХОЛЛ/логотип/лого бел.png" alt="Ривьера Холл" class="end__logo">
         <span class="mark mark--light">11 — заявка</span>
         <h2 class="statement statement--light rise">Забронируем<br><em>вашу дату</em></h2>
-        <p class="end__note rise" style="--d:.1s">Ответим в течение рабочего дня, подберём свободные даты и рассчитаем смету под ваш формат.</p>
+        <p class="end__note rise" style="--d:.1s">Оставьте имя и телефон — управляющий перезвонит в течение рабочего дня, ответит на вопросы, подберёт свободные даты и рассчитает смету под ваш формат.</p>
 
         <div class="mgr rise" style="--d:.16s">
-          <span class="mgr__role">Менеджер площадки</span>
+          <span class="mgr__role">Управляющий площадкой</span>
           <span class="mgr__name">Имя Фамилия</span>
           <a href="tel:+70000000000" class="mgr__tel">+7 (000) 000-00-00</a>
           <div class="mgr__links">
@@ -535,18 +535,18 @@
       </div>
 
       <form class="form rise" style="--d:.12s" id="form" novalidate>
-        <div class="field"><input type="text" name="name" required placeholder=" "><label>Ваше имя</label></div>
-        <div class="field"><input type="tel" name="tel" required placeholder=" "><label>Телефон</label></div>
-        <div class="field"><input type="text" name="date" placeholder=" "><label>Желаемая дата</label></div>
-        <div class="field"><input type="text" name="kind" placeholder=" "><label>Формат события</label></div>
-        <div class="field"><input type="text" name="guests" placeholder=" "><label>Количество гостей</label></div>
+        <div class="field"><input type="text" name="name" required placeholder=" "
+             autocomplete="name" maxlength="60"><label>Ваше имя</label></div>
+        <div class="field"><input type="tel" name="tel" required placeholder=" "
+             autocomplete="tel" inputmode="tel" maxlength="20"><label>Телефон</label></div>
         <label class="agree">
           <input type="checkbox" name="agree" id="agree" required>
           <span class="agree__box" aria-hidden="true"></span>
-          <span class="agree__text">Я даю согласие на обработку моих персональных данных
-          в соответствии с <a href="privacy.html" target="_blank" rel="noopener">Политикой обработки персональных данных</a></span>
+          <span class="agree__text">Даю согласие <b data-fill="ИП">ИП Фамилия И. О.</b> на обработку
+          моих имени и номера телефона с целью связаться со мной по этому обращению —
+          на условиях <a href="privacy.html" target="_blank" rel="noopener">Политики обработки персональных данных</a></span>
         </label>
-        <button type="submit" class="send"><span>Оставить заявку</span>
+        <button type="submit" class="send"><span>Связаться с управляющим</span>
           <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12h15m-6-7 7 7-7 7" stroke="currentColor" stroke-width="1.4"/></svg>
         </button>
         <p class="form__ok" id="formOk">Заявка отправлена. Мы свяжемся с вами в ближайшее время.</p>
@@ -594,6 +594,6 @@
   </div>
 </div>
 
-<script src="js/main.js?v=14"></script>
+<script src="js/main.js?v=15"></script>
 </body>
 </html>
