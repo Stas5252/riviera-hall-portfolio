@@ -509,6 +509,8 @@ body.nav-open .drawer{clip-path:circle(150% at calc(100% - 44px) 34px)}
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: visible;
+  max-width: none;
 }
 .gifts-center-title {
   font-family: 'Proletarsk', serif;
