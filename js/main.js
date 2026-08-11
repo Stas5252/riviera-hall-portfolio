@@ -295,7 +295,6 @@ if ($('.reviews-slider') && window.Swiper) {
     breakpoints: {
       900: {
         slidesPerView: 'auto',
-        centeredSlides: true,
         spaceBetween: 40,
       }
     },
