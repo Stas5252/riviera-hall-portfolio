@@ -557,15 +557,30 @@ body.nav-open .drawer{clip-path:circle(150% at calc(100% - 44px) 34px)}
   .gifts-note--reels .gifts-arrow { margin: 10px auto 0; }
 }
 
-.pin-card {
-  break-inside: avoid;
-  margin-bottom: clamp(16px, 2vw, 24px);
-  border-radius: 4px;
+/* ══════════ REVIEWS SLIDER ══════════ */
+.reviews-slider {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 20px;
+  margin-top: clamp(30px, 5vw, 50px);
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+.reviews-slider::-webkit-scrollbar { display: none; }
+
+.review-card {
+  flex: 0 0 clamp(280px, 80vw, 400px);
+  scroll-snap-align: start;
+  border-radius: 12px;
   padding: clamp(30px, 4vw, 50px);
   position: relative;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
-.pin-card::before {
+.review-card::before {
   content: "“";
   font-family: 'Proletarsk', serif;
   font-size: 140px;
@@ -577,15 +592,18 @@ body.nav-open .drawer{clip-path:circle(150% at calc(100% - 44px) 34px)}
   color: inherit;
   pointer-events: none;
 }
-.pin-text {
+.review-text {
   padding: 0;
   position: relative; z-index: 1;
   text-align: left;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
 }
-.pin-text p { font-size: clamp(17px, 2vw, 24px); line-height: 1.4; font-style: italic; font-weight: 300; margin: 0; opacity: 0.95; }
-.pin-text footer { margin-top: 30px; }
-.pin-text footer b { display: block; font-family: 'Montserrat', sans-serif; font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 6px; }
-.pin-text footer span { display: block; font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; opacity: 0.6; }
+.review-text p { font-size: clamp(17px, 2vw, 24px); line-height: 1.4; font-style: italic; font-weight: 300; margin: 0 0 auto; opacity: 0.95; }
+.review-text footer { margin-top: 30px; }
+.review-text footer b { display: block; font-family: 'Montserrat', sans-serif; font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 6px; }
+.review-text footer span { display: block; font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; opacity: 0.6; }
 
 /* в•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђ Р¦Р•Р Р•РњРћРќРРЇ в•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђ */
 .cer{padding:clamp(66px,9vw,150px) 0 clamp(50px,7vw,110px)}
