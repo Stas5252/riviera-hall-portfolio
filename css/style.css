@@ -619,6 +619,7 @@ body.nav-open .drawer{clip-path:circle(150% at calc(100% - 44px) 34px)}
 }
 
 .review-card {
+  height: 100%;
   background: #fff;
   border-radius: 24px;
   box-shadow: 0 15px 40px rgba(0,0,0,0.06), 0 4px 12px rgba(0,0,0,0.03);
@@ -650,12 +651,30 @@ body.nav-open .drawer{clip-path:circle(150% at calc(100% - 44px) 34px)}
   align-items: flex-start;
   flex-grow: 1;
 }
+.review-card.is-expanded .review-text p {
+  -webkit-line-clamp: unset;
+}
+.review-more {
+  background: none; border: none; padding: 0; margin-top: 12px;
+  color: var(--ink-soft); font-family: 'Montserrat', sans-serif;
+  font-size: 11px; font-weight: 600; text-transform: uppercase;
+  letter-spacing: 0.1em; cursor: pointer; transition: color 0.3s;
+  display: inline-block; text-align: left;
+}
+.review-more:hover {
+  color: var(--ink);
+}
 .review-text p { 
   font-family: 'Vela', sans-serif;
   font-size: clamp(16px, 2.5vw, 18px);
   font-weight: 300;
   line-height: 1.5;
   margin: 0; 
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  transition: all 0.3s ease;
 }
 .review-text footer { 
   margin-top: 24px; 
@@ -672,9 +691,9 @@ body.nav-open .drawer{clip-path:circle(150% at calc(100% - 44px) 34px)}
 /* Навигация */
 .reviews-nav {
   display: flex;
-  gap: 12px;
-  justify-content: flex-end;
-  margin-top: 10px;
+  gap: 16px;
+  justify-content: center;
+  margin-top: 40px;
   padding: 0 10px;
 }
 .reviews-arrow {
@@ -682,18 +701,21 @@ body.nav-open .drawer{clip-path:circle(150% at calc(100% - 44px) 34px)}
   height: 54px;
   border-radius: 50%;
   border: 1px solid rgba(0,0,0,0.15);
-  background: transparent;
+  background: #fff;
   color: var(--ink);
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
 .reviews-arrow:hover {
   background: var(--ink);
   color: #fff;
   transform: scale(1.05);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
 }
 .reviews-arrow:active { transform: scale(0.95); }
 .reviews-arrow svg { width: 22px; height: 22px; }
@@ -1008,7 +1030,8 @@ body.nav-open .burger i:first-child{transform:translateY(5px) rotate(45deg)}
 body.nav-open .burger i:last-child{transform:translateY(-5px) rotate(-45deg)}
 
 /* ── выдвижное меню: прокручиваемое, с контактом внизу ── */
-.drawer{display:block}
+.drawer{display:block; clip-path:none; opacity:0; visibility:hidden; transition:opacity 0.4s, visibility 0.4s;}
+body.nav-open .drawer{opacity:1; visibility:visible; clip-path:none;}
 .drawer__inner{
   min-height:100svh;max-height:100svh;overflow-y:auto;overscroll-behavior:contain;
   display:flex;flex-direction:column;justify-content:center;gap:clamp(24px,6vh,54px);
@@ -1129,8 +1152,8 @@ body.lock{position:fixed;left:0;right:0;width:100%;overflow:hidden}
   .diag-line{stroke-width:2.4px}
   /* ВАЖНО: 44% и центрирование зашиты в геометрию волн (см. генератор в истории),
      менять размер шатра — только вместе с пересчётом путей */
-  .diagram-wrapper__pic{width:44%}
-
+  .diagram-wrapper__pic{width:38%}
+  
   .service-text{width:22%;font-size:clamp(8.5px,2.4vw,11px);letter-spacing:.02em;line-height:1.32}
   .service-text--l{left:8px}
   .service-text--r{right:8px}
@@ -1144,8 +1167,8 @@ body.lock{position:fixed;left:0;right:0;width:100%;overflow:hidden}
   .dock{display:flex;justify-content:center}
   .dock__book{max-width:480px}
   body.dock-on .dock{transform:none}
-  body.nav-open .dock{transform:translateY(125%)}
-  /* панель прячется у формы заявки, поэтому запас снизу небольшой */
+  /* removed dock hiding on nav-open so burger is accessible to close */
+  /* padding end */
   .end{padding-bottom:calc(28px + env(safe-area-inset-bottom))}
 
   .hero{padding-top:calc(78px + env(safe-area-inset-top))}
@@ -1476,4 +1499,18 @@ body.cookie-up .dock{transform:translateY(125%)}
 @media (max-width: 860px) {
   .end__foot { justify-content: flex-start; }
   .end__docs { gap: 8px 18px; }
+}
+
+/* Floating Action Buttons */
+.fab-container { position: fixed; bottom: 24px; right: 24px; display: flex; flex-direction: column; gap: 12px; z-index: 90; }
+.fab-btn, .fab-btn:hover { width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff !important; box-shadow: 0 4px 12px rgba(0,0,0,0.15); transition: transform 0.3s ease, box-shadow 0.3s ease; text-decoration: none; }
+.fab-btn svg { width: 24px; height: 24px; }
+.fab-btn:hover { transform: scale(1.1); box-shadow: 0 6px 16px rgba(0,0,0,0.2); }
+.fab-tg { background: #229ED9; }
+.fab-phone { background: #34C759; }
+
+@media (max-width: 900px) {
+  .fab-container { bottom: calc(84px + env(safe-area-inset-bottom)); right: 16px; gap: 10px; }
+  .fab-btn, .fab-btn:hover { width: 44px; height: 44px; }
+  .fab-btn svg { width: 20px; height: 20px; }
 }

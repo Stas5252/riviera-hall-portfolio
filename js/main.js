@@ -224,14 +224,23 @@ if (form) {
     payload.ts = new Date().toISOString();
 
     try {
-      // ENDPOINT задаётся после выбора хостинга: почта, Telegram-бот или CRM
-      const ENDPOINT = form.dataset.endpoint || '';
-      if (!ENDPOINT) throw new Error('endpoint not configured');
+      // Настройки Telegram бота
+      const BOT_TOKEN = '8912358158:AAEozHFiU52HPeXyNQYYDeXnZIRwgcb-fKw';
+      // ВНИМАНИЕ: Сюда нужно вписать ваш Chat ID!
+      const CHAT_ID = '761405171';
+
+      if (!CHAT_ID) throw new Error('CHAT_ID не указан');
+
+      const text = `Новая заявка с сайта Ривьера Холл:\n\nИмя: ${payload.name}\nТелефон: ${payload.tel}`;
+      const ENDPOINT = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`;
 
       const res = await fetch(ENDPOINT, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload)
+        body: JSON.stringify({
+          chat_id: CHAT_ID,
+          text: text
+        })
       });
       if (!res.ok) throw new Error('HTTP ' + res.status);
 
