@@ -603,7 +603,7 @@ body.nav-open .drawer{clip-path:circle(150% at calc(100% - 44px) 34px)}
   .gifts-note--cake .gifts-arrow { transform: rotate(-45deg); margin: 5px 0 -5px 30px; order: 2; }
   
   .gifts-note--reels { grid-area: reels; padding-right: 5%; text-align: right; }
-  .gifts-note--reels .gifts-arrow { transform: rotate(135deg); margin: -10px 20px 5px auto; order: -1; }
+  .gifts-note--reels .gifts-arrow { transform: rotate(135deg); margin: -10px 40px 5px auto; order: -1; }
   
   .gifts-note--room { grid-area: room; padding-left: 5%; text-align: left; }
   .gifts-note--room .gifts-arrow { transform: rotate(-135deg); margin: -10px auto 5px 20px; order: -1; }
