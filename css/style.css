@@ -42,7 +42,27 @@
 }
 
 *,*::before,*::after{box-sizing:border-box}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;overflow-x:hidden}
+html{
+  scroll-behavior:smooth;
+  -webkit-text-size-adjust:100%;
+  overflow-x:hidden;
+  scrollbar-width: thin;
+  scrollbar-color: var(--ink-soft) var(--ink-deep);
+}
+
+/* Кастомный элегантный скроллбар */
+::-webkit-scrollbar{width:8px;height:8px}
+::-webkit-scrollbar-track{background:var(--ink-deep)}
+::-webkit-scrollbar-thumb{
+  background:var(--ink-soft);
+  border-radius:999px;
+  border:2px solid var(--ink-deep);
+  transition:background .25s var(--ease);
+}
+::-webkit-scrollbar-thumb:hover{background:var(--sea)}
+::-webkit-scrollbar-thumb:active{background:var(--sky)}
+::-webkit-scrollbar-corner{background:var(--ink-deep)}
+
 body{
   margin:0;background:var(--paper);color:var(--ink);
   font-family:'Vela',-apple-system,'Segoe UI',sans-serif;font-weight:300;
