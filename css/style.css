@@ -1481,12 +1481,13 @@ body.cookie-up .dock{transform:translateY(125%)}
 .hero__line--punchy {
   font-family: 'Proletarsk', serif;
   font-size: clamp(18px, 2.5vw, 24px) !important;
-  line-height: 1.3 !important;
-  max-width: 30ch !important;
+  line-height: 1.35 !important;
+  max-width: 36ch !important;
   text-transform: none !important;
   letter-spacing: normal !important;
   opacity: 0.95;
-  margin-top: 24px;
+  margin: 24px auto 0 !important;
+  text-align: center !important;
 }
 
 /* ловушка для ботов: человек её не видит и не наводит табом */
