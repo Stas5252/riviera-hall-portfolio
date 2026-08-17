@@ -31,7 +31,7 @@
      посетителя уходил за границу. По 152-ФЗ это трансграничная передача,
      а в политике сайта написано, что ее нет. -->
 <link rel="stylesheet" href="vendor/swiper-bundle.min.css?v=61">
-<link rel="stylesheet" href="css/style.css?v=63">
+<link rel="stylesheet" href="css/style.css?v=64">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -610,19 +610,17 @@
           <input type="text" id="company" name="company" tabindex="-1" autocomplete="off">
         </div>
 
-        <!-- Согласие на обработку персональных данных (ст. 9 152-ФЗ).
-             Атрибута checked здесь быть не должно: согласие дается действием
-             пользователя, заранее проставленная галочка не считается согласием.
-             Ссылка вынесена за пределы <label>, иначе клик по ней заодно
-             переключал бы галочку. -->
+        <!-- Согласие на обработку персональных данных (ч. 1 ст. 9 152-ФЗ).
+             Оформлено отдельно от Политики. Атрибут checked отсутствует:
+             согласие дается осознанным действием пользователя. -->
         <div class="agree agree--light">
           <input type="checkbox" id="agree" name="agree" required>
           <label class="agree__box" for="agree" aria-hidden="true"></label>
           <span class="agree__text"><label for="agree">Я даю</label>
-          <a href="consent.html" target="_blank" rel="noopener">согласие на обработку персональных данных</a>
-          <label for="agree">и принимаю</label>
-          <a href="privacy.html" target="_blank" rel="noopener">Политику</a>.</span>
+          <a href="consent.html" target="_blank" rel="noopener">согласие на обработку персональных данных</a></span>
         </div>
+
+        <p class="booking-privacy">С <a href="privacy.html" target="_blank" rel="noopener">Политикой обработки персональных данных</a> можно ознакомиться здесь.</p>
 
         <button type="submit" class="btn-gradient send">Написать управляющей &rarr;</button>
         <span class="booking-note">Вы получите расчет в течение суток</span>

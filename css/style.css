@@ -1020,7 +1020,7 @@ body.nav-open .drawer{clip-path:circle(150% at calc(100% - 44px) 34px)}
 .form__ok--err .form__ok-title { color:#D85B5B; }
 .form__ok--err .form__ok-mark { color:#D85B5B; }
 
-.form--sent input, .form--sent textarea, .form--sent .btn-gradient, .form--sent .booking-note, .form--sent .agree { display: none; }
+.form--sent input, .form--sent textarea, .form--sent .btn-gradient, .form--sent .booking-note, .form--sent .agree, .form--sent .booking-privacy { display: none; }
 
 .end-footer {
   background: var(--ink-deep); color: #fff; padding: clamp(40px, 6vw, 60px) 0;
@@ -1393,6 +1393,22 @@ body.lock{position:fixed;left:0;right:0;width:100%;overflow:hidden}
 .agree--light.agree--err .agree__box{border-color:#C0392B}
 .agree--light.agree--err .agree__text{color:#C0392B}
 @keyframes shake{25%{transform:translateX(-4px)}75%{transform:translateX(4px)}}
+
+.booking-privacy{
+  font-size:11px;
+  line-height:1.45;
+  color:var(--ink-soft);
+  margin:-12px 0 0;
+  padding-left:32px;
+}
+.booking-privacy a{
+  color:var(--ink);
+  border-bottom:1px solid rgba(23,58,103,.4);
+  transition:border-color .3s;
+}
+.booking-privacy a:hover{
+  border-bottom-color:var(--ink);
+}
 
 .send:disabled{opacity:.6;cursor:progress}
 .form__ok--err{color:#E8A0A0}
