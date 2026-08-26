@@ -44,13 +44,54 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && $data) {
     // ==========================================
     // ВСТАВЬТЕ СЮДА ТОКЕН ВАШЕГО БОТА (например: 123456789:ABCDefgh...)
     $tg_token = "ВАШ_ТОКЕН_БОТА"; 
-    // ВСТАВЬТЕ СЮДА ID ВАШЕГО ЧАТА (Макса) (например: 12345678)
+    // ВСТАВЬТЕ СЮДА ID ВАШЕГО ЧАТА (например: 12345678)
     $tg_chat_id = "ВАШ_CHAT_ID";
 
-    if ($tg_token != "ВАШ_ТОКЕН_БОТА" && $tg_chat_id != "ВАШ_CHAT_ID") {
+    if (!empty($tg_token) && $tg_token !== "ВАШ_ТОКЕН_БОТА" && !empty($tg_chat_id) && $tg_chat_id !== "ВАШ_CHAT_ID") {
         $tg_url = "https://api.telegram.org/bot" . $tg_token . "/sendMessage?chat_id=" . $tg_chat_id . "&text=" . urlencode($message);
-        // Подавление ошибок при отправке запроса
         @file_get_contents($tg_url);
+    }
+
+
+    // ==========================================
+    // 3. Отправка в мессенджер МАКС (MAX)
+    // ==========================================
+    // Вставьте сюда Webhook URL или адрес бота из приложения МАКС
+    $max_webhook_url = "ВАШ_WEBHOOK_ИЛИ_URL_ДЛЯ_МАКС";
+
+    if (!empty($max_webhook_url) && $max_webhook_url !== "ВАШ_WEBHOOK_ИЛИ_URL_ДЛЯ_МАКС") {
+        $max_payload = json_encode([
+            'text' => $message,
+            'name' => $name,
+            'phone' => $phone,
+            'source' => 'riviera-hall.ru',
+            'created_at' => date('Y-m-d H:i:s')
+        ], JSON_UNESCAPED_UNICODE);
+
+        if (function_exists('curl_init')) {
+            $ch = curl_init($max_webhook_url);
+            curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+            curl_setopt($ch, CURLOPT_POSTFIELDS, $max_payload);
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+            curl_setopt($ch, CURLOPT_HTTPHEADER, [
+                'Content-Type: application/json',
+                'Content-Length: ' . strlen($max_payload)
+            ]);
+            curl_setopt($ch, CURLOPT_TIMEOUT, 5);
+            @curl_exec($ch);
+            curl_close($ch);
+        } else {
+            $opts = [
+                'http' => [
+                    'method' => 'POST',
+                    'header' => "Content-Type: application/json\r\n",
+                    'content' => $max_payload,
+                    'timeout' => 5
+                ]
+            ];
+            $context = stream_context_create($opts);
+            @file_get_contents($max_webhook_url, false, $context);
+        }
     }
 
     // Отправляем успешный ответ форме
