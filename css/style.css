@@ -1544,6 +1544,7 @@ body.cookie-up .dock{transform:translateY(125%)}
 .fab-btn svg { width: 24px; height: 24px; }
 .fab-btn:hover { transform: scale(1.1); box-shadow: 0 6px 16px rgba(0,0,0,0.2); }
 .fab-tg { background: #229ED9; }
+.fab-max { background: linear-gradient(135deg, #2563EB 0%, #1D4ED8 100%); }
 .fab-phone { background: #34C759; }
 
 @media (max-width: 900px) {
