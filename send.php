@@ -30,7 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && $data) {
     // ==========================================
     $to = "RiveraHoll@rg-gorsovet.ru"; // Почта, которую вы указали
     $subject = "Заявка с сайта Ривьера Холл";
-    $host = isset($_SERVER['HTTP_HOST']) ? $_SERVER['HTTP_HOST'] : 'riviera-hall.ru';
+    $host = isset($_SERVER['HTTP_HOST']) ? $_SERVER['HTTP_HOST'] : 'riverahall.ru';
     $headers = "From: noreply@" . $host . "\r\n";
     $headers .= "Reply-To: noreply@" . $host . "\r\n";
     $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
@@ -64,7 +64,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && $data) {
             'text' => $message,
             'name' => $name,
             'phone' => $phone,
-            'source' => 'riviera-hall.ru',
+            'source' => 'riverahall.ru',
             'created_at' => date('Y-m-d H:i:s')
         ], JSON_UNESCAPED_UNICODE);
 

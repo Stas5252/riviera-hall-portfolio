@@ -13,4 +13,4 @@ Disallow: /_архив/
 # Строки Disallow: /*? здесь раньше не было смысла: она задевала
 # style.css?v=51 и js/main.js?v=51, без которых робот не отрисует страницу.
 
-Sitemap: https://riviera-hall.ru/sitemap.xml
+Sitemap: https://riverahall.ru/sitemap.xml
