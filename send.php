@@ -42,14 +42,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && $data) {
     // ==========================================
     // 2. Отправка в Telegram
     // ==========================================
-    // ВСТАВЬТЕ СЮДА ТОКЕН ВАШЕГО БОТА (например: 123456789:ABCDefgh...)
-    $tg_token = "ВАШ_ТОКЕН_БОТА"; 
-    // ВСТАВЬТЕ СЮДА ID ВАШЕГО ЧАТА (например: 12345678)
-    $tg_chat_id = "ВАШ_CHAT_ID";
+    $tg_token = "8912358158:AAEozHFiU52HPeXyNQYYDeXnZIRwgcb-fKw"; 
+    $tg_chat_ids = ["348706658"];
 
-    if (!empty($tg_token) && $tg_token !== "ВАШ_ТОКЕН_БОТА" && !empty($tg_chat_id) && $tg_chat_id !== "ВАШ_CHAT_ID") {
-        $tg_url = "https://api.telegram.org/bot" . $tg_token . "/sendMessage?chat_id=" . $tg_chat_id . "&text=" . urlencode($message);
-        @file_get_contents($tg_url);
+    if (!empty($tg_token) && $tg_token !== "ВАШ_ТОКЕН_БОТА") {
+        foreach ($tg_chat_ids as $chat_id) {
+            if (!empty($chat_id) && $chat_id !== "ВАШ_CHAT_ID") {
+                $tg_url = "https://api.telegram.org/bot" . $tg_token . "/sendMessage?chat_id=" . trim($chat_id) . "&text=" . urlencode($message);
+                @file_get_contents($tg_url);
+            }
+        }
     }
 
 

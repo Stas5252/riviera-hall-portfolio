@@ -226,23 +226,23 @@ if (form) {
     try {
       // Настройки Telegram бота
       const BOT_TOKEN = '8912358158:AAEozHFiU52HPeXyNQYYDeXnZIRwgcb-fKw';
-      // ВНИМАНИЕ: Сюда нужно вписать ваш Chat ID!
-      const CHAT_ID = '761405171';
-
-      if (!CHAT_ID) throw new Error('CHAT_ID не указан');
+      // ID получателей заявок
+      const CHAT_IDS = ['348706658'];
 
       const text = `Новая заявка с сайта Ривьера Холл:\n\nИмя: ${payload.name}\nТелефон: ${payload.tel}`;
       const ENDPOINT = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`;
 
-      const res = await fetch(ENDPOINT, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          chat_id: CHAT_ID,
-          text: text
+      // Отправка всем получателям
+      await Promise.all(CHAT_IDS.map(chat_id =>
+        fetch(ENDPOINT, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            chat_id: chat_id,
+            text: text
+          })
         })
-      });
-      if (!res.ok) throw new Error('HTTP ' + res.status);
+      ));
 
       sayOk();
       window.rhGoal?.('form_sent');
