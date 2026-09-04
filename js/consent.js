@@ -7,7 +7,7 @@
 (() => {
 'use strict';
 
-const METRIKA_ID = '';                 // ← номер счётчика Яндекс.Метрики
+const METRIKA_ID = '112129398';                 // ← номер счётчика Яндекс.Метрики
 const KEY = 'rh-cookie';
 const calm = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
